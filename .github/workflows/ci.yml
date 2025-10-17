@@ -33,8 +33,8 @@ jobs:
 
     - name: Push to itch.io
       env:
-       BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-      run: ./butler push ./godot/Web.zip jee3nda/contraption:web
+        BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+      run: ./butler push ${{ steps.export.outputs.archive_directory }}/Web.zip jee3nda/contraption:web
 
   notify:
     runs-on: ubuntu-latest
