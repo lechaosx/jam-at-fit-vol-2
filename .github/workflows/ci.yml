@@ -28,12 +28,13 @@ jobs:
         archive_output: true
         cache: true
 
-    - uses: Ayowel/butler-to-itch@v1.0.0
+    - uses: KikimoraGames/itch-publish@v0.0.3
       with:
-        butler_key: ${{secrets.BUTLER_API_KEY}}
-        itch_user: jee3nda
-        itch_game: contraption
-        files: "${{ steps.export.outputs.archive_directory }}/web.zip"
+        butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+        gameData: ${{ steps.export.outputs.archive_directory }}/web.zip
+        itchUsername: jee3nda
+        itchGameId: contraption
+        buildChannel: web
 
   notify:
     runs-on: ubuntu-latest
