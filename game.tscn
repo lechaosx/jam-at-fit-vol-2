@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqap1fgfobevr"]
+
+[ext_resource type="Script" uid="uid://syka4aigomtx" path="res://game.gd" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://xsklbsg58dkb" path="res://world.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bucen7t8kj3h7" path="res://UI/pause_menu.tscn" id="3_feb5d"]
+
+[node name="Game" type="Node"]
+process_mode = 3
+script = ExtResource("1_feb5d")
+
+[node name="World" parent="." instance=ExtResource("2_e2o6t")]
+process_mode = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_feb5d")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="resumeClicked" from="PauseMenu" to="." method="_on_pause_menu_resume_clicked"]

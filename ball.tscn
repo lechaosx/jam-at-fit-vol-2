@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0t6hh2jmsrdr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbx31"]
+radius = 2.0
+
+[node name="Ball" type="RigidBody2D"]
+collision_layer = 129
+physics_material_override = SubResource("PhysicsMaterial_cbx31")
+
+[node name="Sprite_haha_xD" type="Polygon2D" parent="."]
+position = Vector2(-40, -20)
+scale = Vector2(5, 5)
+texture_scale = Vector2(5, 5)
+polygon = PackedVector2Array(7, 6, 6, 5, 6, 3, 7, 2, 9, 2, 10, 3, 10, 5, 9, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_cbx31")
