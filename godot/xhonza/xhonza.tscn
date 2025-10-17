@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://v5fwyu2cxtmc"]
+
+[ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://xhonza/fan/fan.tscn" id="1_bxg7w"]
+
+[node name="xhonza" type="Node2D"]
+
+[node name="fan0off" parent="." instance=ExtResource("1_bxg7w")]
+position = Vector2(65, 45)
+
+[node name="fan1slow" parent="." instance=ExtResource("1_bxg7w")]
+position = Vector2(155, 46)
+is_on = true
+speed = 0
+
+[node name="fan2normal" parent="." instance=ExtResource("1_bxg7w")]
+position = Vector2(158, 99)
+is_on = true
+
+[node name="fan3fast" parent="." instance=ExtResource("1_bxg7w")]
+position = Vector2(159, 158)
+is_on = true
+speed = 2
