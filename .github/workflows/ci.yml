@@ -34,6 +34,7 @@ jobs:
         gameData: ${{ steps.export.outputs.build_directory }}/Web
         itchUsername: jee3nda
         itchGameId: contraption
+        buildChannel: web
 
 
   notify:
