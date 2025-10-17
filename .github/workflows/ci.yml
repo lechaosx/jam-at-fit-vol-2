@@ -28,13 +28,11 @@ jobs:
         archive_output: true
         cache: true
 
-    - name: Publish to Itch
-      uses: Ayowel/butler-to-itch@v1.0.0
-      with:
-        butler_key: ${{secrets.BUTLER_API_KEY}}
-        itch_user: jee3nda
-        itch_game: contraption
-        files: ${{ steps.export.outputs.archive_directory }}/Web.zip
+    - name: Install Butler
+      run: curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive && unzip butler.zip && chmod +x butler
+
+    - name: Push to itch.io
+      run: ./butler push ./godot/Web.zip jee3nda/contraption:web
 
   notify:
     runs-on: ubuntu-latest
