@@ -1,0 +1,55 @@
+name: Godot CI
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Export
+      id: export
+      uses: firebelley/godot-export@v7.0.0
+      with:
+        godot_executable_download_url: https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_linux.x86_64.zip
+        godot_export_templates_download_url: https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_export_templates.tpz
+        relative_project_path: ./godot/
+        presets_to_export: Web
+        cache: true
+
+    - uses: KikimoraGames/itch-publish@v0.0.3
+      with:
+        butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+        gameData: ${{ steps.export.outputs.build_directory }}/web
+        itchUsername: jee3nda
+        itchGameId: contraption
+
+
+  notify:
+    runs-on: ubuntu-latest
+    if: failure()
+    needs: build-and-deploy
+    steps:
+    - name: Send Discord notification
+      uses: tsickert/discord-webhook@v7.0.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+        content: |
+            🔥🔥🔥 **FLEE! FLEE FOR YOUR LIVES! ABANDON YOUR POSTS!** 🔥🔥🔥
+            A GitHub Action [pipeline](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) is failing!
+    - name: Send gif
+      uses: tsickert/discord-webhook@v7.0.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+        content: "https://cdn.vox-cdn.com/uploads/chorus_asset/file/6886591/tumblr_mvbeinFEvL1shmc7eo5_500.0.gif"
