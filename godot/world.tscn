@@ -64,8 +64,12 @@ position = Vector2(481, 523)
 associatedBall = NodePath("../../Marble")
 
 [node name="Rope" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
+texture_filter = 0
+texture_repeat = 0
 position = Vector2(-390, 185)
-points = PackedVector2Array(658, 23, 805, 153, 1048, 235)
+points = PackedVector2Array(658, 23, 755.15784, 108.92188, 805, 153, 1048, 235)
+texture = null
+texture_mode = 0
 attach_body_a = NodePath("../Switch/Button")
 attach_body_b = NodePath("../Balloon")
 

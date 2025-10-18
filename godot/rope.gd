@@ -35,6 +35,9 @@ static func catmull_rom_spline(points: PackedVector2Array, resolution: int = 10)
 	return smooth_points
 
 func _ready():
+	for child in get_children():
+		remove_child(child)
+	
 	for i in range(points.size() - 1):
 		var segment_begin := points[i]
 		var segment_end := points[i + 1]
