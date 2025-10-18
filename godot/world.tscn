@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=15 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://v5fwyu2cxtmc" path="res://xhonza/xhonza.tscn" id="9_ioo17"]
 [ext_resource type="PackedScene" uid="uid://dcpac078vhmol" path="res://obstacles/block.tscn" id="10_wse8f"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="12_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="13_2o6r5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -98,5 +99,13 @@ position = Vector2(821, 380)
 
 [node name="Marble2" parent="." instance=ExtResource("12_k3n1d")]
 position = Vector2(618, 104)
+
+[node name="ElectricFan" parent="." instance=ExtResource("13_2o6r5")]
+position = Vector2(424, 627)
+scale = Vector2(-1, 1)
+speed = 2
+
+[node name="Marble3" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(402, 580)
 
 [editable path="Switch"]

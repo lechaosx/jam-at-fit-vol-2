@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://0bjmgokmgvxr"]
+[gd_scene load_steps=8 format=3 uid="uid://0bjmgokmgvxr"]
 
 [ext_resource type="Script" uid="uid://c8dcrlg72raaw" path="res://electric_fan/electric_fan.gd" id="1_jcpqo"]
 [ext_resource type="Texture2D" uid="uid://by2v0mwrpiti3" path="res://electric_fan/electric_fan-1.png" id="2_yp03g"]
@@ -26,11 +26,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibigq"]
+size = Vector2(300, 40)
+
+[node name="ElectricFan" type="Node2D"]
 script = ExtResource("1_jcpqo")
 is_on = true
-speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4occ1")
 frame_progress = 0.9027091
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(150, 0)
+shape = SubResource("RectangleShape2D_ibigq")

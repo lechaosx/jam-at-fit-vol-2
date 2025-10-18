@@ -40,3 +40,21 @@ func set_speed(speed: FanSpeed) -> void:
 		FanSpeed.keys()[speed],
 		sprites.speed_scale
 	])
+
+func _physics_process(delta: float) -> void:
+	for body in $Area2D.get_overlapping_bodies():
+		if body is RigidBody2D:
+			var force: int
+			
+			match speed:
+				FanSpeed.Slow:
+					force = 50
+				FanSpeed.Normal:
+					force = 100
+				FanSpeed.Fast:
+					force = 200
+					
+			force *= clamp(1 - global_position.distance_to(body.global_position) / 300, 0, 1)
+					
+			body.apply_central_force(Vector2(force, 0).rotated(rotation) * sign(scale.x))
+		
