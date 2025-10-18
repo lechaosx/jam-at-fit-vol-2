@@ -1,0 +1,1 @@
+class_name RopeSegment extends RigidBody2D

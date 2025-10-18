@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=12 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" path="res://ball.tscn" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://obstacles/long.tscn" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://75s0i21ku1sy" path="res://targets/checkpoint_target.tscn" id="5_036b0"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://m4ya5u6gd7ax" path="res://switch.tscn" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://b0ysf5iffpxet" path="res://balloon.tscn" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://v5fwyu2cxtmc" path="res://xhonza/xhonza.tscn" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://cfwxa8wrksjp8" path="res://scissors.tscn" id="8_ioo17"]
+[ext_resource type="PackedScene" uid="uid://dcpac078vhmol" path="res://obstacles/block.tscn" id="10_wse8f"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -61,28 +63,32 @@ points = PackedVector2Array(658, 23, 805, 153, 1048, 235)
 attach_body_a = NodePath("../Switch/Button")
 attach_body_b = NodePath("../Balloon")
 
+[node name="Scissors" parent="." instance=ExtResource("8_ioo17")]
+position = Vector2(781.00006, 310)
+rotation = 1.2691846
+
 [node name="Switch" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(267, 205)
-
-[node name="CutRopeButton" type="Button" parent="."]
-unique_name_in_owner = true
-offset_left = 387.0
-offset_top = 171.0
-offset_right = 507.0
-offset_bottom = 202.0
-text = "CUT THE ROPE"
 
 [node name="Balloon" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(658, 420)
 gravity_scale = -1.0
 
 [node name="Balloon2" parent="." instance=ExtResource("8_gbfbk")]
-position = Vector2(758, 302)
+position = Vector2(833, 262)
 gravity_scale = -1.0
 
+[node name="Rope2" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
+position = Vector2(763, 246)
+points = PackedVector2Array(70, 19, 59, 134)
+attach_body_a = NodePath("../Balloon2")
+attach_body_b = NodePath("../Block")
 [node name="xhonza" parent="." instance=ExtResource("9_ioo17")]
 position = Vector2(714, 130)
 
 [connection signal="pressed" from="CutRopeButton" to="." method="_on_cut_rope_button_pressed"]
+
+[node name="Block" parent="." instance=ExtResource("10_wse8f")]
+position = Vector2(821, 380)
 
 [editable path="Switch"]
