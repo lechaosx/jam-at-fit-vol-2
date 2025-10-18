@@ -71,7 +71,7 @@ attach_body_a = NodePath("../Switch/Button")
 attach_body_b = NodePath("../Balloon")
 
 [node name="Scissors" parent="." instance=ExtResource("8_ioo17")]
-position = Vector2(781.00006, 310)
+position = Vector2(818.00006, 317)
 rotation = 1.2691846
 
 [node name="Switch" parent="." instance=ExtResource("7_pkg7o")]
@@ -92,7 +92,7 @@ attach_body_a = NodePath("../Balloon2")
 attach_body_b = NodePath("../Block")
 
 [node name="xhonza" parent="." instance=ExtResource("9_ioo17")]
-position = Vector2(714, 130)
+position = Vector2(-33, 289)
 
 [node name="Block" parent="." instance=ExtResource("10_wse8f")]
 position = Vector2(821, 380)
@@ -107,5 +107,9 @@ speed = 2
 
 [node name="Marble3" parent="." instance=ExtResource("12_k3n1d")]
 position = Vector2(402, 580)
+
+[node name="Scissors2" parent="." instance=ExtResource("8_ioo17")]
+position = Vector2(301, 115.00003)
+rotation = 2.9026845
 
 [editable path="Switch"]

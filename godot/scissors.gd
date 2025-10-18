@@ -12,5 +12,14 @@ func _on_body_entered(_body: Node2D) -> void:
 	%Closed.visible = true
 	
 	for body in %CutArea.get_overlapping_bodies():
-		if body is RopeSegment:
-			body.get_parent().cut(body)
+		if body.has_method("cut"):
+			body.cut()
+
+	%Points.queue_free()
+
+func _on_points_body_entered(body: Node2D) -> void:
+	if closed:
+		return
+		
+	if body.has_method("pop"):
+		body.pop()
