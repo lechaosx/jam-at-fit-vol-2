@@ -1,28 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0hs7nim5oa37"]
+[gd_scene load_steps=9 format=3 uid="uid://c0hs7nim5oa37"]
 
 [ext_resource type="Script" uid="uid://cf72w2bawokd7" path="res://trampoline.gd" id="1_d0j4r"]
+[ext_resource type="Texture2D" uid="uid://6f8o1ob231j8" path="res://assets/trampoline_1.png" id="3_r4tbr"]
+[ext_resource type="Texture2D" uid="uid://bh372w3gi415f" path="res://assets/trampoline_2.png" id="4_crrlg"]
+[ext_resource type="Texture2D" uid="uid://k8fi8274wsp5" path="res://assets/trampoline_3.png" id="5_wld5h"]
+[ext_resource type="Texture2D" uid="uid://bcxe83n2mtc4y" path="res://assets/trampoline_4.png" id="6_7p1gw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0j4r"]
-size = Vector2(100, 7.5)
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvryr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r4tbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_crrlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wld5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7p1gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r4tbr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cilbb"]
-size = Vector2(98, 3)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cilbb"]
+radius = 6.0
+height = 60.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iocah"]
+size = Vector2(81, 14)
 
 [node name="Trampoline" type="RigidBody2D"]
 script = ExtResource("1_d0j4r")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2.9999998)
+scale = Vector2(0.28320313, 0.28320313)
+sprite_frames = SubResource("SpriteFrames_pvryr")
+frame = 4
+frame_progress = 1.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_d0j4r")
+position = Vector2(0, -3)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_cilbb")
 
 [node name="BouncyArea" type="Area2D" parent="."]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BouncyArea"]
-position = Vector2(0, -3.5)
-shape = SubResource("RectangleShape2D_cilbb")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.591011, 2.4017245e-05, 0.44657522, 1)
-polygon = PackedVector2Array(-49, -5, 49, -5, 49, -3, 1, 0, 50, 0, 50, 4, -50, 4, -50, 0, -1, 0, -49, -3)
+position = Vector2(-0.5, 11)
+shape = SubResource("RectangleShape2D_iocah")
 
 [connection signal="body_entered" from="BouncyArea" to="." method="_on_bouncy_area_body_entered"]
