@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3ncero04lpxp"]
+[gd_scene load_steps=5 format=3 uid="uid://b3ncero04lpxp"]
 
 [ext_resource type="Script" uid="uid://b5thoa1gos8bc" path="res://targets/final_target.gd" id="1_t2jmu"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="2_n5tbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hr3o"]
+size = Vector2(10, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvf3i"]
+atlas = ExtResource("2_n5tbl")
+region = Rect2(1511.8186, 941.13434, 173.09082, 403.71063)
 
 [node name="FinalTarget" type="Node2D"]
 script = ExtResource("1_t2jmu")
@@ -14,9 +20,9 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_3hr3o")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-scale = Vector2(5, 5)
-color = Color(0.03137255, 0.7647059, 0, 0.43137255)
-polygon = PackedVector2Array(-1.9999999, 1.9999999, 1.9999999, 1.9999999, 1.9999999, -1.9999999, -1.9999999, -1.9999999)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.062497854, 0.80454683)
+scale = Vector2(0.046965294, 0.04696529)
+texture = SubResource("AtlasTexture_mvf3i")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
