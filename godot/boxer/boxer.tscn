@@ -1,117 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsvhv4tgo5ae0"]
+[gd_scene load_steps=7 format=3 uid="uid://bsvhv4tgo5ae0"]
 
 [ext_resource type="Script" uid="uid://64iatd7iwh7x" path="res://boxer/boxer.gd" id="1_2j1l5"]
 [ext_resource type="Texture2D" uid="uid://dahfdujx80p4x" path="res://boxer/boxer-1.png" id="1_inhgc"]
-[ext_resource type="Texture2D" uid="uid://bris4lp4rqpfo" path="res://boxer/boxer-2.png" id="2_2j1l5"]
 [ext_resource type="Texture2D" uid="uid://dp810xvrt8jke" path="res://boxer/boxer-0.png" id="3_226rx"]
-
-[sub_resource type="Animation" id="Animation_226rx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-24.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../glove-end:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../go-go-push-me/CollisionShape2D:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-28.999998]
-}
-
-[sub_resource type="Animation" id="Animation_2j1l5"]
-resource_name = "moveToPunch"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-24.0, -124.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../glove-end:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../go-go-push-me/CollisionShape2D:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-28.999998, -118.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_226rx"]
-_data = {
-&"RESET": SubResource("Animation_226rx"),
-&"moveToPunch": SubResource("Animation_2j1l5")
-}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om1ag"]
 size = Vector2(5, 16)
@@ -126,34 +17,22 @@ size = Vector2(3, 12)
 [node name="Boxer" type="Node2D"]
 script = ExtResource("1_2j1l5")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../globe-start")
-libraries = {
-&"": SubResource("AnimationLibrary_226rx")
-}
-speed_scale = 5.0
-
-[node name="globe-start" type="Sprite2D" parent="."]
-position = Vector2(-24, 1)
-texture = ExtResource("1_inhgc")
-
-[node name="glove-end" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-118, 4)
-texture = ExtResource("2_2j1l5")
-
 [node name="no-go" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="no-go"]
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_om1ag")
 
-[node name="go-go-push-me" type="StaticBody2D" parent="."]
+[node name="go-go-push-me" type="RigidBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="go-go-push-me"]
-position = Vector2(-28.999998, -9.536743e-07)
+position = Vector2(-28.999985, -9.536743e-07)
 rotation = 1.0053097
 shape = SubResource("CapsuleShape2D_2j1l5")
+
+[node name="globe-start" type="Sprite2D" parent="go-go-push-me"]
+position = Vector2(-24, 1)
+texture = ExtResource("1_inhgc")
 
 [node name="trigger" type="Sprite2D" parent="."]
 texture = ExtResource("3_226rx")

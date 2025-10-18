@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://v5fwyu2cxtmc"]
 
-[ext_resource type="Script" uid="uid://c0olvnbmjpn82" path="res://xhonza/xhonza.gd" id="1_20xof"]
+[ext_resource type="Script" path="res://xhonza/xhonza.gd" id="1_20xof"]
 [ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="1_bxg7w"]
 [ext_resource type="PackedScene" uid="uid://c7e24p47rwu63" path="res://electric_switch/electric_switch.tscn" id="2_uabyj"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="3_1a25x"]
-[ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://obstacles/long.tscn" id="4_r03xa"]
+[ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://placeables/obstacles/long.tscn" id="4_r03xa"]
 [ext_resource type="PackedScene" uid="uid://bsvhv4tgo5ae0" path="res://boxer/boxer.tscn" id="6_6sn2h"]
 [ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="7_eyf6f"]
 
@@ -74,7 +74,7 @@ rotation = -0.2443461
 scale = Vector2(3, 1)
 
 [node name="Long2" parent="boxer" instance=ExtResource("4_r03xa")]
-position = Vector2(425, 271)
+position = Vector2(475, 272)
 scale = Vector2(3, 1)
 
 [node name="ElectricFan" parent="boxer" instance=ExtResource("1_bxg7w")]
