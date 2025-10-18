@@ -64,5 +64,17 @@ position = Vector2(267, 205)
 [node name="Switch2" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(662, 215)
 
+[node name="Node" type="Node" parent="."]
+
+[node name="CutRopeButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 387.0
+offset_top = 171.0
+offset_right = 507.0
+offset_bottom = 202.0
+text = "CUT THE ROPE"
+
+[connection signal="pressed" from="CutRopeButton" to="." method="_on_cut_rope_button_pressed"]
+
 [editable path="Switch"]
 [editable path="Switch2"]

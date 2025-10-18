@@ -43,3 +43,7 @@ func registerTargets():
 		if target is CheckpointTarget:
 			allTargets += 1
 			target.targetNotify.connect(updateTargetCounts)
+
+
+func _on_cut_rope_button_pressed() -> void:
+	$Rope.cut_rope_at(10)

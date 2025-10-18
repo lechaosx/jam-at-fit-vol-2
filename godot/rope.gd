@@ -2,6 +2,7 @@ extends Line2D
 
 @export var attach_body_a: PhysicsBody2D
 @export var attach_body_b: PhysicsBody2D
+@export var segment_distance := 24.0
 
 var segments: Array[RigidBody2D] = []
 var joints: Array[PinJoint2D] = []
@@ -11,6 +12,8 @@ static func catmull_rom_spline(points: PackedVector2Array, resolution: int = 10)
 		return points
 	
 	points.insert(0, points[0] - (points[1] - points[0]))
+	points.insert(0, points[0] - (points[1] - points[0]))
+	points.append(points[-1] + (points[-1] - points[-2]))
 	points.append(points[-1] + (points[-1] - points[-2]))
 
 	var smooth_points := PackedVector2Array()
@@ -32,18 +35,11 @@ static func catmull_rom_spline(points: PackedVector2Array, resolution: int = 10)
 	return smooth_points
 
 func _ready():
-	if points.size() < 2:
-		push_error("Rope needs at least two points.")
-		return
-		
-	var segment_distance := 24.0
-		
 	for i in range(points.size() - 1):
 		var segment_begin := points[i]
 		var segment_end := points[i + 1]
 		
 		var distance := segment_begin.distance_to(segment_end)
-		
 		
 		for j in range(distance / segment_distance):
 			var segment = preload("res://rope_segment.tscn").instantiate()
@@ -77,3 +73,30 @@ func _ready():
 func _process(_delta: float) -> void:
 	points = catmull_rom_spline(segments.map(func(x): return x.position))
 	
+func cut_rope_at(index: int) -> void:
+	if index <= 0 or index >= segments.size():
+		push_error("Invalid cut index")
+		return
+	
+	# Remove the joint connecting the segments at the cut
+	if index - 1 < joints.size():
+		joints[index - 1].queue_free()
+		joints.remove_at(index - 1)
+	
+	# Split segments into two halves
+	var first_half := segments.slice(0, index)
+	var second_half := segments.slice(index, segments.size())
+	segments = first_half
+	
+	joints = joints.slice(0, index)
+	
+	# Optional: make a new rope instance for the second half
+	var new_rope = preload("res://rope.tscn").instantiate()
+	for seg in second_half:
+		seg.reparent(new_rope)
+	new_rope.segments = second_half
+	
+	new_rope.attach_body_b = attach_body_b
+	attach_body_b = null
+	
+	add_sibling(new_rope)
