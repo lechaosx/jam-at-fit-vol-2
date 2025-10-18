@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpg8nm3qigpt0"]
+
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="1_477ct"]
+[ext_resource type="Script" uid="uid://b51sylt5qipct" path="res://static_rotation.gd" id="2_oip8e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
+bounce = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktgx5"]
+atlas = ExtResource("1_477ct")
+region = Rect2(1040.1927, 932.9194, 143.3451, 143.91058)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbx31"]
+radius = 2.7999997
+
+[node name="Ball" type="RigidBody2D"]
+visibility_layer = 2
+collision_layer = 129
+physics_material_override = SubResource("PhysicsMaterial_cbx31")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.3841858e-07, -2.3841858e-07)
+scale = Vector2(0.19638579, 0.19638579)
+texture = SubResource("AtlasTexture_ktgx5")
+script = ExtResource("2_oip8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_cbx31")

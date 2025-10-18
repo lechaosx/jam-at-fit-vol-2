@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="13_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://dcnp5ewnyvsiv" path="res://barrel.tscn" id="14_70uel"]
+[ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="14_70uel"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -81,10 +82,12 @@ position = Vector2(267, 205)
 [node name="Balloon" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(658, 420)
 gravity_scale = -1.0
+script = null
 
 [node name="Balloon2" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(833, 262)
 gravity_scale = -1.0
+script = null
 
 [node name="Rope2" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
 position = Vector2(763, 246)
@@ -118,5 +121,7 @@ position = Vector2(1083, 554)
 
 [node name="Marble4" parent="." instance=ExtResource("12_k3n1d")]
 position = Vector2(1087, 37)
+[node name="Ball" parent="." instance=ExtResource("14_70uel")]
+position = Vector2(255, 33)
 
 [editable path="Switch"]

@@ -12,6 +12,7 @@ radius = 2.0
 
 [node name="Marble" type="RigidBody2D"]
 collision_layer = 129
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_cbx31")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

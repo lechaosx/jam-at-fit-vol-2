@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc3mdtk5nu3h5"]
+[gd_scene load_steps=7 format=3 uid="uid://cc3mdtk5nu3h5"]
 
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="1_41u45"]
 [ext_resource type="Script" uid="uid://b51sylt5qipct" path="res://static_rotation.gd" id="3_n5601"]
@@ -6,24 +6,35 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
 bounce = 0.5
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_41u45"]
+atlas = ExtResource("1_41u45")
+region = Rect2(701.2014, 744.9586, 258.05634, 258.38727)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktgx5"]
 atlas = ExtResource("1_41u45")
-region = Rect2(1040.1927, 932.9194, 143.3451, 143.91058)
+region = Rect2(701.201, 1003.346, 258.05597, 255.02264)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbx31"]
-radius = 2.0
+radius = 5.0039983
 
 [node name="Ball" type="RigidBody2D"]
 visibility_layer = 2
 collision_layer = 129
+mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_cbx31")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 4.7683716e-07)
-scale = Vector2(0.14102332, 0.14102332)
+position = Vector2(-2.3841858e-07, -2.3841858e-07)
+scale = Vector2(0.19638577, 0.19638577)
+texture = SubResource("AtlasTexture_41u45")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0.51765144, 0.49999774)
+scale = Vector2(0.192, 0.196)
 texture = SubResource("AtlasTexture_ktgx5")
 script = ExtResource("3_n5601")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_cbx31")
