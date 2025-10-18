@@ -1,13 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://0bjmgokmgvxr"]
+[gd_scene load_steps=11 format=3 uid="uid://0bjmgokmgvxr"]
 
 [ext_resource type="Script" uid="uid://c8dcrlg72raaw" path="res://electric_fan/electric_fan.gd" id="1_jcpqo"]
 [ext_resource type="Texture2D" uid="uid://by2v0mwrpiti3" path="res://electric_fan/electric_fan-1.png" id="2_yp03g"]
 [ext_resource type="Texture2D" uid="uid://dqq5g68yt4d56" path="res://electric_fan/electric_fan-2.png" id="3_i0v1j"]
 [ext_resource type="Texture2D" uid="uid://dxh1slh31suii" path="res://electric_fan/electric_fan-3.png" id="4_eveuv"]
 [ext_resource type="Texture2D" uid="uid://xq53xv2ksa4q" path="res://electric_fan/electric_fan-4.png" id="5_f5dol"]
+[ext_resource type="Texture2D" uid="uid://5ws0mhq2u6a3" path="res://electric_fan/electric-fan_1.png" id="6_otanc"]
+[ext_resource type="Texture2D" uid="uid://r0qm2cvevja1" path="res://electric_fan/electric-fan_3.png" id="7_lmqmr"]
+[ext_resource type="Texture2D" uid="uid://tapka11sbg5n" path="res://electric_fan/electric-fan_4.png" id="8_b0x0u"]
+[ext_resource type="Texture2D" uid="uid://dt4nnosjp66e1" path="res://electric_fan/electric-fan_2.png" id="9_lr3ww"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4occ1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_otanc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lmqmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b0x0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lr3ww")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_yp03g")
@@ -22,7 +43,7 @@ animations = [{
 "texture": ExtResource("5_f5dol")
 }],
 "loop": true,
-"name": &"default",
+"name": &"old",
 "speed": 5.0
 }]
 
@@ -34,6 +55,9 @@ script = ExtResource("1_jcpqo")
 is_on = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 4
+position = Vector2(0, 1.0000001)
+scale = Vector2(0.14102563, 0.14102565)
 sprite_frames = SubResource("SpriteFrames_4occ1")
 frame_progress = 0.9027091
 
