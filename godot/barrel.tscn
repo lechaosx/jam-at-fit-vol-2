@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcnp5ewnyvsiv"]
+
+[ext_resource type="Script" uid="uid://b0oyqcmfpa7fn" path="res://barrel.gd" id="1_a12vh"]
+[ext_resource type="Texture2D" uid="uid://ddbs6adk0tpmr" path="res://barrel.png" id="2_rdxsi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ygdis"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6iawg"]
+radius = 1000.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a12vh"]
+radius = 36.1
+
+[node name="Barrel" type="RigidBody2D"]
+max_contacts_reported = 10
+script = ExtResource("1_a12vh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rdxsi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6)
+shape = SubResource("CircleShape2D_ygdis")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6iawg")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+position = Vector2(-1, -6)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_a12vh")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

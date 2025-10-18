@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=16 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dcpac078vhmol" path="res://obstacles/block.tscn" id="10_wse8f"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="13_2o6r5"]
+[ext_resource type="PackedScene" uid="uid://dcnp5ewnyvsiv" path="res://barrel.tscn" id="14_70uel"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -111,5 +112,11 @@ position = Vector2(402, 580)
 [node name="Scissors2" parent="." instance=ExtResource("8_ioo17")]
 position = Vector2(301, 115.00003)
 rotation = 2.9026845
+
+[node name="Barrel" parent="." instance=ExtResource("14_70uel")]
+position = Vector2(1083, 554)
+
+[node name="Marble4" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(1087, 37)
 
 [editable path="Switch"]
