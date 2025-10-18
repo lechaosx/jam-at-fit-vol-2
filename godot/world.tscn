@@ -157,4 +157,11 @@ position = Vector2(1026, 442)
 visible = false
 position = Vector2(1131, 393)
 
+[node name="Scissors3" parent="." instance=ExtResource("8_ioo17")]
+position = Vector2(981.0001, 71)
+rotation = 3.0128393
+
+[node name="Balloon3" parent="." instance=ExtResource("8_gbfbk")]
+position = Vector2(745, 597)
+
 [editable path="Switch"]
