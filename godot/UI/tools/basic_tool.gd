@@ -4,6 +4,8 @@ var res:PlaceableResource
 var world_instance : Node2D
 var target_instance : Node2D
 
+signal placement_success
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		target_instance.show()
@@ -18,6 +20,7 @@ func _input(event: InputEvent) -> void:
 			remove_child(target_instance)
 			world_instance.add_child(target_instance)
 			target_instance.process_mode = Node.PROCESS_MODE_INHERIT
+			placement_success.emit()
 			queue_free()
 
 		if event.button_index == MouseButton.MOUSE_BUTTON_WHEEL_DOWN:

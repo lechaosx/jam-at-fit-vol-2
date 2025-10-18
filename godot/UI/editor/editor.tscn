@@ -48,10 +48,12 @@ layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+action_mode = 0
 text = "Play"
 
 [node name="ResetButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+action_mode = 0
 text = "Reset"
 
 [node name="CollapsableContainer" type="FoldableContainer" parent="HBoxContainer/VBoxContainer"]

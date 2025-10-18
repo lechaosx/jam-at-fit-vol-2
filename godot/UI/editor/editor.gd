@@ -7,8 +7,7 @@ var basic_tool_scene:PackedScene = preload("res://UI/tools/basic_tool.tscn")
 
 @onready var viewport = $SubViewportContainer/SubViewport
 
-var selected_element:Node2D
-var selected_resource: PlaceableResource
+var selected_button: ItemPlaceholder
 var world_scene:PackedScene
 var world_instance:Node2D
 var targets_manager:TargetsManager
@@ -17,14 +16,20 @@ var level_placeables: LevelPlaceables
 func _on_button_pressed() -> void:
 	playClicked.emit(get_world_duplicate())
 
-func _on_item_placeholder_element_selected(resource: PlaceableResource) -> void:
+func _on_item_placeholder_element_selected(resource: PlaceableResource, button:ItemPlaceholder) -> void:
+	selected_button = button
+	
 	var tool_scene = resource.tool
 	if not tool_scene:
 		tool_scene = basic_tool_scene
-	
+		
 	var tool = tool_scene.instantiate()
 	tool.init(resource, world_instance)
+	tool.placement_success.connect(placement_success)
 	%ToolsContainer.add_child(tool)
+
+func placement_success():
+	selected_button.item_placed()
 
 func _on_reset_button_pressed() -> void:
 	spawn_world(world_scene)
@@ -44,7 +49,7 @@ func load_placeables_from_level():
 
 	for placeable in level_placeables.placeables:
 		var placeable_button_instance = placeable_button_scene.instantiate()
-		placeable_button_instance.set_resource(placeable.placeable_res)
+		placeable_button_instance.set_resource(placeable.placeable_res, placeable.max_count)
 		%PlaceablesContainer.add_child(placeable_button_instance)
 		placeable_button_instance.element_selected.connect(_on_item_placeholder_element_selected)
 		
