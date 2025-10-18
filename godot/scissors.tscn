@@ -1,15 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://cilps83as6rhs"]
 
-[ext_resource type="Script" uid="uid://kid3ntvial77" path="res://scissors.gd" id="1_xflwj"]
+[ext_resource type="Script" path="res://scissors.gd" id="1_xflwj"]
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="2_apsso"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4h8be"]
 atlas = ExtResource("2_apsso")
-region = Rect2(130, 118, 60, 123)
+region = Rect2(389.99048, 351.98477, 179.92957, 370.37314)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdba0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xflwj"]
 atlas = ExtResource("2_apsso")
-region = Rect2(68, 122, 45, 124)
+region = Rect2(204.29472, 365.74628, 135.84547, 372.65723)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v30fi"]
 radius = 12.0
@@ -27,12 +27,16 @@ script = ExtResource("1_xflwj")
 
 [node name="Opened" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(-0.4999962, 0.30629158)
+scale = Vector2(0.31843576, 0.31843576)
 texture = SubResource("AtlasTexture_4h8be")
 
 [node name="Closed" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 visible = false
-texture = SubResource("AtlasTexture_kdba0")
+position = Vector2(-1.4287106, -0.12977415)
+scale = Vector2(0.31957468, 0.31790203)
+texture = SubResource("AtlasTexture_xflwj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-17, 46)

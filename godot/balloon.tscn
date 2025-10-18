@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0ysf5iffpxet"]
 
-[ext_resource type="Texture2D" uid="uid://66efbws7ywnl" path="res://assets.svg" id="1_n2rxu"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="1_n2rxu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r345k"]
 atlas = ExtResource("1_n2rxu")
-region = Rect2(124, 262, 61, 90)
+region = Rect2(369.66708, 785.0001, 189.05423, 273.33362)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4emby"]
 radius = 29.068884
@@ -16,6 +16,7 @@ gravity_scale = -0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -37)
+scale = Vector2(0.33366406, 0.33366403)
 texture = SubResource("AtlasTexture_r345k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
