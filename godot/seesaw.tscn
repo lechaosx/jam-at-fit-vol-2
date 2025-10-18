@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwglrpbg4e0r4"]
+[gd_scene load_steps=6 format=3 uid="uid://dwglrpbg4e0r4"]
+
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="1_8xinp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8xinp"]
 radius = 4.1231055
@@ -6,6 +8,17 @@ radius = 4.1231055
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2lv8p"]
 a = Vector2(-100, 0)
 b = Vector2(100, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc2ik"]
+atlas = ExtResource("1_8xinp")
+region = Rect2(515.60187, 1354.6367, 859.6713, 109.89697)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8xinp"]
+radius = 4.1231055
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xinp"]
+atlas = ExtResource("1_8xinp")
+region = Rect2(851.08484, 1486.1052, 189.33105, 166.20068)
 
 [node name="Seesaw" type="Node2D"]
 
@@ -27,6 +40,17 @@ shape = SubResource("SegmentShape2D_2lv8p")
 node_a = NodePath("..")
 node_b = NodePath("../../StaticBody2D")
 
-[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
-color = Color(1, 0, 1, 1)
-polygon = PackedVector2Array(-100, -1, 100, -1, 100, 1, -100, 1)
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, -7.5)
+scale = Vector2(0.23509175, 0.23509175)
+texture = SubResource("AtlasTexture_xc2ik")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_8xinp")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, 6.7)
+scale = Vector2(0.13027109, 0.13027109)
+texture = SubResource("AtlasTexture_8xinp")
