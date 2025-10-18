@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsvhv4tgo5ae0"]
+[gd_scene load_steps=8 format=3 uid="uid://bsvhv4tgo5ae0"]
 
 [ext_resource type="Script" uid="uid://64iatd7iwh7x" path="res://boxer/boxer.gd" id="1_2j1l5"]
 [ext_resource type="Texture2D" uid="uid://dahfdujx80p4x" path="res://boxer/boxer-1.png" id="1_inhgc"]
@@ -8,11 +8,14 @@
 size = Vector2(5, 16)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2j1l5"]
-radius = 12.729894
-height = 33.286068
+radius = 9.433749
+height = 32.21443
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yojg8"]
 size = Vector2(3, 12)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_inhgc"]
+points = PackedVector2Array(-10, -1, -19, 5, -28, 9, -35, 8, -35, 10, -28, 10, -10, 2, 0, 2, 0, -1)
 
 [node name="Boxer" type="Node2D"]
 script = ExtResource("1_2j1l5")
@@ -42,5 +45,11 @@ texture = ExtResource("3_226rx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trigger/Area2D"]
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_yojg8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4, 5)
+shape = SubResource("ConvexPolygonShape2D_inhgc")
 
 [connection signal="body_entered" from="trigger/Area2D" to="." method="_on_area_2d_body_entered"]

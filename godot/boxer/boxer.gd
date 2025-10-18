@@ -4,7 +4,6 @@ var is_punched: bool = false
 
 func trigger_me() -> void:
 	if not is_punched:
-		
 		print_debug("boxer/PUNCH >> >> >> ...")
 		is_punched = true
 		$"go-go-push-me".freeze = false
