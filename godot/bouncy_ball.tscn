@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpg8nm3qigpt0"]
 
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="1_477ct"]
-[ext_resource type="Script" uid="uid://b51sylt5qipct" path="res://static_rotation.gd" id="2_oip8e"]
+[ext_resource type="Script" path="res://static_rotation.gd" id="2_oip8e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
 bounce = 0.5

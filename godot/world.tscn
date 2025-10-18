@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=18 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="13_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="14_70uel"]
 [ext_resource type="PackedScene" uid="uid://dwglrpbg4e0r4" path="res://seesaw.tscn" id="15_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://dcnp5ewnyvsiv" path="res://barrel.tscn" id="16_2u3nc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -116,9 +117,6 @@ position = Vector2(402, 580)
 position = Vector2(301, 115.00003)
 rotation = 2.9026845
 
-[node name="Barrel" parent="." instance=ExtResource("14_70uel")]
-position = Vector2(1083, 554)
-
 [node name="Marble4" parent="." instance=ExtResource("12_k3n1d")]
 position = Vector2(1087, 37)
 
@@ -127,5 +125,8 @@ position = Vector2(255, 33)
 
 [node name="Seesaw" parent="." instance=ExtResource("15_hiqwa")]
 position = Vector2(1018, 240)
+
+[node name="Barrel2" parent="." instance=ExtResource("16_2u3nc")]
+position = Vector2(1085, 585)
 
 [editable path="Switch"]
