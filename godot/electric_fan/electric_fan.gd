@@ -27,7 +27,7 @@ func stop() -> void:
 	is_on = false
 	sprites.stop()
 
-func set_speed(speed: float) -> void:
+func set_speed(speed: FanSpeed) -> void:
 	match speed:
 		FanSpeed.Slow:
 			sprites.speed_scale = 0.5
@@ -35,3 +35,8 @@ func set_speed(speed: float) -> void:
 			sprites.speed_scale = 1.0
 		FanSpeed.Fast:
 			sprites.speed_scale = 2.0
+
+	print_debug("electric/fan: speed = %s, value = %f" % [
+		FanSpeed.keys()[speed],
+		sprites.speed_scale
+	])
