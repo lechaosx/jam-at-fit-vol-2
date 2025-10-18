@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ejby3h5t8mbq"]
+
+[ext_resource type="Script" uid="uid://blfv8uflpy641" path="res://electric_connector/electric_connector.gd" id="1_5ed67"]
+
+[node name="ElectricConnector" type="Node2D"]
+script = ExtResource("1_5ed67")
