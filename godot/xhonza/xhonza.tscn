@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://v5fwyu2cxtmc"]
+[gd_scene load_steps=6 format=3 uid="uid://v5fwyu2cxtmc"]
 
+[ext_resource type="Script" uid="uid://c0olvnbmjpn82" path="res://xhonza/xhonza.gd" id="1_20xof"]
 [ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="1_bxg7w"]
 [ext_resource type="PackedScene" uid="uid://c7e24p47rwu63" path="res://electric_switch/electric_switch.tscn" id="2_uabyj"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="3_1a25x"]
 [ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://obstacles/long.tscn" id="4_r03xa"]
 
 [node name="xhonza" type="Node2D"]
+script = ExtResource("1_20xof")
 
 [node name="fan" type="CanvasGroup" parent="."]
 
@@ -36,11 +38,12 @@ is_on = true
 [node name="switch-test1" type="CanvasGroup" parent="."]
 
 [node name="switch2test" parent="switch-test1" instance=ExtResource("2_uabyj")]
+unique_name_in_owner = true
 position = Vector2(208, 100)
 is_on = true
 
 [node name="Marble" parent="switch-test1" instance=ExtResource("3_1a25x")]
-position = Vector2(207, 43)
+position = Vector2(205, 176)
 
 [node name="Long" parent="switch-test1" instance=ExtResource("4_r03xa")]
 position = Vector2(189, 153)
@@ -48,11 +51,12 @@ position = Vector2(189, 153)
 [node name="switch-test2" type="CanvasGroup" parent="."]
 
 [node name="switch3test" parent="switch-test2" instance=ExtResource("2_uabyj")]
-position = Vector2(262, 100)
+unique_name_in_owner = true
+position = Vector2(262, 398)
 is_on = true
 
 [node name="Marble" parent="switch-test2" instance=ExtResource("3_1a25x")]
 position = Vector2(261, 43)
 
 [node name="Long" parent="switch-test2" instance=ExtResource("4_r03xa")]
-position = Vector2(245, 171)
+position = Vector2(245, 469)
