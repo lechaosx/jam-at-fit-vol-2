@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=11 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://v2coglxm5imv" path="res://rope.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://m4ya5u6gd7ax" path="res://switch.tscn" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://b0ysf5iffpxet" path="res://balloon.tscn" id="8_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://v5fwyu2cxtmc" path="res://xhonza/xhonza.tscn" id="9_ioo17"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -78,6 +79,9 @@ gravity_scale = -1.0
 [node name="Balloon2" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(758, 302)
 gravity_scale = -1.0
+
+[node name="xhonza" parent="." instance=ExtResource("9_ioo17")]
+position = Vector2(714, 130)
 
 [connection signal="pressed" from="CutRopeButton" to="." method="_on_cut_rope_button_pressed"]
 
