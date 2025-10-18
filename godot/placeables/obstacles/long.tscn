@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqa5lhjbjxeho"]
 
-[ext_resource type="PackedScene" uid="uid://dcpac078vhmol" path="res://obstacles/block.tscn" id="1_hioqh"]
+[ext_resource type="PackedScene" uid="uid://dcpac078vhmol" path="res://placeables/obstacles/block.tscn" id="1_hioqh"]
 
 [node name="Long" type="Node2D"]
 

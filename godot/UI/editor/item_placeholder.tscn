@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdioybepl7u2g"]
+[gd_scene load_steps=3 format=3 uid="uid://bdioybepl7u2g"]
 
 [ext_resource type="Script" uid="uid://d2hd6xxqv4nmn" path="res://UI/editor/item_placeholder.gd" id="1_nhbkl"]
-[ext_resource type="Texture2D" uid="uid://b8gop2u4bkjx8" path="res://assets/marble_albedo.png" id="2_pball"]
 [ext_resource type="Texture2D" uid="uid://bnu6u3g044pp5" path="res://icon.svg" id="3_ppbsh"]
 
 [node name="ItemPlaceholder" type="Button"]
@@ -20,7 +19,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_nhbkl")
-texture = ExtResource("2_pball")
 
 [node name="MainSprite" type="TextureRect" parent="."]
 layout_mode = 1

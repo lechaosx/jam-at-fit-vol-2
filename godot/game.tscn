@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqap1fgfobevr"]
 
 [ext_resource type="Script" uid="uid://syka4aigomtx" path="res://game.gd" id="1_feb5d"]
-[ext_resource type="PackedScene" uid="uid://xsklbsg58dkb" path="res://world.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://67wdnf8llrj2" path="res://levels/level1.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bucen7t8kj3h7" path="res://UI/pause_menu.tscn" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://dip5b4oujsda5" path="res://UI/editor/editor.tscn" id="4_fc0e3"]
 
 [node name="Game" type="Node"]
 process_mode = 3
 script = ExtResource("1_feb5d")
-world_scene = ExtResource("2_e2o6t")
+world_scene = ExtResource("2_fc0e3")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 anchors_preset = 15
@@ -36,6 +36,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [connection signal="playClicked" from="Editor" to="." method="_on_editor_play_clicked"]
-[connection signal="resetWorldClicked" from="Editor" to="." method="_on_editor_reset_world_clicked"]
 [connection signal="resetToEditor" from="PauseMenu" to="." method="_on_pause_menu_reset_to_editor"]
 [connection signal="resumeClicked" from="PauseMenu" to="." method="_on_pause_menu_resume_clicked"]

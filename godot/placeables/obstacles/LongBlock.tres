@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://b2p4agajtuxgk"]
+
+[ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://placeables/obstacles/long.tscn" id="1_w3brd"]
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="2_3vsce"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_e6ivo"]
+[ext_resource type="PackedScene" uid="uid://cuby3f3hbbilm" path="res://UI/tools/basic_tool.tscn" id="4_3vsce"]
+
+[resource]
+script = ExtResource("2_3vsce")
+element_scene = ExtResource("1_w3brd")
+texture = ExtResource("3_e6ivo")
+tool = ExtResource("4_3vsce")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"

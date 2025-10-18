@@ -7,7 +7,7 @@ var isCompleted:bool
 signal targetNotify
 
 func ballEntered():
-	visible=false
+	hide()
 	isCompleted=true
 	targetNotify.emit()
 

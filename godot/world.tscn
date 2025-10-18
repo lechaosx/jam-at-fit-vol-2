@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=18 format=3 uid="uid://xsklbsg58dkb"]
 
-[ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://obstacles/long.tscn" id="3_036b0"]
+[ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://placeables/obstacles/long.tscn" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://75s0i21ku1sy" path="res://targets/checkpoint_target.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://v2coglxm5imv" path="res://rope.tscn" id="6_dwbse"]
@@ -10,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b0ysf5iffpxet" path="res://balloon.tscn" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://cilps83as6rhs" path="res://scissors.tscn" id="8_ioo17"]
 [ext_resource type="PackedScene" uid="uid://v5fwyu2cxtmc" path="res://xhonza/xhonza.tscn" id="9_ioo17"]
-[ext_resource type="PackedScene" uid="uid://dcpac078vhmol" path="res://obstacles/block.tscn" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://dcpac078vhmol" path="res://placeables/obstacles/block.tscn" id="10_wse8f"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="13_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="14_70uel"]
@@ -22,7 +21,6 @@
 normal = Vector2(1, 0)
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_tlwt5")
 
 [node name="Marble" parent="." instance=ExtResource("2_aqk2v")]
 position = Vector2(206, 72)

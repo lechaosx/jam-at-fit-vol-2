@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuby3f3hbbilm"]
+
+[ext_resource type="Script" uid="uid://yr44pletr8gh" path="res://UI/tools/basic_tool.gd" id="1_iw77a"]
+
+[node name="BasicTool" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_iw77a")

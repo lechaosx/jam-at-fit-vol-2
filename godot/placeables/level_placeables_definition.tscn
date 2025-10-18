@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv7kxl3b27xjo"]
+
+[ext_resource type="Script" uid="uid://c8ry03566wrjc" path="res://placeables/level_placeables_definition.gd" id="1_cqg0u"]
+
+[node name="LevelPlaceables" type="Node"]
+script = ExtResource("1_cqg0u")

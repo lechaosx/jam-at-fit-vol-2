@@ -1,0 +1,33 @@
+[gd_scene load_steps=11 format=3 uid="uid://67wdnf8llrj2"]
+
+[ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_pdtm5"]
+[ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="2_b3oru"]
+[ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_ua5ty"]
+[ext_resource type="Resource" uid="uid://b2p4agajtuxgk" path="res://placeables/obstacles/LongBlock.tres" id="3_ua5ty"]
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="4_61w3m"]
+[ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="4_pdpul"]
+[ext_resource type="Texture2D" uid="uid://c854otwl15bph" path="res://electric_fan/electric-fan_1.png" id="6_8hd6v"]
+
+[sub_resource type="Resource" id="Resource_61w3m"]
+script = ExtResource("2_ua5ty")
+placeable_res = ExtResource("3_ua5ty")
+max_count = 5
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_pdpul"]
+script = ExtResource("4_61w3m")
+element_scene = ExtResource("4_pdpul")
+texture = ExtResource("6_8hd6v")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
+
+[sub_resource type="Resource" id="Resource_ua5ty"]
+script = ExtResource("2_ua5ty")
+placeable_res = SubResource("Resource_pdpul")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[node name="Level1" type="Node2D"]
+
+[node name="LevelPlaceables" parent="." instance=ExtResource("1_pdtm5")]
+placeables = Array[ExtResource("2_ua5ty")]([SubResource("Resource_61w3m"), SubResource("Resource_ua5ty")])
+
+[node name="TargetsManager" parent="." instance=ExtResource("2_b3oru")]
