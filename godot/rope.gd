@@ -7,6 +7,8 @@ extends Line2D
 var segments: Array[RigidBody2D] = []
 var joints: Array[PinJoint2D] = []
 
+var spawned := false
+
 static func catmull_rom_spline(points: PackedVector2Array, resolution: int = 10) -> PackedVector2Array:
 	if points.size() < 2:
 		return points
@@ -34,46 +36,45 @@ static func catmull_rom_spline(points: PackedVector2Array, resolution: int = 10)
 
 	return smooth_points
 
-func _ready():
-	for child in get_children():
-		remove_child(child)
-	
-	for i in range(points.size() - 1):
-		var segment_begin := points[i]
-		var segment_end := points[i + 1]
-		
-		var distance := segment_begin.distance_to(segment_end)
-		
-		for j in range(distance / segment_distance):
-			var segment = preload("res://rope_segment.tscn").instantiate()
-			segment.global_position = segment_begin.lerp(segment_end, (j + 0.5) * segment_distance / distance)
-			segment.global_rotation = (segment_end - segment_begin).angle() + PI / 2
-			segments.append(segment)
-			add_child(segment)
-		
-	for i in range(segments.size() - 1):
-		var joint = PinJoint2D.new()
-		joint.node_a = segments[i].get_path()
-		joint.node_b = segments[i + 1].get_path()
-		joint.position.y = - segment_distance / 2
-		segments[i].add_child(joint)
-		joints.append(joint)
-		
-	if attach_body_a:
-		var joint = PinJoint2D.new()
-		joint.node_a = segments.front().get_path()
-		joint.node_b = attach_body_a.get_path()
-		joint.position.y = segments.front().to_local(attach_body_a.global_position).y
-		segments.front().add_child(joint)
-	
-	if attach_body_b:
-		var joint = PinJoint2D.new()
-		joint.node_a = segments.back().get_path()
-		joint.node_b = attach_body_b.get_path()
-		joint.position.y = segments.back().to_local(attach_body_b.global_position).y
-		segments.back().add_child(joint)
-	
 func _process(_delta: float) -> void:
+	if not spawned:
+		spawned = true
+		
+		for i in range(points.size() - 1):
+			var segment_begin := points[i]
+			var segment_end := points[i + 1]
+			
+			var distance := segment_begin.distance_to(segment_end)
+			
+			for j in range(distance / segment_distance):
+				var segment = preload("res://rope_segment.tscn").instantiate()
+				segment.global_position = segment_begin.lerp(segment_end, (j + 0.5) * segment_distance / distance)
+				segment.global_rotation = (segment_end - segment_begin).angle() + PI / 2
+				segments.append(segment)
+				add_child(segment)
+			
+		for i in range(segments.size() - 1):
+			var joint = PinJoint2D.new()
+			joint.node_a = segments[i].get_path()
+			joint.node_b = segments[i + 1].get_path()
+			joint.position.y = - segment_distance / 2
+			segments[i].add_child(joint)
+			joints.append(joint)
+			
+		if attach_body_a:
+			var joint = PinJoint2D.new()
+			joint.node_a = segments.front().get_path()
+			joint.node_b = attach_body_a.get_path()
+			joint.position.y = segments.front().to_local(attach_body_a.global_position).y
+			segments.front().add_child(joint)
+		
+		if attach_body_b:
+			var joint = PinJoint2D.new()
+			joint.node_a = segments.back().get_path()
+			joint.node_b = attach_body_b.get_path()
+			joint.position.y = segments.back().to_local(attach_body_b.global_position).y
+			segments.back().add_child(joint)
+			
 	points = catmull_rom_spline(segments.map(func(x): return x.position))
 	
 func cut(segment: RopeSegment) -> void:
