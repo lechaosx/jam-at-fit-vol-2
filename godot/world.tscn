@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=19 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="14_70uel"]
 [ext_resource type="PackedScene" uid="uid://dwglrpbg4e0r4" path="res://seesaw.tscn" id="15_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://dcnp5ewnyvsiv" path="res://barrel.tscn" id="16_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://c0hs7nim5oa37" path="res://trampoline.tscn" id="17_udxuc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -127,6 +128,10 @@ position = Vector2(255, 33)
 position = Vector2(1018, 240)
 
 [node name="Barrel2" parent="." instance=ExtResource("16_2u3nc")]
-position = Vector2(1085, 585)
+position = Vector2(656, 589)
+
+[node name="Trampoline" parent="." instance=ExtResource("17_udxuc")]
+position = Vector2(1062, 589)
+rotation = -0.71372604
 
 [editable path="Switch"]

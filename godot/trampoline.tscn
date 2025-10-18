@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0hs7nim5oa37"]
+
+[ext_resource type="Script" uid="uid://cf72w2bawokd7" path="res://trampoline.gd" id="1_d0j4r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0j4r"]
+size = Vector2(100, 7.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cilbb"]
+size = Vector2(98, 3)
+
+[node name="Trampoline" type="RigidBody2D"]
+script = ExtResource("1_d0j4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d0j4r")
+
+[node name="BouncyArea" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BouncyArea"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_cilbb")
+
+[connection signal="body_entered" from="BouncyArea" to="." method="_on_bouncy_area_body_entered"]
