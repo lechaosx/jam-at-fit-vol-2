@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://dpcfqvkvnbtp"]
+
+[ext_resource type="PackedScene" uid="uid://c7e24p47rwu63" path="res://electric_switch/electric_switch.tscn" id="1_gx584"]
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_wxue6"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_44ift"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2hm3"]
+atlas = ExtResource("3_44ift")
+region = Rect2(1599, 693, 79, 104)
+
+[resource]
+resource_name = "Electricity Switch"
+script = ExtResource("1_wxue6")
+element_scene = ExtResource("1_gx584")
+texture = SubResource("AtlasTexture_g2hm3")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"

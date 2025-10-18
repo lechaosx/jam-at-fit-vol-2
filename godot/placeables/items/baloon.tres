@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://br3bk4doest8o"]
+
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_g30qj"]
+[ext_resource type="PackedScene" uid="uid://b0ysf5iffpxet" path="res://balloon.tscn" id="1_udaju"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_g2d2y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc7r7"]
+resource_name = "Flying Baloon"
+atlas = ExtResource("3_g2d2y")
+region = Rect2(372, 787, 182, 269)
+
+[resource]
+script = ExtResource("1_g30qj")
+element_scene = ExtResource("1_udaju")
+texture = SubResource("AtlasTexture_xc7r7")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://dfxxnog1m7687"]
+
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_dy235"]
+[ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="1_jxcwq"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_q8phg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65qq3"]
+resource_name = "Beach Ball"
+atlas = ExtResource("3_q8phg")
+region = Rect2(703, 747, 255, 255)
+
+[resource]
+script = ExtResource("1_dy235")
+element_scene = ExtResource("1_jxcwq")
+texture = SubResource("AtlasTexture_65qq3")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"

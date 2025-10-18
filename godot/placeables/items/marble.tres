@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://b46likhv0v1ss"]
+
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_4n6a3"]
+[ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="1_puury"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_blcsl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nyho"]
+resource_name = "Marble Ball"
+atlas = ExtResource("3_blcsl")
+region = Rect2(1016, 742, 126, 126)
+
+[resource]
+script = ExtResource("1_4n6a3")
+element_scene = ExtResource("1_puury")
+texture = SubResource("AtlasTexture_8nyho")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
