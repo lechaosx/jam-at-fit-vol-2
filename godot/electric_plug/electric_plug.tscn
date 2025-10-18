@@ -1,15 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsncgbnx8f8h0"]
+[gd_scene load_steps=5 format=3 uid="uid://bsncgbnx8f8h0"]
 
-[ext_resource type="Texture2D" uid="uid://bojklyvjvasou" path="res://electric_plug/plug-0.png" id="1_boobh"]
 [ext_resource type="Script" uid="uid://ct45g5m7c4mr2" path="res://electric_plug/electric_plug.gd" id="1_bqk8l"]
-[ext_resource type="Texture2D" uid="uid://3v7y4u1tvorv" path="res://electric_plug/plug-1.png" id="2_bqk8l"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="2_boobh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqk8l"]
+atlas = ExtResource("2_boobh")
+region = Rect2(1500.907, 721.8944, 80.28674, 79.380005)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykgg2"]
+atlas = ExtResource("2_boobh")
+region = Rect2(1500.9618, 812.1199, 80.23926, 87.77728)
 
 [node name="ElectricPlug" type="Node2D"]
 script = ExtResource("1_bqk8l")
 
 [node name="Sprite2D-empty" type="Sprite2D" parent="."]
-texture = ExtResource("1_boobh")
+position = Vector2(0, -1.7881393e-07)
+scale = Vector2(0.22784808, 0.2278481)
+texture = SubResource("AtlasTexture_bqk8l")
 
 [node name="Sprite2D-connected" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_bqk8l")
+position = Vector2(0, 1)
+scale = Vector2(0.22500001, 0.22500001)
+texture = SubResource("AtlasTexture_ykgg2")
