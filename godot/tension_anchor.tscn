@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dynx41sflngpo"]
+
+[ext_resource type="Script" uid="uid://0hhfa7tbdxu7" path="res://tension_anchor.gd" id="1_nfki7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbfe0"]
+
+[node name="TensionAnchor" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_nfki7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xbfe0")
+
+[node name="Spring" type="DampedSpringJoint2D" parent="."]
+unique_name_in_owner = true
+node_a = NodePath("..")
+
+[node name="Joint" type="PinJoint2D" parent="."]
+unique_name_in_owner = true
+node_a = NodePath("..")

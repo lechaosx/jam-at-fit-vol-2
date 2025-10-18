@@ -52,5 +52,6 @@ associatedBall = NodePath("../../Ball")
 position = Vector2(442, 627)
 associatedBall = NodePath("../../Ball")
 
-[node name="RopePrototype" parent="." instance=ExtResource("6_dwbse")]
-position = Vector2(236, 114)
+[node name="Rope" parent="." instance=ExtResource("6_dwbse")]
+position = Vector2(-27, 6)
+points = PackedVector2Array(128, 123, 805, 153, 1045, 263)
