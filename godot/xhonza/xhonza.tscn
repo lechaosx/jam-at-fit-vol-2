@@ -1,28 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://v5fwyu2cxtmc"]
+[gd_scene load_steps=5 format=3 uid="uid://v5fwyu2cxtmc"]
 
 [ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="1_bxg7w"]
 [ext_resource type="PackedScene" uid="uid://c7e24p47rwu63" path="res://electric_switch/electric_switch.tscn" id="2_uabyj"]
+[ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="3_1a25x"]
+[ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://obstacles/long.tscn" id="4_r03xa"]
 
 [node name="xhonza" type="Node2D"]
 
-[node name="fan0off" parent="." instance=ExtResource("1_bxg7w")]
+[node name="fan" type="CanvasGroup" parent="."]
+
+[node name="fan0off" parent="fan" instance=ExtResource("1_bxg7w")]
 position = Vector2(65, 45)
 is_on = false
 
-[node name="fan1slow" parent="." instance=ExtResource("1_bxg7w")]
-position = Vector2(155, 46)
+[node name="fan1slow" parent="fan" instance=ExtResource("1_bxg7w")]
+position = Vector2(116, 46)
 speed = 0
 
-[node name="fan2normal" parent="." instance=ExtResource("1_bxg7w")]
-position = Vector2(158, 99)
+[node name="fan2normal" parent="fan" instance=ExtResource("1_bxg7w")]
+position = Vector2(119, 99)
 
-[node name="fan3fast" parent="." instance=ExtResource("1_bxg7w")]
-position = Vector2(159, 158)
+[node name="fan3fast" parent="fan" instance=ExtResource("1_bxg7w")]
+position = Vector2(120, 158)
 speed = 2
 
-[node name="switch0off" parent="." instance=ExtResource("2_uabyj")]
-position = Vector2(239, 48)
+[node name="switch" type="CanvasGroup" parent="."]
 
-[node name="switch1on" parent="." instance=ExtResource("2_uabyj")]
-position = Vector2(240, 99)
+[node name="switch0off" parent="switch" instance=ExtResource("2_uabyj")]
+position = Vector2(167, 48)
+
+[node name="switch1on" parent="switch" instance=ExtResource("2_uabyj")]
+position = Vector2(168, 99)
 is_on = true
+
+[node name="switch-test1" type="CanvasGroup" parent="."]
+
+[node name="switch2test" parent="switch-test1" instance=ExtResource("2_uabyj")]
+position = Vector2(208, 100)
+is_on = true
+
+[node name="Marble" parent="switch-test1" instance=ExtResource("3_1a25x")]
+position = Vector2(207, 43)
+
+[node name="Long" parent="switch-test1" instance=ExtResource("4_r03xa")]
+position = Vector2(189, 153)
+
+[node name="switch-test2" type="CanvasGroup" parent="."]
+
+[node name="switch3test" parent="switch-test2" instance=ExtResource("2_uabyj")]
+position = Vector2(262, 100)
+is_on = true
+
+[node name="Marble" parent="switch-test2" instance=ExtResource("3_1a25x")]
+position = Vector2(261, 43)
+
+[node name="Long" parent="switch-test2" instance=ExtResource("4_r03xa")]
+position = Vector2(245, 171)
