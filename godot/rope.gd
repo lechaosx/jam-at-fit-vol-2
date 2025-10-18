@@ -74,11 +74,11 @@ func _process(_delta: float) -> void:
 			joint.node_b = attach_body_b.get_path()
 			joint.position.y = segments.back().to_local(attach_body_b.global_position).y
 			segments.back().add_child(joint)
-			
+	
 	points = catmull_rom_spline(segments.map(func(x): return x.position))
 	
 func cut(segment: RopeSegment) -> void:
-	var index := segments.find(segment) + 1
+	var index := segments.find(segment)
 	
 	if index <= 0 or index >= segments.size():
 		push_error("Invalid cut index")

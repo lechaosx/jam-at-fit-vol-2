@@ -18,9 +18,9 @@ height = 28.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xgx0"]
 radius = 11.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xflwj"]
-radius = 3.0
-height = 62.0
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xflwj"]
+a = Vector2(0, -26)
+b = Vector2(0, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xflwj"]
 radius = 1.0
@@ -57,7 +57,7 @@ unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CutArea"]
 position = Vector2(0, -33)
-shape = SubResource("CapsuleShape2D_xflwj")
+shape = SubResource("SegmentShape2D_xflwj")
 
 [node name="Points" type="Area2D" parent="."]
 unique_name_in_owner = true
