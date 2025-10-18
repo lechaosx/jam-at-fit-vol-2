@@ -46,4 +46,5 @@ func registerTargets():
 
 
 func _on_cut_rope_button_pressed() -> void:
+	%CutRopeButton.queue_free()
 	$Rope.cut_rope_at(10)
