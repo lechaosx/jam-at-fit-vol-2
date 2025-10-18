@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=20 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://placeables/obstacles/long.tscn" id="3_036b0"]
@@ -16,12 +16,18 @@
 [ext_resource type="PackedScene" uid="uid://dwglrpbg4e0r4" path="res://seesaw.tscn" id="15_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://dcnp5ewnyvsiv" path="res://barrel.tscn" id="16_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://c0hs7nim5oa37" path="res://trampoline.tscn" id="17_udxuc"]
+[ext_resource type="Texture2D" uid="uid://c7uatvmq8hcqu" path="res://cloud.webp" id="18_cbp6q"]
 [ext_resource type="PackedScene" uid="uid://de181pepln0n" path="res://pulley.tscn" id="18_ikiii"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
 
 [node name="World" type="Node2D"]
+
+[node name="Cloud" type="Sprite2D" parent="."]
+position = Vector2(578.37494, 311.24997)
+scale = Vector2(0.61835927, 0.6183593)
+texture = ExtResource("18_cbp6q")
 
 [node name="Marble" parent="." instance=ExtResource("2_aqk2v")]
 position = Vector2(206, 72)
