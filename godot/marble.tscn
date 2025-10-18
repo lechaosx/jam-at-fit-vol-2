@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0t6hh2jmsrdr"]
+
+[ext_resource type="Texture2D" uid="uid://b8gop2u4bkjx8" path="res://assets/marble_albedo.png" id="1_60n0y"]
+[ext_resource type="Texture2D" uid="uid://c75hg6nt64p5e" path="res://assets/marble_shading.png" id="2_f37sn"]
+[ext_resource type="Script" uid="uid://b51sylt5qipct" path="res://static_rotation.gd" id="3_76m5q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbx31"]
+radius = 2.0
+
+[node name="Marble" type="RigidBody2D"]
+collision_layer = 129
+physics_material_override = SubResource("PhysicsMaterial_cbx31")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_60n0y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_f37sn")
+script = ExtResource("3_76m5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_cbx31")

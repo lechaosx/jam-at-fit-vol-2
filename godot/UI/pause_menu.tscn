@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bucen7t8kj3h7"]
+[gd_scene load_steps=4 format=3 uid="uid://bucen7t8kj3h7"]
 
 [ext_resource type="Script" uid="uid://bwefls438u0ja" path="res://UI/pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="Shader" uid="uid://dlcfbyew4s15c" path="res://UI/pause_menu.gdshader" id="2_jfm1e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ltd3m"]
+shader = ExtResource("2_jfm1e")
+shader_parameter/amount = 2.50000011875
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +15,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hdmo1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ltd3m")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

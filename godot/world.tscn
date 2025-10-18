@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://ball.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://obstacles/long.tscn" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://75s0i21ku1sy" path="res://targets/checkpoint_target.tscn" id="5_036b0"]
@@ -16,7 +16,7 @@ normal = Vector2(1, 0)
 [node name="World" type="Node"]
 script = ExtResource("1_tlwt5")
 
-[node name="Ball" parent="." instance=ExtResource("2_aqk2v")]
+[node name="Marble" parent="." instance=ExtResource("2_aqk2v")]
 position = Vector2(206, 72)
 
 [node name="Long" parent="." instance=ExtResource("3_036b0")]
@@ -49,10 +49,10 @@ shape = SubResource("WorldBoundaryShape2D_e2o6t")
 [node name="FinalTarget" parent="Targets" node_paths=PackedStringArray("associatedBall") instance=ExtResource("4_aqk2v")]
 position = Vector2(810, 546)
 scale = Vector2(10, 10)
-associatedBall = NodePath("../../Ball")
+associatedBall = NodePath("../../Marble")
 
 [node name="CheckpointTarget" parent="Targets" node_paths=PackedStringArray("associatedBall") instance=ExtResource("5_036b0")]
-associatedBall = NodePath("../../Ball")
+associatedBall = NodePath("../../Marble")
 
 [node name="Rope" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
 position = Vector2(-390, 185)
