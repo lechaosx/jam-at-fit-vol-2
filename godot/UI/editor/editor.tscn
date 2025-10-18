@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dip5b4oujsda5"]
+
+[ext_resource type="Script" uid="uid://dvkg1db0fuwdm" path="res://UI/editor/editor.gd" id="1_x6cky"]
+[ext_resource type="PackedScene" uid="uid://bdioybepl7u2g" path="res://UI/editor/item_placeholder.tscn" id="2_x2ey7"]
+[ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://obstacles/long.tscn" id="3_ksdqf"]
+
+[node name="Editor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6cky")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="ResetButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Reset"
+
+[node name="FoldableContainer" type="FoldableContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ItemPlaceholder" parent="HBoxContainer/VBoxContainer/FoldableContainer" instance=ExtResource("2_x2ey7")]
+layout_mode = 2
+size_flags_vertical = 0
+element_scene = ExtResource("3_ksdqf")
+element_name = "Blasdlbjasjbdk"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="element_selected" from="HBoxContainer/VBoxContainer/FoldableContainer/ItemPlaceholder" to="." method="_on_item_placeholder_element_selected"]
