@@ -52,11 +52,11 @@ position = Vector2(189, 153)
 
 [node name="switch3test" parent="switch-test2" instance=ExtResource("2_uabyj")]
 unique_name_in_owner = true
-position = Vector2(262, 398)
+position = Vector2(262, 198)
 is_on = true
 
 [node name="Marble" parent="switch-test2" instance=ExtResource("3_1a25x")]
 position = Vector2(261, 43)
 
 [node name="Long" parent="switch-test2" instance=ExtResource("4_r03xa")]
-position = Vector2(245, 469)
+position = Vector2(245, 269)
