@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://57xl70y2gpkh"]
+[gd_scene load_steps=10 format=3 uid="uid://57xl70y2gpkh"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_p1d34"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_g1dg4"]
 [ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="2_qyb5k"]
 [ext_resource type="Resource" uid="uid://dfxxnog1m7687" path="res://placeables/items/ball.tres" id="3_s1bpp"]
 [ext_resource type="Resource" uid="uid://cwjvlsjeuyrx3" path="res://placeables/items/efan.tres" id="4_76ugp"]
+[ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="5_s1bpp"]
 
-[sub_resource type="Resource" id="Resource_g1dg4"]
+[sub_resource type="Resource" id="Resource_76ugp"]
 resource_local_to_scene = true
 script = ExtResource("2_g1dg4")
 placeable_res = ExtResource("3_s1bpp")
@@ -19,9 +20,15 @@ placeable_res = ExtResource("4_76ugp")
 max_count = 3
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
+[sub_resource type="Resource" id="Resource_e8p81"]
+script = ExtResource("2_g1dg4")
+placeable_res = ExtResource("5_s1bpp")
+max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
 [node name="Level2" type="Node2D"]
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_p1d34")]
-placeables = Array[ExtResource("2_g1dg4")]([SubResource("Resource_g1dg4"), SubResource("Resource_lllkd")])
+placeables = Array[ExtResource("2_g1dg4")]([SubResource("Resource_76ugp"), SubResource("Resource_lllkd"), SubResource("Resource_e8p81")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("2_qyb5k")]

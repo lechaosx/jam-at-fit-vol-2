@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cv7kxl3b27xjo"]
+[gd_scene load_steps=19 format=3 uid="uid://cv7kxl3b27xjo"]
 
 [ext_resource type="Script" uid="uid://c8ry03566wrjc" path="res://placeables/level_placeables_definition.gd" id="1_cqg0u"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_omlgl"]
@@ -8,6 +8,8 @@
 [ext_resource type="Resource" uid="uid://dpcfqvkvnbtp" path="res://placeables/items/eswitch.tres" id="6_ddpb4"]
 [ext_resource type="Resource" uid="uid://br3bk4doest8o" path="res://placeables/items/baloon.tres" id="7_q1xah"]
 [ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="8_lllkd"]
+[ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="9_l50cl"]
+[ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="10_wqtvx"]
 
 [sub_resource type="Resource" id="Resource_q1xah"]
 resource_local_to_scene = true
@@ -45,6 +47,18 @@ script = ExtResource("2_omlgl")
 placeable_res = ExtResource("6_ddpb4")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
+[sub_resource type="Resource" id="Resource_3352f"]
+resource_local_to_scene = true
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("9_l50cl")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_n2x8l"]
+resource_local_to_scene = true
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("10_wqtvx")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
 [node name="LevelPlaceables" type="Node"]
 script = ExtResource("1_cqg0u")
-placeables = Array[ExtResource("2_omlgl")]([SubResource("Resource_q1xah"), SubResource("Resource_wqtvx"), SubResource("Resource_l50cl"), SubResource("Resource_0imvb"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd")])
+placeables = Array[ExtResource("2_omlgl")]([SubResource("Resource_q1xah"), SubResource("Resource_wqtvx"), SubResource("Resource_l50cl"), SubResource("Resource_0imvb"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_3352f"), SubResource("Resource_n2x8l")])
