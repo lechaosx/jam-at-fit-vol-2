@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cilps83as6rhs"]
+[gd_scene load_steps=10 format=3 uid="uid://cilps83as6rhs"]
 
 [ext_resource type="Script" uid="uid://kid3ntvial77" path="res://scissors.gd" id="1_xflwj"]
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="2_apsso"]
@@ -24,6 +24,9 @@ height = 62.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xflwj"]
 radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_apsso"]
+radius = 7.0
 
 [node name="Scissors" type="Area2D"]
 script = ExtResource("1_xflwj")
@@ -66,6 +69,11 @@ shape = SubResource("CircleShape2D_xflwj")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Points"]
 position = Vector2(13, -58)
 shape = SubResource("CircleShape2D_xflwj")
+
+[node name="Pivot" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot"]
+shape = SubResource("CircleShape2D_apsso")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Points" to="." method="_on_points_body_entered"]
