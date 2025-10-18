@@ -3,9 +3,6 @@ extends Line2D
 @export var attach_body_a: PhysicsBody2D
 @export var attach_body_b: PhysicsBody2D
 
-signal rope_tense_a
-signal rope_tense_b
-
 var segments: Array[RigidBody2D] = []
 var joints: Array[PinJoint2D] = []
 
@@ -63,23 +60,19 @@ func _ready():
 		segments[i].add_child(joint)
 		joints.append(joint)
 		
-	var tension_anchor := preload("res://tension_anchor.tscn")
-	
 	if attach_body_a:
-		var anchor = tension_anchor.instantiate()
-		anchor.node_a = segments.front().get_path()
-		anchor.node_b = attach_body_a.get_path()
-		anchor.position.y = segment_distance / 2
-		anchor.trigger.connect(func(): rope_tense_a.emit())
-		segments.front().add_child(anchor)
+		var joint = PinJoint2D.new()
+		joint.node_a = segments.front().get_path()
+		joint.node_b = attach_body_a.get_path()
+		joint.position.y = segment_distance / 2
+		segments.front().add_child(joint)
 	
 	if attach_body_b:
-		var anchor = tension_anchor.instantiate()
-		anchor.node_a = segments.back().get_path()
-		anchor.node_b = attach_body_b.get_path()
-		anchor.position.y = -segment_distance / 2
-		anchor.trigger.connect(func(): rope_tense_b.emit())
-		segments.back().add_child(anchor)
+		var joint = PinJoint2D.new()
+		joint.node_a = segments.back().get_path()
+		joint.node_b = attach_body_b.get_path()
+		joint.position.y = -segment_distance / 2
+		segments.back().add_child(joint)
 	
 func _process(_delta: float) -> void:
 	points = catmull_rom_spline(segments.map(func(x): return x.position))

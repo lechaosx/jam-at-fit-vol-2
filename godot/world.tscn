@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=10 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://ball.tscn" id="2_aqk2v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://75s0i21ku1sy" path="res://targets/checkpoint_target.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://v2coglxm5imv" path="res://rope.tscn" id="6_dwbse"]
+[ext_resource type="PackedScene" uid="uid://m4ya5u6gd7ax" path="res://switch.tscn" id="7_pkg7o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -54,9 +55,9 @@ associatedBall = NodePath("../../Ball")
 associatedBall = NodePath("../../Ball")
 
 [node name="Rope" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
-position = Vector2(-390, 175)
-points = PackedVector2Array(493, 114, 805, 153, 1045, 263)
-attach_body_a = NodePath("../RopePulledBody")
+position = Vector2(-390, 185)
+points = PackedVector2Array(658, 23, 805, 153, 1045, 263)
+attach_body_a = NodePath("../Switch/Button")
 attach_body_b = NodePath("../RopePulledBody2")
 
 [node name="RopePulledBody2" type="StaticBody2D" parent="."]
@@ -65,8 +66,7 @@ position = Vector2(655, 440)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RopePulledBody2"]
 shape = SubResource("RectangleShape2D_dwbse")
 
-[node name="RopePulledBody" type="StaticBody2D" parent="."]
-position = Vector2(104, 284)
+[node name="Switch" parent="." instance=ExtResource("7_pkg7o")]
+position = Vector2(267, 205)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RopePulledBody"]
-shape = SubResource("RectangleShape2D_dwbse")
+[editable path="Switch"]
