@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://v5fwyu2cxtmc"]
+[gd_scene load_steps=8 format=3 uid="uid://v5fwyu2cxtmc"]
 
 [ext_resource type="Script" uid="uid://c0olvnbmjpn82" path="res://xhonza/xhonza.gd" id="1_20xof"]
 [ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="1_bxg7w"]
 [ext_resource type="PackedScene" uid="uid://c7e24p47rwu63" path="res://electric_switch/electric_switch.tscn" id="2_uabyj"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="3_1a25x"]
 [ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://obstacles/long.tscn" id="4_r03xa"]
+[ext_resource type="PackedScene" uid="uid://bsvhv4tgo5ae0" path="res://boxer/boxer.tscn" id="6_6sn2h"]
+[ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="7_eyf6f"]
 
 [node name="xhonza" type="Node2D"]
 script = ExtResource("1_20xof")
@@ -60,3 +62,28 @@ position = Vector2(261, 43)
 
 [node name="Long" parent="switch-test2" instance=ExtResource("4_r03xa")]
 position = Vector2(245, 269)
+
+[node name="boxer" type="CanvasGroup" parent="."]
+
+[node name="Boxer" parent="boxer" instance=ExtResource("6_6sn2h")]
+position = Vector2(600, 250)
+
+[node name="Long" parent="boxer" instance=ExtResource("4_r03xa")]
+position = Vector2(611, 267)
+rotation = -0.2443461
+scale = Vector2(3, 1)
+
+[node name="Long2" parent="boxer" instance=ExtResource("4_r03xa")]
+position = Vector2(425, 271)
+scale = Vector2(3, 1)
+
+[node name="ElectricFan" parent="boxer" instance=ExtResource("1_bxg7w")]
+position = Vector2(745, 323)
+scale = Vector2(-1, 1)
+speed = 2
+
+[node name="Ball" parent="boxer" instance=ExtResource("7_eyf6f")]
+position = Vector2(711, 194)
+
+[node name="Ball2" parent="boxer" instance=ExtResource("7_eyf6f")]
+position = Vector2(528, 243)
