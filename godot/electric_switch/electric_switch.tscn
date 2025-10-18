@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7e24p47rwu63"]
+
+[ext_resource type="Script" uid="uid://clc4hlqemghpo" path="res://electric_switch/electric_switch.gd" id="1_4w7j1"]
+[ext_resource type="Texture2D" uid="uid://b4shauyrvmxen" path="res://electric_switch/switch-off.png" id="1_wv7io"]
+[ext_resource type="Texture2D" uid="uid://4wfol2pst5x6" path="res://electric_switch/switch-on.png" id="2_4w7j1"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4w7j1")
+
+[node name="Sprite2D-off" type="Sprite2D" parent="."]
+texture = ExtResource("1_wv7io")
+
+[node name="Sprite2D-on" type="Sprite2D" parent="."]
+texture = ExtResource("2_4w7j1")
