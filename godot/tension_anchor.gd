@@ -1,18 +1,20 @@
-extends RigidBody2D
+extends PinJoint2D
 
 signal trigger
 
-@export var body_a: PhysicsBody2D = null
-@export var body_b: PhysicsBody2D = null
+var _pulling := false
+var _start_distance: int
 
 func _ready() -> void:
-	if body_b:
-		%Spring.node_b = body_b.get_path()
-		
-	if body_a:
-		%Joint.node_b = body_a.get_path()
+	_start_distance = global_position.distance_to(get_node(node_b).global_position) 
 
 func _process(_delta: float) -> void:
-	if body_a and body_b:
-		if body_a.global_position.distance_to(body_b.global_position) > 50:
+	if not _pulling and global_position.distance_to(get_node(node_b).global_position) >= _start_distance + 0.5:
+		if not _pulling:
+			print("PULLED")
+			_pulling = true
 			trigger.emit()
+	else:
+		if _pulling:
+			print("RELEASED")
+			_pulling = false
