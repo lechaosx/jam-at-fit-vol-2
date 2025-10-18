@@ -1,6 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv7kxl3b27xjo"]
+[gd_scene load_steps=15 format=3 uid="uid://cv7kxl3b27xjo"]
 
 [ext_resource type="Script" uid="uid://c8ry03566wrjc" path="res://placeables/level_placeables_definition.gd" id="1_cqg0u"]
+[ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_omlgl"]
+[ext_resource type="Resource" uid="uid://dfxxnog1m7687" path="res://placeables/items/ball.tres" id="3_0imvb"]
+[ext_resource type="Resource" uid="uid://cwjvlsjeuyrx3" path="res://placeables/items/efan.tres" id="4_ddpb4"]
+[ext_resource type="Resource" uid="uid://lot8llu3c3wi" path="res://placeables/items/eplug.tres" id="4_omlgl"]
+[ext_resource type="Resource" uid="uid://dpcfqvkvnbtp" path="res://placeables/items/eswitch.tres" id="6_ddpb4"]
+[ext_resource type="Resource" uid="uid://br3bk4doest8o" path="res://placeables/items/baloon.tres" id="7_q1xah"]
+[ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="8_lllkd"]
+
+[sub_resource type="Resource" id="Resource_q1xah"]
+resource_local_to_scene = true
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("3_0imvb")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_wqtvx"]
+resource_local_to_scene = true
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("8_lllkd")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_l50cl"]
+resource_local_to_scene = true
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("7_q1xah")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_0imvb"]
+resource_local_to_scene = true
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("4_omlgl")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_ddpb4"]
+resource_local_to_scene = true
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("4_ddpb4")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_lllkd"]
+resource_local_to_scene = true
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("6_ddpb4")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [node name="LevelPlaceables" type="Node"]
 script = ExtResource("1_cqg0u")
+placeables = Array[ExtResource("2_omlgl")]([SubResource("Resource_q1xah"), SubResource("Resource_wqtvx"), SubResource("Resource_l50cl"), SubResource("Resource_0imvb"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd")])
