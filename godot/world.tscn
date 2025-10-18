@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=20 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dwglrpbg4e0r4" path="res://seesaw.tscn" id="15_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://dcnp5ewnyvsiv" path="res://barrel.tscn" id="16_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://c0hs7nim5oa37" path="res://trampoline.tscn" id="17_udxuc"]
+[ext_resource type="PackedScene" uid="uid://de181pepln0n" path="res://pulley.tscn" id="18_ikiii"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -133,5 +134,20 @@ position = Vector2(656, 589)
 [node name="Trampoline" parent="." instance=ExtResource("17_udxuc")]
 position = Vector2(1062, 589)
 rotation = -0.71372604
+
+[node name="Pulley" parent="." instance=ExtResource("18_ikiii")]
+position = Vector2(1092, 352)
+
+[node name="Rope3" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
+position = Vector2(1027, 435)
+points = PackedVector2Array(110, -53, 69, -163, 0, 0)
+attach_body_a = NodePath("../Barrel3")
+attach_body_b = NodePath("../Barrel")
+
+[node name="Barrel" parent="." instance=ExtResource("16_2u3nc")]
+position = Vector2(1026, 442)
+
+[node name="Barrel3" parent="." instance=ExtResource("16_2u3nc")]
+position = Vector2(1131, 393)
 
 [editable path="Switch"]

@@ -26,5 +26,5 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	print_debug(velocity)
 	print_debug(velocity.length())
 
-	if velocity.length() > 50:
+	if velocity.length() > 1000:
 		kaboom()
