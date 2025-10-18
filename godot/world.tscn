@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=10 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="2_aqk2v"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://75s0i21ku1sy" path="res://targets/checkpoint_target.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://v2coglxm5imv" path="res://rope.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://m4ya5u6gd7ax" path="res://switch.tscn" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://b0ysf5iffpxet" path="res://balloon.tscn" id="8_gbfbk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -54,17 +55,12 @@ associatedBall = NodePath("../../Marble")
 
 [node name="Rope" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
 position = Vector2(-390, 185)
-points = PackedVector2Array(658, 23, 805, 153, 1049, 30)
+points = PackedVector2Array(658, 23, 805, 153, 1048, 235)
 attach_body_a = NodePath("../Switch/Button")
-attach_body_b = NodePath("../Switch2/Button")
+attach_body_b = NodePath("../Balloon")
 
 [node name="Switch" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(267, 205)
-
-[node name="Switch2" parent="." instance=ExtResource("7_pkg7o")]
-position = Vector2(662, 215)
-
-[node name="Node" type="Node" parent="."]
 
 [node name="CutRopeButton" type="Button" parent="."]
 unique_name_in_owner = true
@@ -74,7 +70,14 @@ offset_right = 507.0
 offset_bottom = 202.0
 text = "CUT THE ROPE"
 
+[node name="Balloon" parent="." instance=ExtResource("8_gbfbk")]
+position = Vector2(658, 420)
+gravity_scale = -1.0
+
+[node name="Balloon2" parent="." instance=ExtResource("8_gbfbk")]
+position = Vector2(758, 302)
+gravity_scale = -1.0
+
 [connection signal="pressed" from="CutRopeButton" to="." method="_on_cut_rope_button_pressed"]
 
 [editable path="Switch"]
-[editable path="Switch2"]
