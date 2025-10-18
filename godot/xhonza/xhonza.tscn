@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://v5fwyu2cxtmc"]
 
-[ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://xhonza/fan/fan.tscn" id="1_bxg7w"]
+[ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="1_bxg7w"]
 
 [node name="xhonza" type="Node2D"]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xq53xv2ksa4q"
-path="res://.godot/imported/fan-4.png-f92440128cda939d2dcd89c3436c5773.ctex"
+path="res://.godot/imported/electric_fan-4.png-e37ebaf0ce106a04030e28c9f773793c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://xhonza/fan/fan-4.png"
-dest_files=["res://.godot/imported/fan-4.png-f92440128cda939d2dcd89c3436c5773.ctex"]
+source_file="res://electric_fan/electric_fan-4.png"
+dest_files=["res://.godot/imported/electric_fan-4.png-e37ebaf0ce106a04030e28c9f773793c.ctex"]
 
 [params]
 

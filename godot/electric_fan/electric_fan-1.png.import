@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqq5g68yt4d56"
-path="res://.godot/imported/fan-2.png-c206f204b5b481c298f636ae7695e821.ctex"
+uid="uid://by2v0mwrpiti3"
+path="res://.godot/imported/electric_fan-1.png-d5ee83e091154995e015ebc57d3a66c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://xhonza/fan/fan-2.png"
-dest_files=["res://.godot/imported/fan-2.png-c206f204b5b481c298f636ae7695e821.ctex"]
+source_file="res://electric_fan/electric_fan-1.png"
+dest_files=["res://.godot/imported/electric_fan-1.png-d5ee83e091154995e015ebc57d3a66c7.ctex"]
 
 [params]
 
