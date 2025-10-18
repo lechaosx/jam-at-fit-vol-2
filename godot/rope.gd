@@ -78,7 +78,7 @@ func _process(_delta: float) -> void:
 	points = catmull_rom_spline(segments.map(func(x): return x.position))
 	
 func cut(segment: RopeSegment) -> void:
-	var index := segments.find(segment)
+	var index := segments.find(segment) + 1
 	
 	if index <= 0 or index >= segments.size():
 		push_error("Invalid cut index")
@@ -105,4 +105,4 @@ func cut(segment: RopeSegment) -> void:
 	new_rope.attach_body_b = attach_body_b
 	attach_body_b = null
 	
-	add_sibling(new_rope)
+	call_deferred("add_sibling", new_rope)
