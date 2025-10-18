@@ -35,6 +35,12 @@ anchor_bottom = 0.5
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="xhonza" parent="." instance=ExtResource("4_fc0e3")]
+offset_left = 654.0
+offset_top = 131.0
+offset_right = 654.0
+offset_bottom = 131.0
+
 [connection signal="playClicked" from="Editor" to="." method="_on_editor_play_clicked"]
 [connection signal="resetWorldClicked" from="Editor" to="." method="_on_editor_reset_world_clicked"]
 [connection signal="resetToEditor" from="PauseMenu" to="." method="_on_pause_menu_reset_to_editor"]

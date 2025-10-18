@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bevmvv2e0e3x4"
-path="res://.godot/imported/assets.svg-3853cfa7c2ca1785d9a90b31bf8a7f20.ctex"
+uid="uid://d16nsslakixsd"
+path="res://.godot/imported/rope.png-722ec048dd1f2bbcd1f1c7628b4e10d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets.svg"
-dest_files=["res://.godot/imported/assets.svg-3853cfa7c2ca1785d9a90b31bf8a7f20.ctex"]
+source_file="res://assets/rope.png"
+dest_files=["res://.godot/imported/rope.png-722ec048dd1f2bbcd1f1c7628b4e10d2.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bevmvv2e0e3x4"
-path="res://.godot/imported/assets.svg-3853cfa7c2ca1785d9a90b31bf8a7f20.ctex"
+uid="uid://4wfol2pst5x6"
+path="res://.godot/imported/switch-on.png-bdd3396087cc541d200ab69d3828475b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets.svg"
-dest_files=["res://.godot/imported/assets.svg-3853cfa7c2ca1785d9a90b31bf8a7f20.ctex"]
+source_file="res://electric_switch/switch-on.png"
+dest_files=["res://.godot/imported/switch-on.png-bdd3396087cc541d200ab69d3828475b.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
