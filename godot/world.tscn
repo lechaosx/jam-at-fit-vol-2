@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=9 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="2_aqk2v"]
@@ -10,8 +10,6 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwbse"]
 
 [node name="World" type="Node"]
 script = ExtResource("1_tlwt5")
@@ -56,17 +54,15 @@ associatedBall = NodePath("../../Marble")
 
 [node name="Rope" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
 position = Vector2(-390, 185)
-points = PackedVector2Array(658, 23, 805, 153, 1045, 263)
+points = PackedVector2Array(658, 23, 805, 153, 1049, 30)
 attach_body_a = NodePath("../Switch/Button")
-attach_body_b = NodePath("../RopePulledBody2")
-
-[node name="RopePulledBody2" type="StaticBody2D" parent="."]
-position = Vector2(655, 440)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RopePulledBody2"]
-shape = SubResource("RectangleShape2D_dwbse")
+attach_body_b = NodePath("../Switch2/Button")
 
 [node name="Switch" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(267, 205)
 
+[node name="Switch2" parent="." instance=ExtResource("7_pkg7o")]
+position = Vector2(662, 215)
+
 [editable path="Switch"]
+[editable path="Switch2"]
