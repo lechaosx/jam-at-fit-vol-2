@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://de181pepln0n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_medbi"]
+radius = 14.56022
+
+[node name="Pulley" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_medbi")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2(0.3884599, 0.37649217)
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-22, -47, 19, -48, 50, -10, 50, 16, 22, 45, -13, 51, -46, 25, -51, -7, -43, -31)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.33870968, 0.33870968)
+polygon = PackedVector2Array(-29, -32, 11, -37, 22, -18, 30, 3, 21, 21, 1, 29, -29, 8, -32, -9)
