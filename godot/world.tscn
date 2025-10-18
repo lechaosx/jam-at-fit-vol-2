@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="Script" uid="uid://c6mx6sdtpkoyd" path="res://world.gd" id="1_tlwt5"]
-[ext_resource type="PackedScene" path="res://ball.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://obstacles/long.tscn" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://75s0i21ku1sy" path="res://targets/checkpoint_target.tscn" id="5_036b0"]
@@ -64,12 +64,8 @@ position = Vector2(481, 523)
 associatedBall = NodePath("../../Marble")
 
 [node name="Rope" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
-texture_filter = 0
-texture_repeat = 0
 position = Vector2(-390, 185)
 points = PackedVector2Array(658, 23, 755.15784, 108.92188, 805, 153, 1048, 235)
-texture = null
-texture_mode = 0
 attach_body_a = NodePath("../Switch/Button")
 attach_body_b = NodePath("../Balloon")
 
