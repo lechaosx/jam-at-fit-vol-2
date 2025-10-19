@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpemwr5x43tul"]
+
+[ext_resource type="Script" uid="uid://dyoir53g0r0ou" path="res://UI/tools/electric_tool.gd" id="1_iolto"]
+
+[node name="ElectricTool" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_iolto")

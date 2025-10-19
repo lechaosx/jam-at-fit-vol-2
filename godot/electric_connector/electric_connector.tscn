@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://ejby3h5t8mbq"]
+[gd_scene load_steps=5 format=3 uid="uid://ejby3h5t8mbq"]
 
 [ext_resource type="Script" uid="uid://blfv8uflpy641" path="res://electric_connector/electric_connector.gd" id="1_5ed67"]
+[ext_resource type="Texture2D" uid="uid://bnu6u3g044pp5" path="res://icon.svg" id="2_dgfdv"]
 
-[node name="ElectricConnector" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgfdv"]
+size = Vector2(24, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dgfdv"]
+radius = 1.0
+
+[node name="ElectricConnector" type="Area2D" groups=["Electric"]]
+process_mode = 3
 script = ExtResource("1_5ed67")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 4
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_dgfdv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dgfdv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_dgfdv")

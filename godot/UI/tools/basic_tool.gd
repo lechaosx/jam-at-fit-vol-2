@@ -6,10 +6,11 @@ var target_instance : Node2D
 
 signal placement_success
 
-func _input(event: InputEvent) -> void:
+func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		target_instance.show()
 		target_instance.position = event.position
+		print_debug(get_global_mouse_position())
 		
 	if event is InputEventMouseButton:
 		if event.button_index == MouseButton.MOUSE_BUTTON_RIGHT:
@@ -38,5 +39,5 @@ func init(resource:PlaceableResource, world:Node2D):
 	
 	target_instance = res.element_scene.instantiate()
 	add_child(target_instance)
-	target_instance.hide()
+	target_instance.position = world.get_viewport().get_mouse_position()
 	target_instance.process_mode = Node.PROCESS_MODE_DISABLED

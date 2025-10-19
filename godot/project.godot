@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="viewport"
 
+[global_group]
+
+Electric=""
+
 [input]
 
 pause={
@@ -29,4 +33,7 @@ pause={
 
 [layer_names]
 
+2d_render/layer_3="Electric"
+2d_physics/layer_2="Ball"
+2d_physics/layer_3="Electrical"
 2d_physics/layer_8="TargetLayer"

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://seki0y1ekqnb"]
+[gd_scene load_steps=0 format=3 uid="uid://seki0y1ekqnb"]
 
 [node name="Bucket" type="RigidBody2D"]
 position = Vector2(0, 48)

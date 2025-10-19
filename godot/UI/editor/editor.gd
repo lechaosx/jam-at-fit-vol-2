@@ -16,13 +16,20 @@ var level_placeables: LevelPlaceables
 func _on_button_pressed() -> void:
 	playClicked.emit(get_world_duplicate())
 
+func remove_all_tools():
+	for t in %ToolsContainer.get_children():
+		%ToolsContainer.remove_child(t)
+		t.queue_free()
+	
+
 func _on_item_placeholder_element_selected(resource: PlaceableResource, button:ItemPlaceholder) -> void:
+	remove_all_tools()
 	selected_button = button
 	
 	var tool_scene = resource.tool
 	if not tool_scene:
 		tool_scene = basic_tool_scene
-		
+	
 	var tool = tool_scene.instantiate()
 	tool.init(resource, world_instance)
 	tool.placement_success.connect(placement_success)
@@ -33,6 +40,7 @@ func placement_success():
 
 func _on_reset_button_pressed() -> void:
 	spawn_world(world_scene)
+	remove_all_tools()
 	
 func remove_world_instance(world:Node2D):
 	if not world:

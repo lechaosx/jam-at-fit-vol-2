@@ -22,17 +22,22 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
+canvas_cull_mask = 4294967291
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="ToolsContainer" type="Control" parent="."]
 unique_name_in_owner = true
 process_mode = 1
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+z_index = 1
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -62,6 +67,7 @@ layout_mode = 2
 [node name="PlaceablesContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/CollapsableContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

@@ -1,24 +1,92 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1s2p8an8gdwp"]
+[gd_scene load_steps=30 format=3 uid="uid://d1s2p8an8gdwp"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_pdtm5"]
-[ext_resource type="PackedScene" path="res://targets/TargetsManager.tscn" id="2_b3oru"]
+[ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="2_b3oru"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_ua5ty"]
 [ext_resource type="Resource" uid="uid://cwjvlsjeuyrx3" path="res://placeables/items/efan.tres" id="3_045es"]
+[ext_resource type="Resource" uid="uid://dfxxnog1m7687" path="res://placeables/items/ball.tres" id="3_l7nqg"]
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="4_61w3m"]
+[ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="4_w7ck5"]
+[ext_resource type="Resource" uid="uid://br3bk4doest8o" path="res://placeables/items/baloon.tres" id="5_2nn5w"]
 [ext_resource type="PackedScene" uid="uid://dqravtww1kjrd" path="res://block.tscn" id="5_omn1t"]
 [ext_resource type="PackedScene" uid="uid://d32fwrsj74cuk" path="res://slope.tscn" id="6_lf3p4"]
+[ext_resource type="Resource" uid="uid://lot8llu3c3wi" path="res://placeables/items/eplug.tres" id="6_ou4v7"]
+[ext_resource type="PackedScene" uid="uid://dpemwr5x43tul" path="res://UI/tools/electric_tool.tscn" id="7_045es"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="7_yydhl"]
+[ext_resource type="Resource" uid="uid://dpcfqvkvnbtp" path="res://placeables/items/eswitch.tres" id="8_53hnx"]
 [ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="8_bekh1"]
+[ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="9_mxqdg"]
+[ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="10_tv7bq"]
+[ext_resource type="PackedScene" uid="uid://c7eyim1ysnsnl" path="res://Cable.tscn" id="11_wieee"]
+[ext_resource type="Texture2D" uid="uid://c7uatvmq8hcqu" path="res://cloud.webp" id="13_xtf7k"]
 
-[sub_resource type="Resource" id="Resource_8bcou"]
+[sub_resource type="Resource" id="Resource_q1xah"]
+resource_local_to_scene = true
+script = ExtResource("2_ua5ty")
+placeable_res = ExtResource("3_l7nqg")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_wqtvx"]
+resource_local_to_scene = true
+script = ExtResource("2_ua5ty")
+placeable_res = ExtResource("4_w7ck5")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_l50cl"]
+resource_local_to_scene = true
+script = ExtResource("2_ua5ty")
+placeable_res = ExtResource("5_2nn5w")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_0imvb"]
+resource_local_to_scene = true
+script = ExtResource("2_ua5ty")
+placeable_res = ExtResource("6_ou4v7")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_ddpb4"]
+resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("3_045es")
 max_count = 2
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
+[sub_resource type="Resource" id="Resource_lllkd"]
+resource_local_to_scene = true
+script = ExtResource("2_ua5ty")
+placeable_res = ExtResource("8_53hnx")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_3352f"]
+resource_local_to_scene = true
+script = ExtResource("2_ua5ty")
+placeable_res = ExtResource("9_mxqdg")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_n2x8l"]
+resource_local_to_scene = true
+script = ExtResource("2_ua5ty")
+placeable_res = ExtResource("10_tv7bq")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_nhsnn"]
+script = ExtResource("4_61w3m")
+element_scene = ExtResource("11_wieee")
+texture = ExtResource("13_xtf7k")
+tool = ExtResource("7_045es")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
+
+[sub_resource type="Resource" id="Resource_llckc"]
+resource_local_to_scene = true
+script = ExtResource("2_ua5ty")
+placeable_res = SubResource("Resource_nhsnn")
+max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
 [node name="Level1" type="Node2D"]
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_pdtm5")]
-placeables = Array[ExtResource("2_ua5ty")]([SubResource("Resource_8bcou")])
+placeables = Array[ExtResource("2_ua5ty")]([SubResource("Resource_q1xah"), SubResource("Resource_wqtvx"), SubResource("Resource_l50cl"), SubResource("Resource_0imvb"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_3352f"), SubResource("Resource_n2x8l"), SubResource("Resource_llckc")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("2_b3oru")]
 
