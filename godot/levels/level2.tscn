@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://57xl70y2gpkh"]
+[gd_scene load_steps=17 format=3 uid="uid://57xl70y2gpkh"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_p1d34"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_g1dg4"]
@@ -9,13 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://dqravtww1kjrd" path="res://block.tscn" id="8_crte6"]
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="11_hq01p"]
 [ext_resource type="PackedScene" uid="uid://b0ysf5iffpxet" path="res://balloon.tscn" id="12_6mfmt"]
+[ext_resource type="PackedScene" uid="uid://c7eyim1ysnsnl" path="res://Cable.tscn" id="12_bcewn"]
+[ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="13_6mfmt"]
 [ext_resource type="PackedScene" uid="uid://v2coglxm5imv" path="res://rope.tscn" id="13_qegch"]
 [ext_resource type="PackedScene" uid="uid://m4ya5u6gd7ax" path="res://switch.tscn" id="15_qegch"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bcewn"]
 normal = Vector2(1, 0)
 
-[sub_resource type="Resource" id="Resource_fjysh"]
+[sub_resource type="Resource" id="Resource_qegch"]
 resource_local_to_scene = true
 script = ExtResource("2_g1dg4")
 placeable_res = ExtResource("3_hq01p")
@@ -51,7 +53,7 @@ shape = SubResource("WorldBoundaryShape2D_bcewn")
 shape = SubResource("WorldBoundaryShape2D_bcewn")
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_p1d34")]
-placeables = Array[ExtResource("2_g1dg4")]([SubResource("Resource_fjysh"), SubResource("Resource_lllkd")])
+placeables = Array[ExtResource("2_g1dg4")]([SubResource("Resource_qegch"), SubResource("Resource_lllkd")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("2_qyb5k")]
 
@@ -88,3 +90,16 @@ position = Vector2(728, 168)
 [node name="Switch" parent="." instance=ExtResource("15_qegch")]
 position = Vector2(728.00006, 24.000004)
 rotation = -3.111493
+
+[node name="Cable" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("12_bcewn")]
+position = Vector2(984, 88)
+points = PackedVector2Array(-256, -72, 16, 56, 40, 144)
+attach_body_a = NodePath("../Switch/StaticBody2D")
+attach_body_b = NodePath("../ElectricFan")
+
+[node name="ElectricFan" parent="." instance=ExtResource("13_6mfmt")]
+position = Vector2(1024, 232)
+scale = Vector2(-1, 1)
+is_on = false
+
+[editable path="Switch"]

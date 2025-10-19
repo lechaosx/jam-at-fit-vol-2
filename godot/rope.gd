@@ -1,5 +1,6 @@
 extends Line2D
 
+@export var segment_scene = preload("res://rope_segment.tscn")
 @export var attach_body_a: PhysicsBody2D
 @export var attach_body_b: PhysicsBody2D
 @export var segment_distance := 24.0
@@ -47,7 +48,7 @@ func _process(_delta: float) -> void:
 			var distance := segment_begin.distance_to(segment_end)
 			
 			for j in range(distance / segment_distance):
-				var segment = preload("res://rope_segment.tscn").instantiate()
+				var segment = segment_scene.instantiate()
 				segment.global_position = segment_begin.lerp(segment_end, (j + 0.5) * segment_distance / distance)
 				segment.global_rotation = (segment_end - segment_begin).angle() + PI / 2
 				segments.append(segment)
