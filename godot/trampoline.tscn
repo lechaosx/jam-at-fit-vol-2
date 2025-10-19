@@ -26,15 +26,15 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 30.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iocah"]
+size = Vector2(81, 14)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cilbb"]
 radius = 6.0
 height = 60.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iocah"]
-size = Vector2(81, 14)
 
 [node name="Trampoline" type="RigidBody2D"]
 script = ExtResource("1_d0j4r")
@@ -46,16 +46,16 @@ sprite_frames = SubResource("SpriteFrames_pvryr")
 frame = 4
 frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_cilbb")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 11)
+shape = SubResource("RectangleShape2D_iocah")
 
 [node name="BouncyArea" type="Area2D" parent="."]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BouncyArea"]
-position = Vector2(-0.5, 11)
-shape = SubResource("RectangleShape2D_iocah")
+position = Vector2(0, -3)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_cilbb")
 
 [connection signal="body_entered" from="BouncyArea" to="." method="_on_bouncy_area_body_entered"]
