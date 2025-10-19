@@ -6,4 +6,5 @@ extends Node2D
 
 func _ready() -> void:
 	for child in allFans.get_children():
-		child.connector.set_source(switchTest2.connector)
+		if child.connector.has_method("set_source"):
+			child.connector.set_source(switchTest2.connector)

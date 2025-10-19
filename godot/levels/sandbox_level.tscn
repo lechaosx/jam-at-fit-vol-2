@@ -1,6 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://2a6a68yrbe1e"]
+[gd_scene load_steps=40 format=3 uid="uid://2a6a68yrbe1e"]
 
-[ext_resource type="Script" uid="uid://cso2s25wgbyjq" path="res://levels/sandbox_level.gd" id="1_ak613"]
+[ext_resource type="Script" path="res://levels/sandbox_level.gd" id="1_ak613"]
 [ext_resource type="PackedScene" uid="uid://dklkxi1qq2fk6" path="res://border.tscn" id="1_moje3"]
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="2_xioyx"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="3_1vhwt"]
@@ -21,124 +21,131 @@
 [ext_resource type="Resource" uid="uid://c8360l6l5epfm" path="res://placeables/items/block.tres" id="18_kng7q"]
 [ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="19_1vhwt"]
 [ext_resource type="Resource" uid="uid://ctfw1slrhhcp7" path="res://placeables/items/rope.tres" id="19_g5q72"]
+[ext_resource type="Resource" uid="uid://7hr70sacxke5" path="res://placeables/items/boxer.tres" id="20_huvcg"]
 
-[sub_resource type="Resource" id="Resource_1ac74"]
+[sub_resource type="Resource" id="Resource_qg154"]
 resource_local_to_scene = true
 resource_name = "Bouncy Ball"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("4_ak613")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_wqtvx"]
+[sub_resource type="Resource" id="Resource_ow12e"]
 resource_local_to_scene = true
 resource_name = "Marble Ball"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("5_g5q72")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_q1xah"]
+[sub_resource type="Resource" id="Resource_xac37"]
 resource_local_to_scene = true
 resource_name = "Beach Ball"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("6_huvcg")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_l50cl"]
+[sub_resource type="Resource" id="Resource_wvex7"]
 resource_local_to_scene = true
 resource_name = "Flying Baloon"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("7_qg154")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_ddpb4"]
+[sub_resource type="Resource" id="Resource_o0voq"]
 resource_local_to_scene = true
 resource_name = "Electric Fan"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("8_ow12e")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_lllkd"]
+[sub_resource type="Resource" id="Resource_k4oww"]
 resource_local_to_scene = true
 resource_name = "Electric Switch"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("9_xac37")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_0imvb"]
+[sub_resource type="Resource" id="Resource_yjhqg"]
 resource_local_to_scene = true
 resource_name = "Electric Plug"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("10_wvex7")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_ccr7p"]
+[sub_resource type="Resource" id="Resource_6ghu0"]
 resource_local_to_scene = true
 resource_name = "Electric Cable"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("11_o0voq")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_3352f"]
+[sub_resource type="Resource" id="Resource_0ypr8"]
 resource_local_to_scene = true
 resource_name = "Trampoline"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("12_k4oww")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_n2x8l"]
+[sub_resource type="Resource" id="Resource_mt2gc"]
 resource_local_to_scene = true
 resource_name = "Seesaw"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("13_yjhqg")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_cg0ig"]
+[sub_resource type="Resource" id="Resource_8l6dp"]
 resource_local_to_scene = true
 resource_name = "Scissors"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("14_6ghu0")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_bkf2g"]
+[sub_resource type="Resource" id="Resource_kng7q"]
 resource_local_to_scene = true
 resource_name = "Long Block"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("15_0ypr8")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_nhsnn"]
+[sub_resource type="Resource" id="Resource_j521r"]
 resource_local_to_scene = true
 resource_name = "Pulley"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("16_mt2gc")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_llckc"]
+[sub_resource type="Resource" id="Resource_mifp6"]
 resource_local_to_scene = true
 resource_name = "Barrel"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("17_8l6dp")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_ed5g5"]
+[sub_resource type="Resource" id="Resource_bkya1"]
 resource_local_to_scene = true
 resource_name = "Block"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("18_kng7q")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_hf2gr"]
+[sub_resource type="Resource" id="Resource_cebh1"]
 resource_local_to_scene = true
 resource_name = "Rope"
 script = ExtResource("3_1vhwt")
 placeable_res = ExtResource("19_g5q72")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
+[sub_resource type="Resource" id="Resource_vg3g0"]
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("20_huvcg")
+max_count = 9999999999
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
 [node name="SandboxLevel" type="Node2D"]
 script = ExtResource("1_ak613")
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("2_xioyx")]
-placeables = Array[ExtResource("3_1vhwt")]([SubResource("Resource_1ac74"), SubResource("Resource_wqtvx"), SubResource("Resource_q1xah"), SubResource("Resource_l50cl"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_0imvb"), SubResource("Resource_ccr7p"), SubResource("Resource_3352f"), SubResource("Resource_n2x8l"), SubResource("Resource_cg0ig"), SubResource("Resource_bkf2g"), SubResource("Resource_nhsnn"), SubResource("Resource_llckc"), SubResource("Resource_ed5g5"), SubResource("Resource_hf2gr")])
+placeables = Array[ExtResource("3_1vhwt")]([SubResource("Resource_qg154"), SubResource("Resource_ow12e"), SubResource("Resource_xac37"), SubResource("Resource_wvex7"), SubResource("Resource_o0voq"), SubResource("Resource_k4oww"), SubResource("Resource_yjhqg"), SubResource("Resource_6ghu0"), SubResource("Resource_0ypr8"), SubResource("Resource_mt2gc"), SubResource("Resource_8l6dp"), SubResource("Resource_kng7q"), SubResource("Resource_j521r"), SubResource("Resource_mifp6"), SubResource("Resource_bkya1"), SubResource("Resource_cebh1"), SubResource("Resource_vg3g0")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("19_1vhwt")]
 
