@@ -27,7 +27,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Name Of The Game"
+text = "The Excredible Contraption"
 horizontal_alignment = 1
 
 [node name="LevelsContainer" type="GridContainer" parent="VBoxContainer"]
