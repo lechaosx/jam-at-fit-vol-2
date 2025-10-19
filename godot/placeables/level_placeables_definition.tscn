@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cv7kxl3b27xjo"]
+[gd_scene load_steps=29 format=3 uid="uid://cv7kxl3b27xjo"]
 
 [ext_resource type="Script" uid="uid://c8ry03566wrjc" path="res://placeables/level_placeables_definition.gd" id="1_cqg0u"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_omlgl"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="10_wqtvx"]
 [ext_resource type="Resource" uid="uid://vvqxcslx7p3h" path="res://placeables/items/block_long.tres" id="14_qrcb3"]
 [ext_resource type="Resource" uid="uid://ce8s1dkroedn8" path="res://placeables/items/scissors.tres" id="15_1ac74"]
+[ext_resource type="Resource" uid="uid://dhvk3fmdvylni" path="res://placeables/items/pulley.tres" id="15_cg0ig"]
 [ext_resource type="Resource" uid="uid://dwandouoianyk" path="res://placeables/items/bouncy_ball.tres" id="16_cg0ig"]
 [ext_resource type="Resource" uid="uid://yjiwg1m7f7m" path="res://placeables/items/ecable.tres" id="17_bkf2g"]
 
@@ -85,13 +86,6 @@ script = ExtResource("2_omlgl")
 placeable_res = ExtResource("10_wqtvx")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_adyxo"]
-resource_local_to_scene = true
-resource_name = "Electric Cable"
-script = ExtResource("2_omlgl")
-placeable_res = ExtResource("17_bkf2g")
-metadata/_custom_type_script = "uid://d14m1du7rwwy7"
-
 [sub_resource type="Resource" id="Resource_cg0ig"]
 resource_local_to_scene = true
 resource_name = "Scissors"
@@ -106,6 +100,13 @@ script = ExtResource("2_omlgl")
 placeable_res = ExtResource("14_qrcb3")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
+[sub_resource type="Resource" id="Resource_nhsnn"]
+resource_local_to_scene = true
+resource_name = "Pulley"
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("15_cg0ig")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
 [node name="LevelPlaceables" type="Node"]
 script = ExtResource("1_cqg0u")
-placeables = Array[ExtResource("2_omlgl")]([SubResource("Resource_1ac74"), SubResource("Resource_wqtvx"), SubResource("Resource_q1xah"), SubResource("Resource_l50cl"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_0imvb"), SubResource("Resource_ccr7p"), SubResource("Resource_3352f"), SubResource("Resource_n2x8l"), SubResource("Resource_adyxo"), SubResource("Resource_cg0ig"), SubResource("Resource_bkf2g")])
+placeables = Array[ExtResource("2_omlgl")]([SubResource("Resource_1ac74"), SubResource("Resource_wqtvx"), SubResource("Resource_q1xah"), SubResource("Resource_l50cl"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_0imvb"), SubResource("Resource_ccr7p"), SubResource("Resource_3352f"), SubResource("Resource_n2x8l"), SubResource("Resource_cg0ig"), SubResource("Resource_bkf2g"), SubResource("Resource_nhsnn")])
