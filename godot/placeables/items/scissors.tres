@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://bpm4v0shf7jsr"]
+
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_bgiqt"]
+[ext_resource type="PackedScene" uid="uid://cilps83as6rhs" path="res://scissors.tscn" id="1_p3srs"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_3qnyn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mskpa"]
+atlas = ExtResource("3_3qnyn")
+region = Rect2(376.40668, 331.73575, 201.31384, 438.05893)
+
+[resource]
+script = ExtResource("1_bgiqt")
+element_scene = ExtResource("1_p3srs")
+texture = SubResource("AtlasTexture_mskpa")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
