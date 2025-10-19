@@ -30,12 +30,12 @@ func init(resource:PlaceableResource, world:Node2D):
 	store_cull_mask = world_viewport.canvas_cull_mask
 	world_viewport.set_canvas_cull_mask_bit(visibility_mask, true)
 
-func find_first_connector(position:Vector2) -> ElecticConnector:
+func find_first_connector(_position:Vector2) -> ElecticConnector:
 	var params:PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
 	params.collide_with_areas = true
 	params.collide_with_bodies = true
 	#params.collision_mask = 4
-	params.position = position
+	params.position = _position
 	
 	var results:Array[Dictionary] = world_instance.get_world_2d().direct_space_state.intersect_point(params)
 	
