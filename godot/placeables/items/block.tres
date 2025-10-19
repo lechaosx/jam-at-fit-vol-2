@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://dyxjiv08dfy8v"]
+
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_w00uu"]
+[ext_resource type="PackedScene" uid="uid://dcpac078vhmol" path="res://placeables/obstacles/block.tscn" id="1_xevl8"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_jnpa0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pjy5"]
+atlas = ExtResource("3_jnpa0")
+region = Rect2(1808, 942, 210, 211)
+
+[resource]
+resource_name = "Block"
+script = ExtResource("1_w00uu")
+element_scene = ExtResource("1_xevl8")
+texture = SubResource("AtlasTexture_7pjy5")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
