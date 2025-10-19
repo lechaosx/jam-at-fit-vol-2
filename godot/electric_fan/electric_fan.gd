@@ -28,8 +28,9 @@ func on_off_changed(value: bool) -> void:
 
 func start() -> void:
 	is_on = true
-	sprites.play("default")
-	$AudioStreamPlayer.play()
+	if sprites:
+		sprites.play("default")
+		$AudioStreamPlayer.play()
 
 func stop() -> void:
 	is_on = false
