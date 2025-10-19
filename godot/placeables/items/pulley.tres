@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://dhvk3fmdvylni"]
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://dr1j6kiruwdyl"]
 
-[ext_resource type="PackedScene" uid="uid://de181pepln0n" path="res://pulley.tscn" id="1_6aaqt"]
+[ext_resource type="PackedScene" path="res://pulley.tscn" id="1_6aaqt"]
 [ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_sdafr"]
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_tw54u"]
 

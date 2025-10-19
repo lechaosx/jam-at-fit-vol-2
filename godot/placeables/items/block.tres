@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://dyxjiv08dfy8v"]
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://c8360l6l5epfm"]
 
 [ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_w00uu"]
 [ext_resource type="PackedScene" uid="uid://dcpac078vhmol" path="res://placeables/obstacles/block.tscn" id="1_xevl8"]
