@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://seki0y1ekqnb"]
+
+[node name="Bucket" type="RigidBody2D"]
+position = Vector2(0, 48)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -40)
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(0, -8, 40, 0, 24, 88, -24, 88, -40, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(-32, -40, -16, 40, 16, 40, 32, -40, 40, -40, 24, 48, -24, 48, -40, -40)

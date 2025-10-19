@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://xsklbsg58dkb"]
+[gd_scene load_steps=21 format=3 uid="uid://xsklbsg58dkb"]
 
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://placeables/obstacles/long.tscn" id="3_036b0"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c0hs7nim5oa37" path="res://trampoline.tscn" id="17_udxuc"]
 [ext_resource type="Texture2D" uid="uid://c7uatvmq8hcqu" path="res://cloud.webp" id="18_cbp6q"]
 [ext_resource type="PackedScene" uid="uid://de181pepln0n" path="res://pulley.tscn" id="18_ikiii"]
+[ext_resource type="PackedScene" uid="uid://seki0y1ekqnb" path="res://bucket.tscn" id="19_cbp6q"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
@@ -155,10 +156,20 @@ position = Vector2(1026, 442)
 position = Vector2(1131, 393)
 
 [node name="Scissors3" parent="." instance=ExtResource("8_ioo17")]
-position = Vector2(981.0001, 71)
+position = Vector2(923, 75)
 rotation = 3.0128393
 
 [node name="Balloon3" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(745, 597)
 
+[node name="Bucket" parent="." instance=ExtResource("19_cbp6q")]
+position = Vector2(949, 569)
+
+[node name="Rope4" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("6_dwbse")]
+position = Vector2(946, 367)
+points = PackedVector2Array(3, 155, 73, -130)
+attach_body_a = NodePath("../Bucket")
+attach_body_b = NodePath("../Seesaw/StaticBody2D")
+
 [editable path="Switch"]
+[editable path="Seesaw"]
