@@ -23,6 +23,10 @@ window/stretch/mode="viewport"
 
 Electric=""
 
+[gui]
+
+theme/custom="uid://ds7j3q1bbvk53"
+
 [input]
 
 pause={
