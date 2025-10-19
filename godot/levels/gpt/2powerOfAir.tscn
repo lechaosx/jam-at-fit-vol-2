@@ -64,12 +64,12 @@ placeables = Array[ExtResource("2_xv30q")]([SubResource("Resource_foqh4"), SubRe
 
 [node name="TargetsManager" parent="." instance=ExtResource("18_j67ln")]
 
+[node name="Border" parent="." instance=ExtResource("20_ckpbi")]
+
 [node name="FinalTarget" parent="." node_paths=PackedStringArray("associatedBall") instance=ExtResource("19_vi8ks")]
 position = Vector2(1072.0001, 224)
 scale = Vector2(10, 10)
 associatedBall = NodePath("../items/Ball-beach")
-
-[node name="Border" parent="." instance=ExtResource("20_ckpbi")]
 
 [node name="blocks-bottom" type="CanvasGroup" parent="."]
 

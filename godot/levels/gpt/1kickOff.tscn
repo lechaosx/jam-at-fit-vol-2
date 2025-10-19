@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dcnp5ewnyvsiv" path="res://barrel.tscn" id="27_ptxmg"]
 [ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="28_ptxmg"]
 
-[sub_resource type="Resource" id="Resource_ptxmg"]
+[sub_resource type="Resource" id="Resource_v42nx"]
 resource_local_to_scene = true
 resource_name = "Bouncy Ball"
 script = ExtResource("2_x8kql")
@@ -24,7 +24,7 @@ placeable_res = ExtResource("3_pbofo")
 max_count = 1
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_wkleo"]
+[sub_resource type="Resource" id="Resource_ywfhi"]
 resource_local_to_scene = true
 resource_name = "Marble Ball"
 script = ExtResource("2_x8kql")
@@ -32,7 +32,7 @@ placeable_res = ExtResource("4_lnans")
 max_count = 1
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_m45lw"]
+[sub_resource type="Resource" id="Resource_ws8r0"]
 resource_local_to_scene = true
 resource_name = "Beach Ball"
 script = ExtResource("2_x8kql")
@@ -43,16 +43,16 @@ metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 [node name="1KickOff" type="Node2D"]
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_l52p1")]
-placeables = Array[ExtResource("2_x8kql")]([SubResource("Resource_ptxmg"), SubResource("Resource_wkleo"), SubResource("Resource_m45lw")])
+placeables = Array[ExtResource("2_x8kql")]([SubResource("Resource_v42nx"), SubResource("Resource_ywfhi"), SubResource("Resource_ws8r0")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("18_1mxx1")]
+
+[node name="Border" parent="." instance=ExtResource("19_x8kql")]
 
 [node name="FinalTarget" parent="." node_paths=PackedStringArray("associatedBall") instance=ExtResource("25_dyykd")]
 position = Vector2(1071.9999, 487.99997)
 scale = Vector2(10, 10)
 associatedBall = NodePath("../items/Ball3")
-
-[node name="Border" parent="." instance=ExtResource("19_x8kql")]
 
 [node name="blocks-bottom" type="CanvasGroup" parent="."]
 
