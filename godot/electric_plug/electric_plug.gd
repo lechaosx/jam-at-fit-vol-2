@@ -13,3 +13,7 @@ func disconnect_cable() -> void:
 	spriteEmpty.visible = true
 	spriteConnected.visible = false
 	is_connected = false
+
+func _on_electric_connector_on_connected() -> void:
+	connect_cable()
+	$ElectricConnector.set_state(true)

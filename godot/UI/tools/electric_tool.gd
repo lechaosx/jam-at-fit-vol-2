@@ -73,8 +73,8 @@ func _gui_input(event: InputEvent) -> void:
 					line.show()
 			
 			if connector_A and connector_B:
-				connector_A.set_source(connector_B)
-				connector_B.set_source(connector_A)
+				connector_A.connect_with(connector_B)
+				connector_B.connect_with(connector_A)
 				var cable = res.element_scene.instantiate()
 				cable.name+="%d"%idx
 				cable.add_point(connector_A.get_global_transform().origin)

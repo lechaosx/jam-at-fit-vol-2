@@ -76,3 +76,9 @@ func _physics_process(delta: float) -> void:
 func _on_on_off_changed(value: bool) -> void:
 	print_debug("electric/fan: connector(%s)" % connector.on_off_str(value))
 	is_on = value
+
+func _on_electric_connector_propagate_state_cahnged(value: bool) -> void:
+	if value:
+		start()
+	else:
+		stop()

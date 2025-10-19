@@ -5,16 +5,9 @@ extends Node2D
 @onready var spriteOn = $"Sprite2D-on"
 @onready var spriteOff = $"Sprite2D-off"
 @onready var connector = $ElectricConnector
-var is_on_prev: bool = is_on
 
 func _ready() -> void:
 	set_state(is_on)
-	on_off_changed(is_on)
-
-func _process(_delta: float) -> void:
-	if is_on != is_on_prev:
-		is_on_prev = is_on
-		on_off_changed(is_on)
 
 func on_off_changed(current: bool) -> void:
 	print_debug("electric/switch: %s - GFX" % connector.on_off_str(is_on))
@@ -34,5 +27,6 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 
 func set_state(value: bool) -> void:
 	is_on = value
-	print_debug("electric/switch: %s - LOGIC" % connector.on_off_str(is_on))
-	connector.on_off_changed.emit(is_on)
+	on_off_changed(value)
+	print_debug("set state switch %s" % ("true" if value else "false"))
+	$ElectricConnector.set_state(value)

@@ -1,0 +1,80 @@
+[gd_scene load_steps=22 format=3 uid="uid://40bw6bhd555h"]
+
+[ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_0vv12"]
+[ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_o5yuq"]
+[ext_resource type="Resource" uid="uid://dfxxnog1m7687" path="res://placeables/items/ball.tres" id="3_wjuib"]
+[ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="4_xag4j"]
+[ext_resource type="Resource" uid="uid://br3bk4doest8o" path="res://placeables/items/baloon.tres" id="5_pgbyh"]
+[ext_resource type="Resource" uid="uid://lot8llu3c3wi" path="res://placeables/items/eplug.tres" id="6_68kkm"]
+[ext_resource type="Resource" uid="uid://cwjvlsjeuyrx3" path="res://placeables/items/efan.tres" id="7_n4g7x"]
+[ext_resource type="Resource" uid="uid://dpcfqvkvnbtp" path="res://placeables/items/eswitch.tres" id="8_atrxo"]
+[ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="9_vr6yy"]
+[ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="10_ra35m"]
+[ext_resource type="Resource" uid="uid://yjiwg1m7f7m" path="res://placeables/items/ecable.tres" id="11_8hjdj"]
+[ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="15_5y2bn"]
+
+[sub_resource type="Resource" id="Resource_axl34"]
+resource_local_to_scene = true
+script = ExtResource("2_o5yuq")
+placeable_res = ExtResource("3_wjuib")
+max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_8hjdj"]
+resource_local_to_scene = true
+script = ExtResource("2_o5yuq")
+placeable_res = ExtResource("4_xag4j")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_0vv12"]
+resource_local_to_scene = true
+script = ExtResource("2_o5yuq")
+placeable_res = ExtResource("5_pgbyh")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_o5yuq"]
+resource_local_to_scene = true
+script = ExtResource("2_o5yuq")
+placeable_res = ExtResource("6_68kkm")
+max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_wjuib"]
+resource_local_to_scene = true
+script = ExtResource("2_o5yuq")
+placeable_res = ExtResource("7_n4g7x")
+max_count = 2
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_xag4j"]
+resource_local_to_scene = true
+script = ExtResource("2_o5yuq")
+placeable_res = ExtResource("8_atrxo")
+max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_pgbyh"]
+resource_local_to_scene = true
+script = ExtResource("2_o5yuq")
+placeable_res = ExtResource("9_vr6yy")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_68kkm"]
+resource_local_to_scene = true
+script = ExtResource("2_o5yuq")
+placeable_res = ExtResource("10_ra35m")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_n4g7x"]
+resource_local_to_scene = true
+script = ExtResource("2_o5yuq")
+placeable_res = ExtResource("11_8hjdj")
+max_count = 3
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="LevelPlaceables" parent="." instance=ExtResource("1_0vv12")]
+placeables = Array[ExtResource("2_o5yuq")]([SubResource("Resource_axl34"), SubResource("Resource_8hjdj"), SubResource("Resource_0vv12"), SubResource("Resource_o5yuq"), SubResource("Resource_wjuib"), SubResource("Resource_xag4j"), SubResource("Resource_pgbyh"), SubResource("Resource_68kkm"), SubResource("Resource_n4g7x")])
+
+[node name="TargetsManager" parent="." instance=ExtResource("15_5y2bn")]

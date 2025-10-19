@@ -19,6 +19,5 @@ func _physics_process(delta):
 	var force = -spring_strength * displacement - damping * %Button.linear_velocity.y
 	%Button.apply_central_impulse(Vector2(0, force * delta))
 
-
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	$ElectricConnector.set_state(false)
