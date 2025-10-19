@@ -1,9 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwglrpbg4e0r4"]
+[gd_scene load_steps=12 format=3 uid="uid://dwglrpbg4e0r4"]
 
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="1_8xinp"]
+[ext_resource type="Script" uid="uid://brf0ss3x2djam" path="res://seesaw.gd" id="1_xc2ik"]
+[ext_resource type="AudioStream" uid="uid://cff3l5tbqeriw" path="res://audio/Click-complex.wav" id="2_ssxl2"]
+[ext_resource type="AudioStream" uid="uid://byvtf1tumaj50" path="res://audio/Creak-heavy.wav" id="3_3pa3j"]
+[ext_resource type="AudioStream" uid="uid://bepl1jpmpnrkt" path="res://audio/Creak-metal.wav" id="4_ag4ir"]
+[ext_resource type="AudioStream" uid="uid://c6nbre74de0gg" path="res://audio/Creak-wood-short.wav" id="5_s51bv"]
+[ext_resource type="AudioStream" uid="uid://dtlq1ldjudks7" path="res://audio/Creak-wood.wav" id="6_c1uy8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8xinp"]
 radius = 4.1231055
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xinp"]
+atlas = ExtResource("1_8xinp")
+region = Rect2(851.08484, 1486.1052, 189.33105, 166.20068)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2lv8p"]
 a = Vector2(-100, 0)
@@ -13,14 +23,9 @@ b = Vector2(100, 0)
 atlas = ExtResource("1_8xinp")
 region = Rect2(515.60187, 1354.6367, 859.6713, 109.89697)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8xinp"]
-radius = 4.1231055
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8xinp"]
-atlas = ExtResource("1_8xinp")
-region = Rect2(851.08484, 1486.1052, 189.33105, 166.20068)
-
 [node name="Seesaw" type="Node2D"]
+script = ExtResource("1_xc2ik")
+creaks = Array[AudioStream]([ExtResource("2_ssxl2"), ExtResource("3_3pa3j"), ExtResource("4_ag4ir"), ExtResource("5_s51bv"), ExtResource("6_c1uy8")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -30,6 +35,14 @@ shape = SubResource("CircleShape2D_8xinp")
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 color = Color(0, 1, 1, 1)
 polygon = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_8xinp")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, 6.7)
+scale = Vector2(0.13027109, 0.13027109)
+texture = SubResource("AtlasTexture_8xinp")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
@@ -45,12 +58,6 @@ position = Vector2(0, -7.5)
 scale = Vector2(0.23509175, 0.23509175)
 texture = SubResource("AtlasTexture_xc2ik")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("CircleShape2D_8xinp")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(0, 6.7)
-scale = Vector2(0.13027109, 0.13027109)
-texture = SubResource("AtlasTexture_8xinp")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

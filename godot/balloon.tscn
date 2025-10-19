@@ -17,6 +17,7 @@ radius = 29.068884
 [node name="Balloon" type="RigidBody2D"]
 gravity_scale = -0.5
 script = ExtResource("1_r345k")
+pop_sounds = Array[AudioStream]([ExtResource("3_jj3vs"), ExtResource("4_wxbh2")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -37)
@@ -31,8 +32,5 @@ shape = SubResource("CircleShape2D_4emby")
 position = Vector2(0, -16)
 shape = SubResource("CapsuleShape2D_jj3vs")
 
-[node name="Pop1" type="AudioStreamPlayer" parent="."]
+[node name="Pop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_jj3vs")
-
-[node name="Pop2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_wxbh2")

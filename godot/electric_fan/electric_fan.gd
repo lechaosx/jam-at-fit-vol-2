@@ -10,6 +10,9 @@ var is_on_prev: bool = is_on
 func _ready() -> void:
 	set_speed(speed)
 	on_off_changed(is_on)
+	
+	if is_on:
+		$AudioStreamPlayer.play()
 
 func _process(_delta: float) -> void:
 	if is_on != is_on_prev:
@@ -26,18 +29,23 @@ func on_off_changed(value: bool) -> void:
 func start() -> void:
 	is_on = true
 	sprites.play("default")
+	$AudioStreamPlayer.play()
 
 func stop() -> void:
 	is_on = false
 	sprites.stop()
+	$AudioStreamPlayer.stop()
 
 func set_speed(speed: FanSpeed) -> void:
 	match speed:
 		FanSpeed.Slow:
+			$AudioStreamPlayer.pitch_scale = 0.5
 			sprites.speed_scale = 0.5
 		FanSpeed.Normal:
+			$AudioStreamPlayer.pitch_scale = 1.0
 			sprites.speed_scale = 1.0
 		FanSpeed.Fast:
+			$AudioStreamPlayer.pitch_scale = 2.0
 			sprites.speed_scale = 2.0
 
 	print_debug("electric/fan: speed = %s, value = %f" % [

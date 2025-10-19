@@ -133,8 +133,7 @@ position = Vector2(255, 33)
 position = Vector2(1018, 240)
 
 [node name="Barrel2" parent="." instance=ExtResource("16_2u3nc")]
-visible = false
-position = Vector2(656, 589)
+position = Vector2(1090, 150)
 
 [node name="Trampoline" parent="." instance=ExtResource("17_udxuc")]
 position = Vector2(1062, 589)
@@ -150,11 +149,9 @@ attach_body_a = NodePath("../Barrel3")
 attach_body_b = NodePath("../Barrel")
 
 [node name="Barrel" parent="." instance=ExtResource("16_2u3nc")]
-visible = false
 position = Vector2(1026, 442)
 
 [node name="Barrel3" parent="." instance=ExtResource("16_2u3nc")]
-visible = false
 position = Vector2(1131, 393)
 
 [node name="Scissors3" parent="." instance=ExtResource("8_ioo17")]

@@ -11,10 +11,15 @@ func kaboom():
 			
 			if body.has_method("pop") and distance < 300:
 				body.pop()
+				
+	var player := AudioStreamPlayer.new()
+	player.stream = preload("res://audio/BarrellExplosion.wav")
+	player.finished.connect(player.queue_free)
+	add_sibling(player)
+	player.play()
 	
 	queue_free()
-
-
+	
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	print_debug("CONTACT")
 	
@@ -26,5 +31,5 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	print_debug(velocity)
 	print_debug(velocity.length())
 
-	if velocity.length() > 1000:
+	if velocity.length() > 500:
 		kaboom()

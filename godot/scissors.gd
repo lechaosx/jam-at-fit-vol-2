@@ -1,10 +1,15 @@
 extends Area2D
 
+@export var smik_sounds: Array[AudioStream] = []
+
 var closed: bool = false
 
 func _on_body_entered(_body: Node2D) -> void:
 	if closed:
 		return
+		
+	$AudioStreamPlayer.stream = smik_sounds.pick_random()
+	$AudioStreamPlayer.play()
 		
 	closed = true
 		
