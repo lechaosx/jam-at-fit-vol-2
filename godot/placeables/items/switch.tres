@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://bfekoavcwhldx"]
+
+[ext_resource type="PackedScene" uid="uid://m4ya5u6gd7ax" path="res://switch.tscn" id="1_tmbto"]
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="2_5l3md"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_ghnfb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs25p"]
+atlas = ExtResource("3_ghnfb")
+region = Rect2(1926, 683, 177, 89)
+
+[resource]
+resource_name = "Trampoline"
+script = ExtResource("2_5l3md")
+element_scene = ExtResource("1_tmbto")
+texture = SubResource("AtlasTexture_xs25p")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"

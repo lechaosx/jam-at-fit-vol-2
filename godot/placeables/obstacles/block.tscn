@@ -1,13 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcpac078vhmol"]
+[gd_scene load_steps=4 format=3 uid="uid://dcpac078vhmol"]
+
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="1_7562x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7562x"]
+atlas = ExtResource("1_7562x")
+region = Rect2(1044, 1164, 80, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qncar"]
 size = Vector2(12, 12)
 
 [node name="Block" type="StaticBody2D"]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-scale = Vector2(5, 5)
-polygon = PackedVector2Array(-1.1999999, 1.1999999, 1.1999999, 1.1999999, 1.1999999, -1.1999999, -1.1999999, -1.1999999)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.14999999, 0.14999999)
+texture = SubResource("AtlasTexture_7562x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qncar")

@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7pjy5"]
 atlas = ExtResource("3_jnpa0")
-region = Rect2(1808, 942, 210, 211)
+region = Rect2(1043, 1164, 82, 81)
 
 [resource]
 resource_name = "Block"

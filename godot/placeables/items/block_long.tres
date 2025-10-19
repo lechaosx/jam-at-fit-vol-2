@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p51ir"]
 atlas = ExtResource("3_8ctbu")
-region = Rect2(1032, 1176, 200, 72)
+region = Rect2(1048, 1265, 236, 80)
 
 [resource]
 resource_name = "Long Block"

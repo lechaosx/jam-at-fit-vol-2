@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xs25p"]
 atlas = ExtResource("3_kfjf5")
-region = Rect2(1926, 683, 177, 89)
+region = Rect2(1678, 1259, 442, 204)
 
 [resource]
 resource_name = "Trampoline"
