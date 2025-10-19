@@ -11,14 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://dqravtww1kjrd" path="res://block.tscn" id="5_omn1t"]
 [ext_resource type="PackedScene" uid="uid://d32fwrsj74cuk" path="res://slope.tscn" id="6_lf3p4"]
 [ext_resource type="Resource" uid="uid://lot8llu3c3wi" path="res://placeables/items/eplug.tres" id="6_ou4v7"]
-[ext_resource type="PackedScene" uid="uid://dpemwr5x43tul" path="res://UI/tools/electric_tool.tscn" id="7_045es"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="7_yydhl"]
 [ext_resource type="Resource" uid="uid://dpcfqvkvnbtp" path="res://placeables/items/eswitch.tres" id="8_53hnx"]
 [ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="8_bekh1"]
 [ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="9_mxqdg"]
 [ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="10_tv7bq"]
-[ext_resource type="PackedScene" uid="uid://c7eyim1ysnsnl" path="res://Cable.tscn" id="11_wieee"]
+[ext_resource type="PackedScene" uid="uid://dpfhlsllh6e6q" path="res://rope.tscn" id="11_l7nqg"]
 [ext_resource type="Texture2D" uid="uid://c7uatvmq8hcqu" path="res://cloud.webp" id="13_xtf7k"]
+[ext_resource type="PackedScene" uid="uid://buc8dlej5ikex" path="res://UI/tools/rope_tool.tscn" id="14_w7ck5"]
 
 [sub_resource type="Resource" id="Resource_l7nqg"]
 resource_local_to_scene = true
@@ -71,9 +71,9 @@ metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [sub_resource type="Resource" id="Resource_nhsnn"]
 script = ExtResource("4_61w3m")
-element_scene = ExtResource("11_wieee")
+element_scene = ExtResource("11_l7nqg")
 texture = ExtResource("13_xtf7k")
-tool = ExtResource("7_045es")
+tool = ExtResource("14_w7ck5")
 metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
 
 [sub_resource type="Resource" id="Resource_xtf7k"]

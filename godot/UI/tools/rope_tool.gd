@@ -1,13 +1,13 @@
 extends Control
 
-@export var visibility_mask = 2
+@export var visibility_mask = 3
 var res:PlaceableResource
 var world_instance : Node2D
 var world_viewport:Viewport
 var idx = 0
 
-var connector_A:ElecticConnector
-var connector_B:ElecticConnector
+var connector_A:RopeConnector
+var connector_B:RopeConnector
 
 var store_cull_mask:int
 
@@ -32,7 +32,7 @@ func init(resource:PlaceableResource, world:Node2D, i:int):
 	store_cull_mask = world_viewport.canvas_cull_mask
 	world_viewport.set_canvas_cull_mask_bit(visibility_mask, true)
 
-func find_first_connector(_position:Vector2) -> ElecticConnector:
+func find_first_connector(_position:Vector2) -> RopeConnector:
 	var params:PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
 	params.collide_with_areas = true
 	params.collide_with_bodies = true
@@ -42,7 +42,7 @@ func find_first_connector(_position:Vector2) -> ElecticConnector:
 	var results:Array[Dictionary] = world_instance.get_world_2d().direct_space_state.intersect_point(params)
 	
 	for r in results:
-		if r.get("collider") is ElecticConnector:
+		if r.get("collider") is RopeConnector:
 			print_debug("found connector:", r)
 			return r.get("collider")
 		
@@ -54,7 +54,8 @@ func _exit_tree() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if connector_A:
-			line.points[1] = event.position
+			#var cnt = line.points.size()
+			line.points[-1] = event.position
 	if event is InputEventMouseButton:
 		if event.button_index == MouseButton.MOUSE_BUTTON_RIGHT:
 			get_parent().remove_child(self)
@@ -64,6 +65,8 @@ func _gui_input(event: InputEvent) -> void:
 			## IMPORTANT ORDER OF THIS CONDITIONS !!
 			if connector_A and not connector_B:
 				connector_B = find_first_connector(event.position)
+				if not connector_B:
+					line.add_point(event.position)
 			
 			if not connector_A:
 				connector_A = find_first_connector(event.position)
@@ -73,15 +76,17 @@ func _gui_input(event: InputEvent) -> void:
 					line.show()
 			
 			if connector_A and connector_B:
-				connector_A.set_source(connector_B)
-				connector_B.set_source(connector_A)
-				var cable = res.element_scene.instantiate()
-				cable.name+="%d"%idx
-				cable.add_point(connector_A.get_global_transform().origin)
-				cable.add_point(connector_B.get_global_transform().origin)
-				cable.attach_body_a = connector_A.static_body
-				cable.attach_body_b = connector_B.static_body
-				world_instance.add_child(cable)
+				var rope = res.element_scene.instantiate()
+				rope.name+="%d" % idx
+				line.points[-1] = connector_B.get_global_transform().origin
+				rope.attach_body_a = connector_A.static_body
+				rope.attach_body_b = connector_B.static_body
+				
+				print_debug(connector_A.static_body, connector_B.static_body)
+				
+				for point in line.points:
+					rope.add_point(point)
+				world_instance.add_child(rope)
 				
 				placement_success.emit()
 				get_parent().remove_child(self)

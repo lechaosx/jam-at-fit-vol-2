@@ -33,11 +33,12 @@ func _gui_input(event: InputEvent) -> void:
 		if event.button_index == MouseButton.MOUSE_BUTTON_MIDDLE and event.pressed:
 			target_instance.scale.x = target_instance.scale.x * -1
 
-func init(resource:PlaceableResource, world:Node2D):
+func init(resource:PlaceableResource, world:Node2D, i:int):
 	res = resource
 	world_instance = world
 	
 	target_instance = res.element_scene.instantiate()
+	target_instance.name += "%d" % i
 	add_child(target_instance)
 	target_instance.position = world.get_viewport().get_mouse_position()
 	target_instance.process_mode = Node.PROCESS_MODE_DISABLED

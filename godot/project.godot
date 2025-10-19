@@ -38,6 +38,7 @@ pause={
 [layer_names]
 
 2d_render/layer_3="Electric"
+2d_render/layer_4="Ropes"
 2d_physics/layer_2="Ball"
 2d_physics/layer_3="Electrical"
 2d_physics/layer_8="TargetLayer"

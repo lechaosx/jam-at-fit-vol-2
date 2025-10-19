@@ -18,6 +18,8 @@ var world_instance:Node2D
 var targets_manager:TargetsManager
 var level_placeables: LevelPlaceables
 
+var magic_number = 0
+
 func _on_button_pressed() -> void:
 	playClicked.emit(get_world_duplicate())
 
@@ -36,12 +38,13 @@ func _on_item_placeholder_element_selected(resource: PlaceableResource, button:I
 		tool_scene = basic_tool_scene
 	
 	var tool = tool_scene.instantiate()
-	tool.init(resource, world_instance)
+	tool.init(resource, world_instance, magic_number)
 	tool.placement_success.connect(placement_success)
 	%ToolsContainer.add_child(tool)
 
 func placement_success():
 	selected_button.item_placed()
+	magic_number += 1
 
 func _on_reset_button_pressed() -> void:
 	spawn_world(world_scene)
@@ -68,6 +71,7 @@ func load_placeables_from_level():
 		
 		
 func spawn_world(scene:PackedScene):
+	magic_number = 0
 	remove_world_instance(world_instance)
 	world_instance = scene.instantiate()
 	world_instance.process_mode = Node.PROCESS_MODE_DISABLED
