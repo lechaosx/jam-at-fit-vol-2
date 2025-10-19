@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://d1s2p8an8gdwp"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_pdtm5"]
-[ext_resource type="Texture2D" uid="uid://6373mliib6n6" path="res://assets/bg_gradient.tres" id="1_w7ck5"]
+[ext_resource type="PackedScene" uid="uid://dklkxi1qq2fk6" path="res://border.tscn" id="1_yydhl"]
 [ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="2_b3oru"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_ua5ty"]
 [ext_resource type="Resource" uid="uid://cwjvlsjeuyrx3" path="res://placeables/items/efan.tres" id="3_045es"]
@@ -12,14 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="8_bekh1"]
 [ext_resource type="Resource" uid="uid://yjiwg1m7f7m" path="res://placeables/items/ecable.tres" id="10_53hnx"]
 
-[sub_resource type="Resource" id="Resource_lf3p4"]
+[sub_resource type="Resource" id="Resource_8bcou"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("6_ou4v7")
 max_count = 2
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_yydhl"]
+[sub_resource type="Resource" id="Resource_f7u7y"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("3_045es")
@@ -34,13 +34,10 @@ metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [node name="Level1" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(574, 325)
-scale = Vector2(18.375, 10.53125)
-texture = ExtResource("1_w7ck5")
+[node name="Border" parent="." instance=ExtResource("1_yydhl")]
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_pdtm5")]
-placeables = Array[ExtResource("2_ua5ty")]([SubResource("Resource_lf3p4"), SubResource("Resource_yydhl"), SubResource("Resource_bekh1")])
+placeables = Array[ExtResource("2_ua5ty")]([SubResource("Resource_8bcou"), SubResource("Resource_f7u7y"), SubResource("Resource_bekh1")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("2_b3oru")]
 

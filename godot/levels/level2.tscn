@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://57xl70y2gpkh"]
 
-[ext_resource type="Texture2D" uid="uid://6373mliib6n6" path="res://assets/bg_gradient.tres" id="1_jai45"]
+[ext_resource type="PackedScene" uid="uid://dklkxi1qq2fk6" path="res://border.tscn" id="1_jai45"]
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_p1d34"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_g1dg4"]
 [ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="2_qyb5k"]
@@ -42,10 +42,7 @@ metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [node name="Level2" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(574, 325)
-scale = Vector2(18.375, 10.53125)
-texture = ExtResource("1_jai45")
+[node name="Border2" parent="." instance=ExtResource("1_jai45")]
 
 [node name="Border" type="StaticBody2D" parent="."]
 
@@ -109,7 +106,6 @@ attach_body_b = NodePath("../Block3")
 [node name="ElectricFan" parent="." instance=ExtResource("13_6mfmt")]
 position = Vector2(1105, 623)
 scale = Vector2(-1, 1)
-is_on = false
 speed = 2
 
 [node name="Ball" parent="." instance=ExtResource("14_6mfmt")]

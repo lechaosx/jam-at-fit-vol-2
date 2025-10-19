@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnqwg71fj2o65"]
+[gd_scene load_steps=9 format=3 uid="uid://dnqwg71fj2o65"]
 
 [ext_resource type="Script" uid="uid://dvtbt3byrhqmd" path="res://UI/level_selector/level_selector.gd" id="1_gbel3"]
 [ext_resource type="PackedScene" uid="uid://d0nux7prgrt12" path="res://UI/level_selector/level_placeholder.tscn" id="2_7lqe8"]
-[ext_resource type="PackedScene" uid="uid://2a6a68yrbe1e" path="res://levels/sandbox_level.tscn" id="2_a68yj"]
+[ext_resource type="PackedScene" path="res://levels/sandbox_level.tscn" id="2_a68yj"]
 [ext_resource type="PackedScene" uid="uid://d1s2p8an8gdwp" path="res://levels/level1.tscn" id="2_lqsub"]
 [ext_resource type="PackedScene" uid="uid://57xl70y2gpkh" path="res://levels/level2.tscn" id="3_43r57"]
 [ext_resource type="PackedScene" uid="uid://dlg4ggr2bf2dg" path="res://levels/gpt/1kickOff.tscn" id="3_a68yj"]
 [ext_resource type="PackedScene" uid="uid://b2tfjlmda4hgb" path="res://levels/level3.tscn" id="4_a68yj"]
+[ext_resource type="Texture2D" uid="uid://6373mliib6n6" path="res://assets/bg_gradient.tres" id="8_n4v6u"]
 
 [node name="LevelSelector" type="Control"]
 layout_mode = 3
@@ -18,6 +19,11 @@ grow_vertical = 2
 script = ExtResource("1_gbel3")
 levels = Array[PackedScene]([ExtResource("3_a68yj"), ExtResource("2_lqsub"), ExtResource("3_43r57"), ExtResource("4_a68yj"), ExtResource("2_a68yj")])
 level_button_scene = ExtResource("2_7lqe8")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(574, 325)
+scale = Vector2(18.375, 10.53125)
+texture = ExtResource("8_n4v6u")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

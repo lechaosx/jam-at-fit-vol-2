@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dklkxi1qq2fk6"]
+[gd_scene load_steps=3 format=3 uid="uid://dklkxi1qq2fk6"]
+
+[ext_resource type="Texture2D" uid="uid://6373mliib6n6" path="res://assets/bg_gradient.tres" id="1_ujjr2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 normal = Vector2(1, 0)
 
 [node name="Border" type="StaticBody2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(574, 325)
+scale = Vector2(18.375, 10.53125)
+texture = ExtResource("1_ujjr2")
 
 [node name="BottomBorder" type="CollisionShape2D" parent="."]
 position = Vector2(13, 648)
