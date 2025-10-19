@@ -28,6 +28,7 @@ script = ExtResource("1_xc2ik")
 creaks = Array[AudioStream]([ExtResource("2_ssxl2"), ExtResource("3_3pa3j"), ExtResource("4_ag4ir"), ExtResource("5_s51bv"), ExtResource("6_c1uy8")])
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+continuous_cd = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("SegmentShape2D_2lv8p")

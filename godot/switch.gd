@@ -11,9 +11,14 @@ signal pressed
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	print("PRESSED")
 	pressed.emit()
+	$ElectricConnector.on_off_changed.emit(true)
 
 func _physics_process(delta):
 	# Spring force: F = -k * x - c * v
 	var displacement = %Button.position.y - spring_target_y
 	var force = -spring_strength * displacement - damping * %Button.linear_velocity.y
 	%Button.apply_central_impulse(Vector2(0, force * delta))
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	$ElectricConnector.on_off_changed.emit(false)

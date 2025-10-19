@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://m4ya5u6gd7ax"]
+[gd_scene load_steps=9 format=3 uid="uid://m4ya5u6gd7ax"]
 
 [ext_resource type="Script" uid="uid://d2b1g1kngj6l" path="res://switch.gd" id="1_it01i"]
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="2_8307x"]
+[ext_resource type="PackedScene" uid="uid://ejby3h5t8mbq" path="res://electric_connector/electric_connector.tscn" id="3_ds62l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ds62l"]
 atlas = ExtResource("2_8307x")
@@ -65,4 +66,8 @@ position = Vector2(0, 5.4999995)
 scale = Vector2(0.2950819, 0.3114754)
 texture = SubResource("AtlasTexture_8307x")
 
+[node name="ElectricConnector" parent="." instance=ExtResource("3_ds62l")]
+position = Vector2(0, 1)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

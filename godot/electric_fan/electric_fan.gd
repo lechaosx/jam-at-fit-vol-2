@@ -54,6 +54,9 @@ func set_speed(speed: FanSpeed) -> void:
 	])
 
 func _physics_process(delta: float) -> void:
+	if not is_on:
+		return
+		
 	for body in $Area2D.get_overlapping_bodies():
 		if body is RigidBody2D:
 			var force: int

@@ -1,6 +1,6 @@
 class_name Cable extends Line2D
 
-@export var segment_scene = preload("res://rope_segment.tscn")
+@export var segment_scene = preload("res://cable_segment.tscn")
 @export var attach_body_a: PhysicsBody2D
 @export var attach_body_b: PhysicsBody2D
 @export var segment_distance := 24.0
