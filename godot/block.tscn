@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqravtww1kjrd"]
+[gd_scene load_steps=3 format=3 uid="uid://dqravtww1kjrd"]
+
+[ext_resource type="Texture2D" uid="uid://byceouq5eywcx" path="res://assets/sand_block.png" id="1_im0tn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qncar"]
 size = Vector2(64, 64)
@@ -8,6 +10,6 @@ size = Vector2(64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qncar")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(1, 0.003921569, 1, 1)
-polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_im0tn")

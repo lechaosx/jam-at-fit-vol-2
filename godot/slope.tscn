@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://d32fwrsj74cuk"]
+[gd_scene load_steps=2 format=3 uid="uid://d32fwrsj74cuk"]
+
+[ext_resource type="Texture2D" uid="uid://byceouq5eywcx" path="res://assets/sand_block.png" id="1_iwyfe"]
 
 [node name="Slope" type="StaticBody2D"]
 
@@ -7,5 +9,6 @@ polygon = PackedVector2Array(-32, -32, 32, 32, -32, 32)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(1, 2)
-color = Color(1, 0, 1, 1)
+texture = ExtResource("1_iwyfe")
 polygon = PackedVector2Array(-33, -34, 30, 30, -33, 30)
+uv = PackedVector2Array(2.3875332, 2.3131733, 250.13416, 253.99228, 2.3875332, 253.99228)
