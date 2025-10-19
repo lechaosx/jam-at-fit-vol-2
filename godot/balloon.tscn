@@ -15,6 +15,7 @@ radius = 29.068884
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj3vs"]
 
 [node name="Balloon" type="RigidBody2D"]
+collision_layer = 129
 gravity_scale = -0.5
 script = ExtResource("1_r345k")
 pop_sounds = Array[AudioStream]([ExtResource("3_jj3vs"), ExtResource("4_wxbh2")])
