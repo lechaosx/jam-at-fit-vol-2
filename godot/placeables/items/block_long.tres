@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://vvqxcslx7p3h"]
+
+[ext_resource type="PackedScene" uid="uid://bqa5lhjbjxeho" path="res://placeables/obstacles/long.tscn" id="1_2x6wl"]
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_ou22t"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_8ctbu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p51ir"]
+atlas = ExtResource("3_8ctbu")
+region = Rect2(1032, 1176, 200, 72)
+
+[resource]
+resource_name = "Long Block"
+script = ExtResource("1_ou22t")
+element_scene = ExtResource("1_2x6wl")
+texture = SubResource("AtlasTexture_p51ir")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
