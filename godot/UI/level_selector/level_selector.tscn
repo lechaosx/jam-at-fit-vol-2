@@ -15,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gbel3")
 levels = Array[PackedScene]([ExtResource("2_lqsub"), ExtResource("3_43r57"), ExtResource("4_a68yj")])
-level_button = ExtResource("2_7lqe8")
+level_button_scene = ExtResource("2_7lqe8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -42,7 +42,6 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Game code"
 
 [node name="CodeEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -50,3 +49,5 @@ layout_mode = 2
 [node name="EnterCode" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Enter Code"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/EnterCode" to="." method="_on_enter_code_pressed"]

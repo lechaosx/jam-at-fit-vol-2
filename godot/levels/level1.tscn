@@ -20,50 +20,50 @@
 [ext_resource type="PackedScene" uid="uid://c7eyim1ysnsnl" path="res://Cable.tscn" id="11_wieee"]
 [ext_resource type="Texture2D" uid="uid://c7uatvmq8hcqu" path="res://cloud.webp" id="13_xtf7k"]
 
-[sub_resource type="Resource" id="Resource_q1xah"]
+[sub_resource type="Resource" id="Resource_l7nqg"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("3_l7nqg")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_wqtvx"]
+[sub_resource type="Resource" id="Resource_w7ck5"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("4_w7ck5")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_l50cl"]
+[sub_resource type="Resource" id="Resource_2nn5w"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("5_2nn5w")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_0imvb"]
+[sub_resource type="Resource" id="Resource_ou4v7"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("6_ou4v7")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_ddpb4"]
+[sub_resource type="Resource" id="Resource_53hnx"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("3_045es")
 max_count = 2
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_lllkd"]
+[sub_resource type="Resource" id="Resource_mxqdg"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("8_53hnx")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_3352f"]
+[sub_resource type="Resource" id="Resource_tv7bq"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("9_mxqdg")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_n2x8l"]
+[sub_resource type="Resource" id="Resource_wieee"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = ExtResource("10_tv7bq")
@@ -76,7 +76,7 @@ texture = ExtResource("13_xtf7k")
 tool = ExtResource("7_045es")
 metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
 
-[sub_resource type="Resource" id="Resource_llckc"]
+[sub_resource type="Resource" id="Resource_xtf7k"]
 resource_local_to_scene = true
 script = ExtResource("2_ua5ty")
 placeable_res = SubResource("Resource_nhsnn")
@@ -86,7 +86,7 @@ metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 [node name="Level1" type="Node2D"]
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_pdtm5")]
-placeables = Array[ExtResource("2_ua5ty")]([SubResource("Resource_q1xah"), SubResource("Resource_wqtvx"), SubResource("Resource_l50cl"), SubResource("Resource_0imvb"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_3352f"), SubResource("Resource_n2x8l"), SubResource("Resource_llckc")])
+placeables = Array[ExtResource("2_ua5ty")]([SubResource("Resource_l7nqg"), SubResource("Resource_w7ck5"), SubResource("Resource_2nn5w"), SubResource("Resource_ou4v7"), SubResource("Resource_53hnx"), SubResource("Resource_mxqdg"), SubResource("Resource_tv7bq"), SubResource("Resource_wieee"), SubResource("Resource_xtf7k")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("2_b3oru")]
 
@@ -171,6 +171,7 @@ position = Vector2(480, 552)
 [node name="Marble" parent="." instance=ExtResource("7_yydhl")]
 position = Vector2(160, 488)
 
-[node name="FinalTarget" parent="." instance=ExtResource("8_bekh1")]
+[node name="FinalTarget" parent="." node_paths=PackedStringArray("associatedBall") instance=ExtResource("8_bekh1")]
 position = Vector2(1080, 488)
 scale = Vector2(10, 10)
+associatedBall = NodePath("../Marble")

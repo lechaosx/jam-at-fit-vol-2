@@ -6,8 +6,6 @@ var isInEditor:bool = true:
 		$Editor.visible = amount
 		isInEditor = amount
 
-@export var world_scene:PackedScene
-var editor_world_instance
 var play_world_instance
 
 func remove_world(world_node):
@@ -15,9 +13,6 @@ func remove_world(world_node):
 		world_node.queue_free()
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$Editor.set_world(world_scene)
-
 func unPause():
 	$PauseMenu.hide()
 	get_tree().paused = false
@@ -50,7 +45,15 @@ func _on_editor_play_clicked(world:Node2D) -> void:
 	isInEditor = false
 	play_world_instance = world
 	play_world_instance.process_mode = Node.PROCESS_MODE_PAUSABLE
+	var targets_manager:TargetsManager = play_world_instance.find_child("TargetsManager")
+	if targets_manager:
+		targets_manager.completed.connect(_on_level_completed)
 	$SubViewportContainer/SubViewport.add_child(play_world_instance)
+
+func _on_level_completed():
+	$LevelSelector.completed()
+	$LevelSelector.show()
+	remove_world(play_world_instance)
 
 func reset_to_editor() -> void:
 	if play_world_instance:
@@ -58,13 +61,11 @@ func reset_to_editor() -> void:
 		remove_world(play_world_instance)
 	isInEditor=true
 
-
 func _on_level_selector_level_selected(scene: PackedScene, level_name: String) -> void:
 		$Editor.set_world(scene)
 		$Editor.level_name = level_name
 		$LevelSelector.hide()
 		$Editor.show()
-
 
 func _on_pause_menu_go_to_level_selector() -> void:
 	$Editor.hide()
