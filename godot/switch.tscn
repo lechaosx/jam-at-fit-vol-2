@@ -1,15 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://m4ya5u6gd7ax"]
+[gd_scene load_steps=8 format=3 uid="uid://m4ya5u6gd7ax"]
 
 [ext_resource type="Script" uid="uid://d2b1g1kngj6l" path="res://switch.gd" id="1_it01i"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="2_8307x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds62l"]
+atlas = ExtResource("2_8307x")
+region = Rect2(1959.4353, 794.21594, 110.45874, 49.918823)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxpdx"]
-size = Vector2(30, 19)
+size = Vector2(30, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ds62l"]
-size = Vector2(20, 7)
+size = Vector2(20, 6.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_it01i"]
-size = Vector2(9, 25.5)
+size = Vector2(9, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8307x"]
+atlas = ExtResource("2_8307x")
+region = Rect2(1926.0767, 848.43976, 177.39648, 61.268433)
 
 [node name="Switch" type="Node2D"]
 script = ExtResource("1_it01i")
@@ -21,13 +30,14 @@ collision_mask = 3
 gravity_scale = 0.0
 lock_rotation = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Button"]
-shape = SubResource("RectangleShape2D_kxpdx")
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(0.065314755, -7.029095)
+scale = Vector2(0.28452674, 0.28452674)
+texture = SubResource("AtlasTexture_ds62l")
 
-[node name="Polygon2D" type="Polygon2D" parent="Button"]
-position = Vector2(-4, 12)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-12, -22, 20, -22, 20, -12, -12, -12)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_kxpdx")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 15)
@@ -35,6 +45,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3.75)
 shape = SubResource("RectangleShape2D_ds62l")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -42,15 +53,16 @@ collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(21, 7)
+position = Vector2(21, 6)
 shape = SubResource("RectangleShape2D_it01i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-21, 7)
+position = Vector2(-21, 5.5)
 shape = SubResource("RectangleShape2D_it01i")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.06053035, 0.06053035, 0.060530342, 1)
-polygon = PackedVector2Array(-25, -5, 25, -5, 25, 19, -25, 19)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 5.4999995)
+scale = Vector2(0.2950819, 0.3114754)
+texture = SubResource("AtlasTexture_8307x")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
