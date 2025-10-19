@@ -1,33 +1,108 @@
-[gd_scene load_steps=11 format=3 uid="uid://67wdnf8llrj2"]
+[gd_scene load_steps=10 format=3 uid="uid://d1s2p8an8gdwp"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_pdtm5"]
-[ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="2_b3oru"]
+[ext_resource type="PackedScene" path="res://targets/TargetsManager.tscn" id="2_b3oru"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_ua5ty"]
-[ext_resource type="Resource" uid="uid://b2p4agajtuxgk" path="res://placeables/obstacles/LongBlock.tres" id="3_ua5ty"]
-[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="4_61w3m"]
-[ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="4_pdpul"]
-[ext_resource type="Texture2D" uid="uid://c854otwl15bph" path="res://electric_fan/electric-fan_1.png" id="6_8hd6v"]
+[ext_resource type="Resource" uid="uid://cwjvlsjeuyrx3" path="res://placeables/items/efan.tres" id="3_045es"]
+[ext_resource type="PackedScene" uid="uid://dqravtww1kjrd" path="res://block.tscn" id="5_omn1t"]
+[ext_resource type="PackedScene" uid="uid://d32fwrsj74cuk" path="res://slope.tscn" id="6_lf3p4"]
+[ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="7_yydhl"]
+[ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="8_bekh1"]
 
-[sub_resource type="Resource" id="Resource_61w3m"]
+[sub_resource type="Resource" id="Resource_8bcou"]
 script = ExtResource("2_ua5ty")
-placeable_res = ExtResource("3_ua5ty")
-max_count = 5
-metadata/_custom_type_script = "uid://d14m1du7rwwy7"
-
-[sub_resource type="Resource" id="Resource_pdpul"]
-script = ExtResource("4_61w3m")
-element_scene = ExtResource("4_pdpul")
-texture = ExtResource("6_8hd6v")
-metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
-
-[sub_resource type="Resource" id="Resource_ua5ty"]
-script = ExtResource("2_ua5ty")
-placeable_res = SubResource("Resource_pdpul")
+placeable_res = ExtResource("3_045es")
+max_count = 2
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [node name="Level1" type="Node2D"]
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_pdtm5")]
-placeables = Array[ExtResource("2_ua5ty")]([SubResource("Resource_61w3m"), SubResource("Resource_ua5ty")])
+placeables = Array[ExtResource("2_ua5ty")]([SubResource("Resource_8bcou")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("2_b3oru")]
+
+[node name="Block2" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(96, 616)
+
+[node name="Block" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(32, 616)
+
+[node name="Block3" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(224, 616)
+
+[node name="Block4" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(160, 616)
+
+[node name="Block5" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(352, 616)
+
+[node name="Block6" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(288, 616)
+
+[node name="Block7" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(480, 616)
+
+[node name="Block8" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(416, 616)
+
+[node name="Block19" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(96, 552)
+
+[node name="Block20" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(32, 552)
+
+[node name="Block21" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(224, 552)
+
+[node name="Block22" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(160, 552)
+
+[node name="Block23" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(352, 552)
+
+[node name="Block24" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(288, 552)
+
+[node name="Block25" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(416, 552)
+
+[node name="Block9" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(608, 616)
+
+[node name="Block10" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(544, 616)
+
+[node name="Block11" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(736, 616)
+
+[node name="Block12" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(672, 616)
+
+[node name="Block13" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(864, 616)
+
+[node name="Block14" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(800, 616)
+
+[node name="Block15" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(992, 616)
+
+[node name="Block16" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(928, 616)
+
+[node name="Block17" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(1120, 616)
+
+[node name="Block18" parent="." instance=ExtResource("5_omn1t")]
+position = Vector2(1056, 616)
+
+[node name="Slope" parent="." instance=ExtResource("6_lf3p4")]
+position = Vector2(480, 552)
+
+[node name="Marble" parent="." instance=ExtResource("7_yydhl")]
+position = Vector2(160, 488)
+
+[node name="FinalTarget" parent="." instance=ExtResource("8_bekh1")]
+position = Vector2(1080, 488)
+scale = Vector2(10, 10)
