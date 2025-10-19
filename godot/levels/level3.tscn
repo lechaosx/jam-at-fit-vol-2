@@ -25,63 +25,63 @@
 normal = Vector2(1, 0)
 distance = -56.0
 
-[sub_resource type="Resource" id="Resource_1ac74"]
+[sub_resource type="Resource" id="Resource_283cd"]
 resource_local_to_scene = true
 resource_name = "Bouncy Ball"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("3_283cd")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_wqtvx"]
+[sub_resource type="Resource" id="Resource_ulrxl"]
 resource_local_to_scene = true
 resource_name = "Marble Ball"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("3_7trqu")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_q1xah"]
+[sub_resource type="Resource" id="Resource_4lmri"]
 resource_local_to_scene = true
 resource_name = "Beach Ball"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("5_ulrxl")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_l50cl"]
+[sub_resource type="Resource" id="Resource_i3cyh"]
 resource_local_to_scene = true
 resource_name = "Flying Baloon"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("6_4lmri")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_ddpb4"]
+[sub_resource type="Resource" id="Resource_x6jsp"]
 resource_local_to_scene = true
 resource_name = "Electric Fan"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("7_i3cyh")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_lllkd"]
+[sub_resource type="Resource" id="Resource_rg68n"]
 resource_local_to_scene = true
 resource_name = "Electric Switch"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("8_x6jsp")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_0imvb"]
+[sub_resource type="Resource" id="Resource_g38f6"]
 resource_local_to_scene = true
 resource_name = "Electric Plug"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("9_rg68n")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_ccr7p"]
+[sub_resource type="Resource" id="Resource_u3me6"]
 resource_local_to_scene = true
 resource_name = "Electric Cable"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("10_g38f6")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_3352f"]
+[sub_resource type="Resource" id="Resource_4sv2i"]
 resource_local_to_scene = true
 resource_name = "Trampoline"
 script = ExtResource("2_mf7v1")
@@ -96,14 +96,14 @@ placeable_res = ExtResource("12_4sv2i")
 max_count = 4
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_adyxo"]
+[sub_resource type="Resource" id="Resource_43cms"]
 resource_local_to_scene = true
 resource_name = "Electric Cable"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("10_g38f6")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_cg0ig"]
+[sub_resource type="Resource" id="Resource_5peto"]
 resource_local_to_scene = true
 resource_name = "Scissors"
 script = ExtResource("2_mf7v1")
@@ -134,7 +134,7 @@ position = Vector2(56, 0)
 shape = SubResource("WorldBoundaryShape2D_bcewn")
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_cpuyl")]
-placeables = Array[ExtResource("2_mf7v1")]([SubResource("Resource_1ac74"), SubResource("Resource_wqtvx"), SubResource("Resource_q1xah"), SubResource("Resource_l50cl"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_0imvb"), SubResource("Resource_ccr7p"), SubResource("Resource_3352f"), SubResource("Resource_6slt7"), SubResource("Resource_adyxo"), SubResource("Resource_cg0ig")])
+placeables = Array[ExtResource("2_mf7v1")]([SubResource("Resource_283cd"), SubResource("Resource_ulrxl"), SubResource("Resource_4lmri"), SubResource("Resource_i3cyh"), SubResource("Resource_x6jsp"), SubResource("Resource_rg68n"), SubResource("Resource_g38f6"), SubResource("Resource_u3me6"), SubResource("Resource_4sv2i"), SubResource("Resource_6slt7"), SubResource("Resource_43cms"), SubResource("Resource_5peto")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("5_nq7ub")]
 
@@ -193,6 +193,7 @@ speed = 2
 [node name="Ball" parent="." instance=ExtResource("11_7trqu")]
 position = Vector2(1048, 96)
 
-[node name="FinalTarget" parent="." instance=ExtResource("12_mf7v1")]
+[node name="FinalTarget" parent="." node_paths=PackedStringArray("associatedBall") instance=ExtResource("12_mf7v1")]
 position = Vector2(1032, 544)
 scale = Vector2(9.915, 9.915)
+associatedBall = NodePath("../Ball")

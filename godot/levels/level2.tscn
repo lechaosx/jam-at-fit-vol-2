@@ -19,7 +19,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bcewn"]
 normal = Vector2(1, 0)
 
-[sub_resource type="Resource" id="Resource_jj0ry"]
+[sub_resource type="Resource" id="Resource_qegch"]
 resource_local_to_scene = true
 script = ExtResource("2_g1dg4")
 placeable_res = ExtResource("3_hq01p")
@@ -32,7 +32,7 @@ placeable_res = ExtResource("4_fjysh")
 max_count = 1
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_w8ofq"]
+[sub_resource type="Resource" id="Resource_jai45"]
 resource_local_to_scene = true
 script = ExtResource("2_g1dg4")
 placeable_res = ExtResource("5_bcewn")
@@ -62,7 +62,7 @@ shape = SubResource("WorldBoundaryShape2D_bcewn")
 shape = SubResource("WorldBoundaryShape2D_bcewn")
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_p1d34")]
-placeables = Array[ExtResource("2_g1dg4")]([SubResource("Resource_jj0ry"), SubResource("Resource_lllkd"), SubResource("Resource_w8ofq")])
+placeables = Array[ExtResource("2_g1dg4")]([SubResource("Resource_qegch"), SubResource("Resource_lllkd"), SubResource("Resource_jai45")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("2_qyb5k")]
 
@@ -110,8 +110,9 @@ speed = 2
 position = Vector2(1028, 633)
 mass = 0.1
 
-[node name="FinalTarget" parent="." instance=ExtResource("16_jai45")]
+[node name="FinalTarget" parent="." node_paths=PackedStringArray("associatedBall") instance=ExtResource("16_jai45")]
 position = Vector2(452, 576)
 scale = Vector2(6.95, 6.95)
+associatedBall = NodePath("../Ball")
 
 [editable path="Switch"]
