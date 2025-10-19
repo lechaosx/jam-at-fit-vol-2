@@ -26,6 +26,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("3_ppbsh")
 expand_mode = 3
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2

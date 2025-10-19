@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ds7j3q1bbvk53"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ds7j3q1bbvk53"]
 
 [ext_resource type="StyleBox" uid="uid://ncioop4odoer" path="res://assets/UI_gradient.tres" id="1_go05t"]
 [ext_resource type="Texture2D" uid="uid://b70pdvmihrdak" path="res://assets/button.png" id="1_wsa4l"]
+[ext_resource type="StyleBox" uid="uid://cy4fuw1irxg3" path="res://assets/UI_foldable_container_title_panel.tres" id="3_oieh5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oieh5"]
 texture = ExtResource("1_wsa4l")
@@ -26,6 +27,15 @@ texture_margin_right = 10.0
 texture_margin_bottom = 5.0
 modulate_color = Color(0.8784314, 0.8784314, 0.8784314, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oieh5"]
+content_margin_left = 5.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 3.0
+bg_color = Color(0.2509804, 0.1254902, 0.07058824, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [resource]
 Button/colors/font_color = Color(0.2509804, 0.1254902, 0.07058824, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_oieh5")
@@ -33,5 +43,15 @@ Button/styles/focus = ExtResource("1_go05t")
 Button/styles/hover = SubResource("StyleBoxTexture_wsa4l")
 Button/styles/normal = ExtResource("1_go05t")
 Button/styles/pressed = SubResource("StyleBoxTexture_t3rxx")
+FoldableContainer/colors/collapsed_font_color = Color(0.2509804, 0.1254902, 0.07058824, 1)
+FoldableContainer/colors/font_color = Color(0.2509804, 0.1254902, 0.07058824, 1)
+FoldableContainer/colors/font_outline_color = Color(0.2509804, 0.1254902, 0.07058824, 1)
+FoldableContainer/colors/hover_font_color = Color(0.78431374, 0.44313726, 0.21568628, 1)
+FoldableContainer/icons/expanded_arrow = null
+FoldableContainer/styles/panel = SubResource("StyleBoxFlat_oieh5")
+FoldableContainer/styles/title_collapsed_hover_panel = ExtResource("3_oieh5")
+FoldableContainer/styles/title_collapsed_panel = ExtResource("3_oieh5")
+FoldableContainer/styles/title_hover_panel = ExtResource("3_oieh5")
+FoldableContainer/styles/title_panel = ExtResource("3_oieh5")
 Level_Button/base_type = &"Button"
 Level_Button/font_sizes/font_size = 50
