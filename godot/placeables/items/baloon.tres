@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_g2d2y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc7r7"]
-resource_name = "Flying Baloon"
 atlas = ExtResource("3_g2d2y")
 region = Rect2(372, 787, 182, 269)
 
 [resource]
+resource_name = "Flying Baloon"
 script = ExtResource("1_g30qj")
 element_scene = ExtResource("1_udaju")
 texture = SubResource("AtlasTexture_xc7r7")

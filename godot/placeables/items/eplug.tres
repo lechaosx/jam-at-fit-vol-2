@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_sghf7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjnnt"]
-resource_name = "Electricity Plug"
 atlas = ExtResource("3_sghf7")
 region = Rect2(1502, 723, 78, 78)
 
 [resource]
+resource_name = "Electric Plug"
 script = ExtResource("1_og2rf")
 element_scene = ExtResource("1_4elkm")
 texture = SubResource("AtlasTexture_sjnnt")

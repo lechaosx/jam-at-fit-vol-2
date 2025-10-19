@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://dwandouoianyk"]
+
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_6jf51"]
+[ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="1_et2xr"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_n5pfp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rubo"]
+atlas = ExtResource("3_n5pfp")
+region = Rect2(1041, 935, 140, 140)
+
+[resource]
+resource_name = "Bouncy Ball"
+script = ExtResource("1_6jf51")
+element_scene = ExtResource("1_et2xr")
+texture = SubResource("AtlasTexture_1rubo")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=6 format=3 uid="uid://yjiwg1m7f7m"]
+
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_gyitu"]
+[ext_resource type="PackedScene" uid="uid://c7eyim1ysnsnl" path="res://Cable.tscn" id="1_v7yti"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_ye13q"]
+[ext_resource type="PackedScene" uid="uid://dpemwr5x43tul" path="res://UI/tools/electric_tool.tscn" id="4_ye13q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86nih"]
+atlas = ExtResource("3_ye13q")
+region = Rect2(1808, 942, 210, 211)
+
+[resource]
+resource_name = "Electric Cable"
+script = ExtResource("1_gyitu")
+element_scene = ExtResource("1_v7yti")
+texture = SubResource("AtlasTexture_86nih")
+tool = ExtResource("4_ye13q")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"

@@ -9,7 +9,7 @@ atlas = ExtResource("3_44ift")
 region = Rect2(1599, 693, 79, 104)
 
 [resource]
-resource_name = "Electricity Switch"
+resource_name = "Electric Switch"
 script = ExtResource("1_wxue6")
 element_scene = ExtResource("1_gx584")
 texture = SubResource("AtlasTexture_g2hm3")

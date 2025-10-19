@@ -6,11 +6,11 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulrsw"]
 resource_local_to_scene = true
-resource_name = "SeeSaw"
 atlas = ExtResource("3_pmu2i")
 region = Rect2(517, 1356, 857, 107)
 
 [resource]
+resource_name = "Seesaw"
 script = ExtResource("1_6rb1x")
 element_scene = ExtResource("1_xi7m1")
 texture = SubResource("AtlasTexture_ulrsw")

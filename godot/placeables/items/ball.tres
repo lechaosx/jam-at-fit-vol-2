@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_q8phg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65qq3"]
-resource_name = "Beach Ball"
 atlas = ExtResource("3_q8phg")
 region = Rect2(703, 747, 255, 255)
 
 [resource]
+resource_name = "Beach Ball"
 script = ExtResource("1_dy235")
 element_scene = ExtResource("1_jxcwq")
 texture = SubResource("AtlasTexture_65qq3")

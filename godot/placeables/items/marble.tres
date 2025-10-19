@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_blcsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nyho"]
-resource_name = "Marble Ball"
 atlas = ExtResource("3_blcsl")
 region = Rect2(1016, 742, 126, 126)
 
 [resource]
+resource_name = "Marble Ball"
 script = ExtResource("1_4n6a3")
 element_scene = ExtResource("1_puury")
 texture = SubResource("AtlasTexture_8nyho")

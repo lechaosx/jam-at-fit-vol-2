@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cv7kxl3b27xjo"]
+[gd_scene load_steps=26 format=3 uid="uid://cv7kxl3b27xjo"]
 
 [ext_resource type="Script" uid="uid://c8ry03566wrjc" path="res://placeables/level_placeables_definition.gd" id="1_cqg0u"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_omlgl"]
@@ -10,72 +10,94 @@
 [ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="8_lllkd"]
 [ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="9_l50cl"]
 [ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="10_wqtvx"]
-[ext_resource type="PackedScene" uid="uid://c7eyim1ysnsnl" path="res://Cable.tscn" id="11_qrcb3"]
-[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="12_1ac74"]
-[ext_resource type="Texture2D" uid="uid://c7uatvmq8hcqu" path="res://cloud.webp" id="13_cg0ig"]
-[ext_resource type="PackedScene" uid="uid://dpemwr5x43tul" path="res://UI/tools/electric_tool.tscn" id="14_bkf2g"]
+[ext_resource type="Resource" uid="uid://ce8s1dkroedn8" path="res://placeables/items/scissors.tres" id="15_1ac74"]
+[ext_resource type="Resource" uid="uid://dwandouoianyk" path="res://placeables/items/bouncy_ball.tres" id="16_cg0ig"]
+[ext_resource type="Resource" uid="uid://yjiwg1m7f7m" path="res://placeables/items/ecable.tres" id="17_bkf2g"]
 
-[sub_resource type="Resource" id="Resource_q1xah"]
+[sub_resource type="Resource" id="Resource_1ac74"]
 resource_local_to_scene = true
+resource_name = "Bouncy Ball"
 script = ExtResource("2_omlgl")
-placeable_res = ExtResource("3_0imvb")
+placeable_res = ExtResource("16_cg0ig")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [sub_resource type="Resource" id="Resource_wqtvx"]
 resource_local_to_scene = true
+resource_name = "Marble Ball"
 script = ExtResource("2_omlgl")
 placeable_res = ExtResource("8_lllkd")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
+[sub_resource type="Resource" id="Resource_q1xah"]
+resource_local_to_scene = true
+resource_name = "Beach Ball"
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("3_0imvb")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
 [sub_resource type="Resource" id="Resource_l50cl"]
 resource_local_to_scene = true
+resource_name = "Flying Baloon"
 script = ExtResource("2_omlgl")
 placeable_res = ExtResource("7_q1xah")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_0imvb"]
-resource_local_to_scene = true
-script = ExtResource("2_omlgl")
-placeable_res = ExtResource("4_omlgl")
-metadata/_custom_type_script = "uid://d14m1du7rwwy7"
-
 [sub_resource type="Resource" id="Resource_ddpb4"]
 resource_local_to_scene = true
+resource_name = "Electric Fan"
 script = ExtResource("2_omlgl")
 placeable_res = ExtResource("4_ddpb4")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [sub_resource type="Resource" id="Resource_lllkd"]
 resource_local_to_scene = true
+resource_name = "Electric Switch"
 script = ExtResource("2_omlgl")
 placeable_res = ExtResource("6_ddpb4")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
+[sub_resource type="Resource" id="Resource_0imvb"]
+resource_local_to_scene = true
+resource_name = "Electric Plug"
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("4_omlgl")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_ccr7p"]
+resource_local_to_scene = true
+resource_name = "Electric Cable"
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("17_bkf2g")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
 [sub_resource type="Resource" id="Resource_3352f"]
 resource_local_to_scene = true
+resource_name = "Trampoline"
 script = ExtResource("2_omlgl")
 placeable_res = ExtResource("9_l50cl")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [sub_resource type="Resource" id="Resource_n2x8l"]
 resource_local_to_scene = true
+resource_name = "Seesaw"
 script = ExtResource("2_omlgl")
 placeable_res = ExtResource("10_wqtvx")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_nhsnn"]
-script = ExtResource("12_1ac74")
-element_scene = ExtResource("11_qrcb3")
-texture = ExtResource("13_cg0ig")
-tool = ExtResource("14_bkf2g")
-metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
-
-[sub_resource type="Resource" id="Resource_llckc"]
+[sub_resource type="Resource" id="Resource_adyxo"]
 resource_local_to_scene = true
+resource_name = "Electric Cable"
 script = ExtResource("2_omlgl")
-placeable_res = SubResource("Resource_nhsnn")
+placeable_res = ExtResource("17_bkf2g")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_cg0ig"]
+resource_local_to_scene = true
+resource_name = "Scissors"
+script = ExtResource("2_omlgl")
+placeable_res = ExtResource("15_1ac74")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [node name="LevelPlaceables" type="Node"]
 script = ExtResource("1_cqg0u")
-placeables = Array[ExtResource("2_omlgl")]([SubResource("Resource_q1xah"), SubResource("Resource_wqtvx"), SubResource("Resource_l50cl"), SubResource("Resource_0imvb"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_3352f"), SubResource("Resource_n2x8l"), SubResource("Resource_llckc")])
+placeables = Array[ExtResource("2_omlgl")]([SubResource("Resource_1ac74"), SubResource("Resource_wqtvx"), SubResource("Resource_q1xah"), SubResource("Resource_l50cl"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_0imvb"), SubResource("Resource_ccr7p"), SubResource("Resource_3352f"), SubResource("Resource_n2x8l"), SubResource("Resource_adyxo"), SubResource("Resource_cg0ig")])

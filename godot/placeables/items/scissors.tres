@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://bpm4v0shf7jsr"]
+[gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://ce8s1dkroedn8"]
 
 [ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_bgiqt"]
 [ext_resource type="PackedScene" uid="uid://cilps83as6rhs" path="res://scissors.tscn" id="1_p3srs"]
@@ -9,6 +9,7 @@ atlas = ExtResource("3_3qnyn")
 region = Rect2(376.40668, 331.73575, 201.31384, 438.05893)
 
 [resource]
+resource_name = "Scissors"
 script = ExtResource("1_bgiqt")
 element_scene = ExtResource("1_p3srs")
 texture = SubResource("AtlasTexture_mskpa")
