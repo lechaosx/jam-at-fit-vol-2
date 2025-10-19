@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d32fwrsj74cuk"]
 
-[node name="Slope" type="RigidBody2D"]
+[node name="Slope" type="StaticBody2D"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-32, -32, 32, 32, -32, 32)

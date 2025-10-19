@@ -81,7 +81,6 @@ func cut(segment: RopeSegment) -> void:
 	var index := segments.find(segment)
 	
 	if index <= 0 or index >= segments.size():
-		push_error("Invalid cut index")
 		return
 	
 	# Remove the joint connecting the segments at the cut
