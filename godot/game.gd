@@ -51,6 +51,16 @@ func _on_editor_play_clicked(world:Node2D) -> void:
 	$SubViewportContainer/SubViewport.add_child(play_world_instance)
 
 func _on_level_completed():
+	
+	var overlay = preload("res://win_overlay.tscn").instantiate()
+	
+	add_child(overlay)
+	
+	$Timer.start()
+	await $Timer.timeout
+	
+	overlay.queue_free()
+	
 	$LevelSelector.completed()
 	$LevelSelector.show()
 	remove_world(play_world_instance)

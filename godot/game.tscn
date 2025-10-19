@@ -38,6 +38,10 @@ anchor_bottom = 0.5
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="playClicked" from="Editor" to="." method="_on_editor_play_clicked"]
 [connection signal="level_selected" from="LevelSelector" to="." method="_on_level_selector_level_selected"]
 [connection signal="go_to_level_selector" from="PauseMenu" to="." method="_on_pause_menu_go_to_level_selector"]
