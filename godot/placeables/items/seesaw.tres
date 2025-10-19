@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlaceableResource" load_steps=5 format=3 uid="uid://tp3st0262pdq"]
 
 [ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="1_6rb1x"]
-[ext_resource type="PackedScene" path="res://seesaw.tscn" id="1_xi7m1"]
+[ext_resource type="PackedScene" uid="uid://dwglrpbg4e0r4" path="res://seesaw.tscn" id="1_xi7m1"]
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="3_pmu2i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulrsw"]
