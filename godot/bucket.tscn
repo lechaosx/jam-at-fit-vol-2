@@ -1,13 +1,19 @@
-[gd_scene load_steps=0 format=3 uid="uid://seki0y1ekqnb"]
+[gd_scene load_steps=3 format=3 uid="uid://seki0y1ekqnb"]
+
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="1_bgj3b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caem6"]
+atlas = ExtResource("1_bgj3b")
+region = Rect2(1279.2671, 933.8369, 142.39795, 177.16956)
 
 [node name="Bucket" type="RigidBody2D"]
 position = Vector2(0, 48)
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(0, -40)
-color = Color(1, 0, 1, 1)
-polygon = PackedVector2Array(0, -8, 40, 0, 24, 88, -24, 88, -40, 0)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.000001)
+scale = Vector2(0.5316901, 0.53169024)
+texture = SubResource("AtlasTexture_caem6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 build_mode = 1
-polygon = PackedVector2Array(-32, -40, -16, 40, 16, 40, 32, -40, 40, -40, 24, 48, -24, 48, -40, -40)
+polygon = PackedVector2Array(-29, -40, -16, 40, 16, 40, 29, -40, 38, -40, 24, 48, -24, 48, -38, -40)
