@@ -1,4 +1,4 @@
-class_name Rope extends Line2D
+class_name Cable extends Line2D
 
 @export var segment_scene = preload("res://rope_segment.tscn")
 @export var attach_body_a: PhysicsBody2D

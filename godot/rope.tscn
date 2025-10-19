@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://v2coglxm5imv"]
+[gd_scene load_steps=3 format=3 uid="uid://dpfhlsllh6e6q"]
 
-[ext_resource type="Script" uid="uid://vpj0kbt01pwe" path="res://rope.gd" id="1_0756u"]
 [ext_resource type="Texture2D" uid="uid://d16nsslakixsd" path="res://assets/rope.png" id="1_nmccy"]
+[ext_resource type="Script" uid="uid://b4lunk686tlvt" path="res://rope.gd" id="2_nmccy"]
 
 [node name="Rope" type="Line2D"]
 texture_filter = 4
 texture_repeat = 2
 texture = ExtResource("1_nmccy")
 texture_mode = 1
-script = ExtResource("1_0756u")
+script = ExtResource("2_nmccy")
