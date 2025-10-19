@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://0bjmgokmgvxr"]
+[gd_scene load_steps=16 format=4 uid="uid://0bjmgokmgvxr"]
 
 [ext_resource type="Script" uid="uid://c8dcrlg72raaw" path="res://electric_fan/electric_fan.gd" id="1_jcpqo"]
 [ext_resource type="Texture2D" uid="uid://by2v0mwrpiti3" path="res://electric_fan/electric_fan-1.png" id="2_yp03g"]
@@ -66,7 +66,11 @@ tags = {
 }
 loop = true
 
-[node name="ElectricFan" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmqmr"]
+radius = 8.0
+height = 40.0
+
+[node name="ElectricFan" type="StaticBody2D"]
 script = ExtResource("1_jcpqo")
 is_on = true
 
@@ -88,3 +92,7 @@ shape = SubResource("RectangleShape2D_ibigq")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamOggVorbis_lmqmr")
 volume_db = -7.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -3)
+shape = SubResource("CapsuleShape2D_lmqmr")

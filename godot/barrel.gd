@@ -21,8 +21,6 @@ func kaboom():
 	queue_free()
 	
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	print_debug("CONTACT")
-	
 	var velocity := linear_velocity
 	
 	if body is RigidBody2D:
