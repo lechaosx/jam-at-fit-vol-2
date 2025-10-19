@@ -1,6 +1,7 @@
 [gd_scene load_steps=34 format=3 uid="uid://b2tfjlmda4hgb"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_cpuyl"]
+[ext_resource type="Texture2D" uid="uid://6373mliib6n6" path="res://assets/bg_gradient.tres" id="1_d6jip"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_mf7v1"]
 [ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="3_7trqu"]
 [ext_resource type="Resource" uid="uid://dwandouoianyk" path="res://placeables/items/bouncy_ball.tres" id="3_283cd"]
@@ -111,6 +112,11 @@ placeable_res = ExtResource("4_o0ax4")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [node name="Level3" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(574, 325)
+scale = Vector2(18.375, 10.53125)
+texture = ExtResource("1_d6jip")
 
 [node name="Border" type="StaticBody2D" parent="."]
 
