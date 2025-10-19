@@ -1,0 +1,198 @@
+[gd_scene load_steps=41 format=3 uid="uid://b1dtcchl6a3hk"]
+
+[ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_f0qsb"]
+[ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_xv30q"]
+[ext_resource type="Resource" uid="uid://dwandouoianyk" path="res://placeables/items/bouncy_ball.tres" id="3_tfqgh"]
+[ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="4_ny5mr"]
+[ext_resource type="Resource" uid="uid://dfxxnog1m7687" path="res://placeables/items/ball.tres" id="5_7b22e"]
+[ext_resource type="Resource" uid="uid://br3bk4doest8o" path="res://placeables/items/baloon.tres" id="6_jyi08"]
+[ext_resource type="Resource" uid="uid://cwjvlsjeuyrx3" path="res://placeables/items/efan.tres" id="7_mbmbl"]
+[ext_resource type="Resource" uid="uid://dpcfqvkvnbtp" path="res://placeables/items/eswitch.tres" id="8_t3oc6"]
+[ext_resource type="Resource" uid="uid://lot8llu3c3wi" path="res://placeables/items/eplug.tres" id="9_1lx0d"]
+[ext_resource type="Resource" uid="uid://yjiwg1m7f7m" path="res://placeables/items/ecable.tres" id="10_7obal"]
+[ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="11_1pq6f"]
+[ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="12_vmikf"]
+[ext_resource type="Resource" uid="uid://ce8s1dkroedn8" path="res://placeables/items/scissors.tres" id="13_rccgd"]
+[ext_resource type="Resource" uid="uid://c4wf31rl7dx2j" path="res://placeables/items/block_long.tres" id="14_k4rkm"]
+[ext_resource type="Resource" uid="uid://dr1j6kiruwdyl" path="res://placeables/items/pulley.tres" id="15_h5aew"]
+[ext_resource type="Resource" uid="uid://csu7knhqflg0d" path="res://placeables/items/barrel.tres" id="16_nrk8e"]
+[ext_resource type="Resource" uid="uid://c8360l6l5epfm" path="res://placeables/items/block.tres" id="17_ib1do"]
+[ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="18_j67ln"]
+[ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="19_vi8ks"]
+[ext_resource type="PackedScene" uid="uid://dklkxi1qq2fk6" path="res://border.tscn" id="20_ckpbi"]
+[ext_resource type="PackedScene" uid="uid://cfrauis6a2qlm" path="res://levels/items/block8.tscn" id="21_ud0no"]
+[ext_resource type="PackedScene" uid="uid://cp0bcsvn1pld5" path="res://levels/items/block2.tscn" id="22_rj3nn"]
+[ext_resource type="PackedScene" uid="uid://b0ysf5iffpxet" path="res://balloon.tscn" id="23_xv30q"]
+[ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="24_tfqgh"]
+[ext_resource type="PackedScene" uid="uid://dpfhlsllh6e6q" path="res://rope.tscn" id="25_tfqgh"]
+
+[sub_resource type="Resource" id="Resource_tfqgh"]
+resource_local_to_scene = true
+resource_name = "Bouncy Ball"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("3_tfqgh")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_ny5mr"]
+resource_local_to_scene = true
+resource_name = "Marble Ball"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("4_ny5mr")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_7b22e"]
+resource_local_to_scene = true
+resource_name = "Beach Ball"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("5_7b22e")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_jyi08"]
+resource_local_to_scene = true
+resource_name = "Flying Baloon"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("6_jyi08")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_mbmbl"]
+resource_local_to_scene = true
+resource_name = "Electric Fan"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("7_mbmbl")
+max_count = 3
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_t3oc6"]
+resource_local_to_scene = true
+resource_name = "Electric Switch"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("8_t3oc6")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_1lx0d"]
+resource_local_to_scene = true
+resource_name = "Electric Plug"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("9_1lx0d")
+max_count = 3
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_7obal"]
+resource_local_to_scene = true
+resource_name = "Electric Cable"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("10_7obal")
+max_count = 4
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_1pq6f"]
+resource_local_to_scene = true
+resource_name = "Trampoline"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("11_1pq6f")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_vmikf"]
+resource_local_to_scene = true
+resource_name = "Seesaw"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("12_vmikf")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_rccgd"]
+resource_local_to_scene = true
+resource_name = "Scissors"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("13_rccgd")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_k4rkm"]
+resource_local_to_scene = true
+resource_name = "Long Block"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("14_k4rkm")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_h5aew"]
+resource_local_to_scene = true
+resource_name = "Pulley"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("15_h5aew")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_nrk8e"]
+resource_local_to_scene = true
+resource_name = "Barrel"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("16_nrk8e")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_ib1do"]
+resource_local_to_scene = true
+resource_name = "Block"
+script = ExtResource("2_xv30q")
+placeable_res = ExtResource("17_ib1do")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[node name="2PowerOfAir" type="Node2D"]
+
+[node name="LevelPlaceables" parent="." instance=ExtResource("1_f0qsb")]
+placeables = Array[ExtResource("2_xv30q")]([SubResource("Resource_tfqgh"), SubResource("Resource_ny5mr"), SubResource("Resource_7b22e"), SubResource("Resource_jyi08"), SubResource("Resource_mbmbl"), SubResource("Resource_t3oc6"), SubResource("Resource_1lx0d"), SubResource("Resource_7obal"), SubResource("Resource_1pq6f"), SubResource("Resource_vmikf"), SubResource("Resource_rccgd"), SubResource("Resource_k4rkm"), SubResource("Resource_h5aew"), SubResource("Resource_nrk8e"), SubResource("Resource_ib1do")])
+
+[node name="TargetsManager" parent="." instance=ExtResource("18_j67ln")]
+
+[node name="FinalTarget" parent="." node_paths=PackedStringArray("associatedBall") instance=ExtResource("19_vi8ks")]
+position = Vector2(1072.0001, 224)
+scale = Vector2(10, 10)
+associatedBall = NodePath("../items/Balloon2")
+
+[node name="Border" parent="." instance=ExtResource("20_ckpbi")]
+
+[node name="blocks-bottom" type="CanvasGroup" parent="."]
+
+[node name="Block8" parent="blocks-bottom" instance=ExtResource("21_ud0no")]
+position = Vector2(32, 616)
+
+[node name="Block9" parent="blocks-bottom" instance=ExtResource("21_ud0no")]
+position = Vector2(544, 616)
+
+[node name="Block2" parent="blocks-bottom" instance=ExtResource("22_rj3nn")]
+position = Vector2(1056, 616)
+
+[node name="items" type="CanvasGroup" parent="."]
+
+[node name="Balloon" parent="items" instance=ExtResource("23_xv30q")]
+position = Vector2(344, 504)
+collision_layer = 3
+
+[node name="Balloon2" parent="items" instance=ExtResource("23_xv30q")]
+position = Vector2(600, 506)
+collision_layer = 3
+
+[node name="ElectricFan" parent="items" instance=ExtResource("24_tfqgh")]
+position = Vector2(272.00003, 455)
+rotation = -0.24085544
+is_on = true
+
+[node name="Rope" parent="items" node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("25_tfqgh")]
+points = PackedVector2Array(344, 496, 600, 496)
+attach_body_a = NodePath("../Balloon")
+attach_body_b = NodePath("../Balloon2")
+
+[node name="Block2" parent="items" instance=ExtResource("22_rj3nn")]
+position = Vector2(1056, 352)
+
+[node name="toDEL" type="CanvasGroup" parent="."]
+
+[node name="ElectricFan2" parent="toDEL" instance=ExtResource("24_tfqgh")]
+position = Vector2(424, 280)
+is_on = true
+
+[node name="ElectricFan3" parent="toDEL" instance=ExtResource("24_tfqgh")]
+position = Vector2(610, 152)
+is_on = true
+
+[node name="ElectricFan4" parent="toDEL" instance=ExtResource("24_tfqgh")]
+position = Vector2(792, 64.000015)
+rotation = 0.3228859
+is_on = true
