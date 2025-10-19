@@ -1,0 +1,103 @@
+[gd_scene load_steps=19 format=3 uid="uid://dlg4ggr2bf2dg"]
+
+[ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_l52p1"]
+[ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_x8kql"]
+[ext_resource type="Resource" uid="uid://dwandouoianyk" path="res://placeables/items/bouncy_ball.tres" id="3_pbofo"]
+[ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="4_lnans"]
+[ext_resource type="Resource" uid="uid://dfxxnog1m7687" path="res://placeables/items/ball.tres" id="5_upada"]
+[ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="18_1mxx1"]
+[ext_resource type="PackedScene" uid="uid://dklkxi1qq2fk6" path="res://border.tscn" id="19_x8kql"]
+[ext_resource type="PackedScene" uid="uid://cfrauis6a2qlm" path="res://levels/items/block8.tscn" id="20_lnans"]
+[ext_resource type="PackedScene" uid="uid://cp0bcsvn1pld5" path="res://levels/items/block2.tscn" id="21_upada"]
+[ext_resource type="PackedScene" uid="uid://crslie18awxoo" path="res://levels/items/block4.tscn" id="22_2rrg6"]
+[ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="25_dyykd"]
+[ext_resource type="PackedScene" uid="uid://bmvfopw6r7f62" path="res://levels/items/slope1.tscn" id="26_uqo5h"]
+[ext_resource type="PackedScene" uid="uid://cxkvcr8y045v0" path="res://levels/items/slope2.tscn" id="27_8mpwr"]
+[ext_resource type="PackedScene" uid="uid://dcnp5ewnyvsiv" path="res://barrel.tscn" id="27_ptxmg"]
+[ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="28_ptxmg"]
+
+[sub_resource type="Resource" id="Resource_ptxmg"]
+resource_local_to_scene = true
+resource_name = "Bouncy Ball"
+script = ExtResource("2_x8kql")
+placeable_res = ExtResource("3_pbofo")
+max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_wkleo"]
+resource_local_to_scene = true
+resource_name = "Marble Ball"
+script = ExtResource("2_x8kql")
+placeable_res = ExtResource("4_lnans")
+max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_m45lw"]
+resource_local_to_scene = true
+resource_name = "Beach Ball"
+script = ExtResource("2_x8kql")
+placeable_res = ExtResource("5_upada")
+max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[node name="1KickOff" type="Node2D"]
+
+[node name="LevelPlaceables" parent="." instance=ExtResource("1_l52p1")]
+placeables = Array[ExtResource("2_x8kql")]([SubResource("Resource_ptxmg"), SubResource("Resource_wkleo"), SubResource("Resource_m45lw")])
+
+[node name="TargetsManager" parent="." instance=ExtResource("18_1mxx1")]
+
+[node name="FinalTarget" parent="." node_paths=PackedStringArray("associatedBall") instance=ExtResource("25_dyykd")]
+position = Vector2(1071.9999, 487.99997)
+scale = Vector2(10, 10)
+associatedBall = NodePath("../items/Ball3")
+
+[node name="Border" parent="." instance=ExtResource("19_x8kql")]
+
+[node name="blocks-bottom" type="CanvasGroup" parent="."]
+
+[node name="Block8" parent="blocks-bottom" instance=ExtResource("20_lnans")]
+position = Vector2(32, 616)
+
+[node name="Block9" parent="blocks-bottom" instance=ExtResource("20_lnans")]
+position = Vector2(544, 616)
+
+[node name="Block2" parent="blocks-bottom" instance=ExtResource("21_upada")]
+position = Vector2(1056, 616)
+
+[node name="Block4" parent="blocks-bottom" instance=ExtResource("22_2rrg6")]
+position = Vector2(32, 552)
+
+[node name="Block3" parent="blocks-bottom" instance=ExtResource("21_upada")]
+position = Vector2(288, 552)
+
+[node name="blocks-right" type="CanvasGroup" parent="."]
+
+[node name="Slope1" parent="blocks-right" instance=ExtResource("26_uqo5h")]
+position = Vector2(32, 488)
+
+[node name="Slope2" parent="blocks-right" instance=ExtResource("27_8mpwr")]
+position = Vector2(1120, 136)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Slope3" parent="blocks-right" instance=ExtResource("27_8mpwr")]
+position = Vector2(992, 264)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Block2" parent="blocks-right" instance=ExtResource("21_upada")]
+position = Vector2(1056, 264)
+
+[node name="Block3" parent="blocks-right" instance=ExtResource("21_upada")]
+position = Vector2(1056, 328)
+
+[node name="items" type="CanvasGroup" parent="."]
+
+[node name="Barrel" parent="items" instance=ExtResource("27_ptxmg")]
+position = Vector2(360, 472)
+kaboomVelocityLimit = 1
+kaboomExplosionForce = 150000000.0
+
+[node name="Ball3" parent="items" instance=ExtResource("28_ptxmg")]
+position = Vector2(448, 568)

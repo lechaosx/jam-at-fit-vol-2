@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmvfopw6r7f62"]
+
+[ext_resource type="PackedScene" uid="uid://d32fwrsj74cuk" path="res://slope.tscn" id="1_u8qsg"]
+
+[node name="Slope1" type="Node2D"]
+
+[node name="Slope" parent="." instance=ExtResource("1_u8qsg")]

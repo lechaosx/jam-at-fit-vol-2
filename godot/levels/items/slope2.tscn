@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxkvcr8y045v0"]
+
+[ext_resource type="PackedScene" uid="uid://bmvfopw6r7f62" path="res://levels/items/slope1.tscn" id="1_7q8gt"]
+[ext_resource type="PackedScene" uid="uid://dktx2fap0cbwm" path="res://levels/items/block1.tscn" id="2_xsehr"]
+
+[node name="Slope2" type="Node2D"]
+
+[node name="Slope1" parent="." instance=ExtResource("1_7q8gt")]
+
+[node name="Slope2" parent="." instance=ExtResource("1_7q8gt")]
+position = Vector2(64, 64)
+
+[node name="Block1" parent="." instance=ExtResource("2_xsehr")]
+position = Vector2(0, 64)
