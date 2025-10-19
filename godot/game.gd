@@ -3,7 +3,6 @@ extends Node
 var isPaused = false
 var isInEditor:bool = true:
 	set(amount):
-		$PauseMenu.isInEditor = amount
 		$Editor.visible = amount
 		isInEditor = amount
 
@@ -22,10 +21,12 @@ func _ready() -> void:
 func unPause():
 	$PauseMenu.hide()
 	get_tree().paused = false
+	isPaused = false
 
 func pause():
 	$PauseMenu.show()
 	get_tree().paused = true 
+	isPaused=true
 
 func process_pause():
 	if !isInEditor:
@@ -36,7 +37,6 @@ func process_pause():
 		unPause()
 	else:
 		pause()
-	isPaused = !isPaused
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -44,8 +44,7 @@ func _process(_delta: float) -> void:
 		process_pause()
 
 func _on_pause_menu_resume_clicked() -> void:
-	if isPaused:
-		process_pause()
+	unPause()
 
 func _on_editor_play_clicked(world:Node2D) -> void:
 	isInEditor = false
@@ -58,3 +57,16 @@ func reset_to_editor() -> void:
 		play_world_instance.hide()
 		remove_world(play_world_instance)
 	isInEditor=true
+
+
+func _on_level_selector_level_selected(scene: PackedScene, level_name: String) -> void:
+		$Editor.set_world(scene)
+		$Editor.level_name = level_name
+		$LevelSelector.hide()
+		$Editor.show()
+
+
+func _on_pause_menu_go_to_level_selector() -> void:
+	$Editor.hide()
+	$LevelSelector.show()
+	unPause()

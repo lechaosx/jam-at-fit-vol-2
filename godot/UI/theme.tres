@@ -1,4 +1,4 @@
-[gd_resource type="Theme" format=3 uid="uid://ds7j3q1bbvk53"]
+[gd_resource type="Theme" load_steps=0 format=3 uid="uid://ds7j3q1bbvk53"]
 
 [resource]
 Level_Button/base_type = &"Button"

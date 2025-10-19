@@ -7,8 +7,13 @@ var basic_tool_scene:PackedScene = preload("res://UI/tools/basic_tool.tscn")
 
 @onready var viewport = $SubViewportContainer/SubViewport
 
-var selected_button: ItemPlaceholder
 var world_scene:PackedScene
+var level_name:String:
+	set(val):
+		level_name = val
+		$LevelName.text = val
+
+var selected_button: ItemPlaceholder
 var world_instance:Node2D
 var targets_manager:TargetsManager
 var level_placeables: LevelPlaceables
