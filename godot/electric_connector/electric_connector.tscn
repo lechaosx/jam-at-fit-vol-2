@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ejby3h5t8mbq"]
+[gd_scene load_steps=6 format=3 uid="uid://ejby3h5t8mbq"]
 
 [ext_resource type="Script" uid="uid://blfv8uflpy641" path="res://electric_connector/electric_connector.gd" id="1_5ed67"]
-[ext_resource type="Texture2D" uid="uid://bnu6u3g044pp5" path="res://icon.svg" id="2_dgfdv"]
+[ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="2_dgfdv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgfdv"]
-size = Vector2(24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_seslb"]
+atlas = ExtResource("2_dgfdv")
+region = Rect2(1349.2983, 607.1162, 132.4585, 132.86035)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_seslb"]
+radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dgfdv"]
 radius = 1.0
@@ -15,11 +19,12 @@ script = ExtResource("1_5ed67")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visibility_layer = 4
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_dgfdv")
+position = Vector2(9.536743e-07, -9.536743e-07)
+scale = Vector2(0.18181817, 0.18181817)
+texture = SubResource("AtlasTexture_seslb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_dgfdv")
+shape = SubResource("CircleShape2D_seslb")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
