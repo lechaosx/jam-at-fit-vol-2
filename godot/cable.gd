@@ -61,15 +61,15 @@ func _process(_delta: float) -> void:
 			joint.position.y = - segment_distance / 2
 			segments[i].add_child(joint)
 			joints.append(joint)
-			
-		if attach_body_a:
+		
+		if attach_body_a and not segments.is_empty():
 			var joint = PinJoint2D.new()
 			joint.node_a = segments.front().get_path()
 			joint.node_b = attach_body_a.get_path()
 			joint.position.y = segments.front().to_local(attach_body_a.global_position).y
 			segments.front().add_child(joint)
 		
-		if attach_body_b:
+		if attach_body_b and not segments.is_empty():
 			var joint = PinJoint2D.new()
 			joint.node_a = segments.back().get_path()
 			joint.node_b = attach_body_b.get_path()
