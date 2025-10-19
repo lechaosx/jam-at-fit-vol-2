@@ -28,6 +28,10 @@ func pause():
 	get_tree().paused = true 
 
 func process_pause():
+	if !isInEditor:
+		reset_to_editor()
+		return
+	
 	if isPaused:
 		unPause()
 	else:
@@ -49,7 +53,7 @@ func _on_editor_play_clicked(world:Node2D) -> void:
 	play_world_instance.process_mode = Node.PROCESS_MODE_PAUSABLE
 	$SubViewportContainer/SubViewport.add_child(play_world_instance)
 
-func _on_pause_menu_reset_to_editor() -> void:
+func reset_to_editor() -> void:
 	if play_world_instance:
 		play_world_instance.hide()
 		remove_world(play_world_instance)
