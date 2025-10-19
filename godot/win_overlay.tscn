@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://r1upghk74dyv"]
+[gd_scene load_steps=7 format=3 uid="uid://r1upghk74dyv"]
+
+[ext_resource type="AudioStream" uid="uid://b610drjcf6jig" path="res://audio/Win.wav" id="1_vbang"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ofvn4"]
 font_size = 70
@@ -45,6 +47,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_vbang")
+autoplay = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

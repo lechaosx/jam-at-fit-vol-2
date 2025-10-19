@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpemwr5x43tul"]
+[gd_scene load_steps=3 format=3 uid="uid://dpemwr5x43tul"]
 
 [ext_resource type="Script" uid="uid://dyoir53g0r0ou" path="res://UI/tools/electric_tool.gd" id="1_iolto"]
+[ext_resource type="AudioStream" uid="uid://dipuppxo76bk6" path="res://audio/Electricity-2.wav" id="2_3c7ga"]
 
 [node name="ElectricTool" type="Control"]
 layout_mode = 3
@@ -10,3 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iolto")
+
+[node name="Electricity" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3c7ga")

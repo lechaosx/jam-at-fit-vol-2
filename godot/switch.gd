@@ -11,6 +11,7 @@ signal pressed
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	print("PRESSED")
 	pressed.emit()
+	$Electricity.play()
 	$ElectricConnector.set_state(true)
 
 func _physics_process(delta):

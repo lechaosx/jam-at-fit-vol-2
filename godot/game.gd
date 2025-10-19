@@ -42,6 +42,8 @@ func _on_pause_menu_resume_clicked() -> void:
 	unPause()
 
 func _on_editor_play_clicked(world:Node2D) -> void:
+	$LoopNoMelody.stop()
+	
 	isInEditor = false
 	play_world_instance = world
 	play_world_instance.process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -64,8 +66,10 @@ func _on_level_completed():
 	$LevelSelector.completed()
 	$LevelSelector.show()
 	remove_world(play_world_instance)
+	$LoopNoMelody.play()
 
 func reset_to_editor() -> void:
+	$LoopNoMelody.play()
 	if play_world_instance:
 		play_world_instance.hide()
 		remove_world(play_world_instance)

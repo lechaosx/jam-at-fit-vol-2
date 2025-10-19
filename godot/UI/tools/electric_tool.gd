@@ -1,5 +1,7 @@
 extends Control
 
+
+
 @export var visibility_mask = 2
 var res:PlaceableResource
 var world_instance : Node2D
@@ -56,11 +58,14 @@ func _gui_input(event: InputEvent) -> void:
 		if connector_A:
 			line.points[1] = event.position
 	if event is InputEventMouseButton:
+		
 		if event.button_index == MouseButton.MOUSE_BUTTON_RIGHT:
 			get_parent().remove_child(self)
 			self.queue_free()
 			
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT and event.pressed:
+			$Electricity.play()
+			
 			## IMPORTANT ORDER OF THIS CONDITIONS !!
 			if connector_A and not connector_B:
 				connector_B = find_first_connector(event.position)

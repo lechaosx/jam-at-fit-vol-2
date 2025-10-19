@@ -12,6 +12,7 @@ func _ready() -> void:
 func on_off_changed(current: bool) -> void:
 	print_debug("electric/switch: %s - GFX" % connector.on_off_str(is_on))
 	if current:
+		$Electricity.play()
 		spriteOn.visible = true
 		spriteOff.visible = false
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b2tfjlmda4hgb"]
+[gd_scene load_steps=35 format=3 uid="uid://b2tfjlmda4hgb"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_cpuyl"]
 [ext_resource type="Texture2D" uid="uid://6373mliib6n6" path="res://assets/bg_gradient.tres" id="1_d6jip"]
@@ -21,80 +21,55 @@
 [ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="11_u3me6"]
 [ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="12_4sv2i"]
 [ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="12_mf7v1"]
+[ext_resource type="PackedScene" uid="uid://dklkxi1qq2fk6" path="res://border.tscn" id="22_4lmri"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bcewn"]
-normal = Vector2(1, 0)
-distance = -56.0
-
-[sub_resource type="Resource" id="Resource_283cd"]
+[sub_resource type="Resource" id="Resource_i3cyh"]
 resource_local_to_scene = true
 resource_name = "Bouncy Ball"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("3_283cd")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_ulrxl"]
+[sub_resource type="Resource" id="Resource_x6jsp"]
 resource_local_to_scene = true
 resource_name = "Marble Ball"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("3_7trqu")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_4lmri"]
+[sub_resource type="Resource" id="Resource_rg68n"]
 resource_local_to_scene = true
 resource_name = "Beach Ball"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("5_ulrxl")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_i3cyh"]
+[sub_resource type="Resource" id="Resource_g38f6"]
 resource_local_to_scene = true
 resource_name = "Flying Baloon"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("6_4lmri")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_x6jsp"]
+[sub_resource type="Resource" id="Resource_u3me6"]
 resource_local_to_scene = true
 resource_name = "Electric Fan"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("7_i3cyh")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_rg68n"]
+[sub_resource type="Resource" id="Resource_4sv2i"]
 resource_local_to_scene = true
 resource_name = "Electric Switch"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("8_x6jsp")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_g38f6"]
+[sub_resource type="Resource" id="Resource_6slt7"]
 resource_local_to_scene = true
 resource_name = "Electric Plug"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("9_rg68n")
-metadata/_custom_type_script = "uid://d14m1du7rwwy7"
-
-[sub_resource type="Resource" id="Resource_u3me6"]
-resource_local_to_scene = true
-resource_name = "Electric Cable"
-script = ExtResource("2_mf7v1")
-placeable_res = ExtResource("10_g38f6")
-metadata/_custom_type_script = "uid://d14m1du7rwwy7"
-
-[sub_resource type="Resource" id="Resource_4sv2i"]
-resource_local_to_scene = true
-resource_name = "Trampoline"
-script = ExtResource("2_mf7v1")
-placeable_res = ExtResource("11_u3me6")
-metadata/_custom_type_script = "uid://d14m1du7rwwy7"
-
-[sub_resource type="Resource" id="Resource_6slt7"]
-resource_local_to_scene = true
-resource_name = "Seesaw"
-script = ExtResource("2_mf7v1")
-placeable_res = ExtResource("12_4sv2i")
-max_count = 4
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [sub_resource type="Resource" id="Resource_43cms"]
@@ -105,6 +80,29 @@ placeable_res = ExtResource("10_g38f6")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [sub_resource type="Resource" id="Resource_5peto"]
+resource_local_to_scene = true
+resource_name = "Trampoline"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("11_u3me6")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_sv5e8"]
+resource_local_to_scene = true
+resource_name = "Seesaw"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("12_4sv2i")
+max_count = 4
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_vnxxs"]
+resource_local_to_scene = true
+resource_name = "Electric Cable"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("10_g38f6")
+max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_gxq45"]
 resource_local_to_scene = true
 resource_name = "Scissors"
 script = ExtResource("2_mf7v1")
@@ -118,29 +116,8 @@ position = Vector2(574, 325)
 scale = Vector2(18.375, 10.53125)
 texture = ExtResource("1_d6jip")
 
-[node name="Border" type="StaticBody2D" parent="."]
-
-[node name="BottomBorder" type="CollisionShape2D" parent="Border"]
-position = Vector2(64, 592)
-rotation = -1.5707964
-shape = SubResource("WorldBoundaryShape2D_bcewn")
-
-[node name="RightBorder" type="CollisionShape2D" parent="Border"]
-position = Vector2(1096, 616)
-rotation = 3.1415927
-shape = SubResource("WorldBoundaryShape2D_bcewn")
-
-[node name="TopBorder" type="CollisionShape2D" parent="Border"]
-position = Vector2(920, 56)
-rotation = 1.5707964
-shape = SubResource("WorldBoundaryShape2D_bcewn")
-
-[node name="LeftBoder" type="CollisionShape2D" parent="Border"]
-position = Vector2(56, 0)
-shape = SubResource("WorldBoundaryShape2D_bcewn")
-
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_cpuyl")]
-placeables = Array[ExtResource("2_mf7v1")]([SubResource("Resource_283cd"), SubResource("Resource_ulrxl"), SubResource("Resource_4lmri"), SubResource("Resource_i3cyh"), SubResource("Resource_x6jsp"), SubResource("Resource_rg68n"), SubResource("Resource_g38f6"), SubResource("Resource_u3me6"), SubResource("Resource_4sv2i"), SubResource("Resource_6slt7"), SubResource("Resource_43cms"), SubResource("Resource_5peto")])
+placeables = Array[ExtResource("2_mf7v1")]([SubResource("Resource_i3cyh"), SubResource("Resource_x6jsp"), SubResource("Resource_rg68n"), SubResource("Resource_g38f6"), SubResource("Resource_u3me6"), SubResource("Resource_4sv2i"), SubResource("Resource_6slt7"), SubResource("Resource_43cms"), SubResource("Resource_5peto"), SubResource("Resource_sv5e8"), SubResource("Resource_vnxxs"), SubResource("Resource_gxq45")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("5_nq7ub")]
 
@@ -152,54 +129,55 @@ position = Vector2(856, 504)
 rotation = -3.1415927
 
 [node name="Block" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 32)
+position = Vector2(224, 8)
 
 [node name="Block2" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 96)
+position = Vector2(224, 72)
 
 [node name="Block3" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 160)
+position = Vector2(224, 136)
 
 [node name="Block4" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 224)
+position = Vector2(224, 200)
 
 [node name="Block5" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 288)
+position = Vector2(224, 264)
 
 [node name="Block6" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 352)
+position = Vector2(224, 328)
 
 [node name="Block7" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 416)
+position = Vector2(224, 392)
 
 [node name="Block8" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 480)
+position = Vector2(224, 456)
 
 [node name="Block9" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 544)
+position = Vector2(224, 520)
 
 [node name="Block10" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 608)
+position = Vector2(224, 584)
 
 [node name="Block11" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(928, 672)
+position = Vector2(224, 648)
 
 [node name="Block12" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(1120, 160)
+position = Vector2(160, 120)
 
 [node name="Block13" parent="." instance=ExtResource("9_cpuyl")]
-position = Vector2(1056, 160)
+position = Vector2(96, 120)
 
 [node name="ElectricFan" parent="." instance=ExtResource("10_mf7v1")]
-position = Vector2(1112, 104)
+position = Vector2(152, 64)
 scale = Vector2(-1, 1)
-is_on = false
 speed = 2
 
 [node name="Ball" parent="." instance=ExtResource("11_7trqu")]
-position = Vector2(1048, 96)
+position = Vector2(88, 56)
 
 [node name="FinalTarget" parent="." node_paths=PackedStringArray("associatedBall") instance=ExtResource("12_mf7v1")]
-position = Vector2(1032, 544)
+position = Vector2(72, 560)
 scale = Vector2(9.915, 9.915)
 associatedBall = NodePath("../Ball")
+
+[node name="Border" parent="." instance=ExtResource("22_4lmri")]

@@ -33,8 +33,9 @@ func start() -> void:
 
 func stop() -> void:
 	is_on = false
-	sprites.stop()
-	$AudioStreamPlayer.stop()
+	if sprites:
+		sprites.stop()
+		$AudioStreamPlayer.stop()
 
 func set_speed(speed: FanSpeed) -> void:
 	match speed:

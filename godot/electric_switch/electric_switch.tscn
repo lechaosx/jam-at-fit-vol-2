@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7e24p47rwu63"]
+[gd_scene load_steps=8 format=3 uid="uid://c7e24p47rwu63"]
 
 [ext_resource type="Script" uid="uid://clc4hlqemghpo" path="res://electric_switch/electric_switch.gd" id="1_4w7j1"]
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="2_4w7j1"]
+[ext_resource type="AudioStream" uid="uid://b6kgou7ovk0q4" path="res://audio/Electricity.wav" id="4_h0qps"]
 [ext_resource type="PackedScene" uid="uid://ejby3h5t8mbq" path="res://electric_connector/electric_connector.tscn" id="4_n0cgk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0cgk"]
@@ -34,5 +35,8 @@ texture = SubResource("AtlasTexture_h0qps")
 shape = SubResource("RectangleShape2D_n0cgk")
 
 [node name="ElectricConnector" parent="." instance=ExtResource("4_n0cgk")]
+
+[node name="Electricity" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h0qps")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
