@@ -1,29 +1,113 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2tfjlmda4hgb"]
+[gd_scene load_steps=34 format=3 uid="uid://b2tfjlmda4hgb"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_cpuyl"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_mf7v1"]
 [ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="3_7trqu"]
-[ext_resource type="Resource" uid="uid://bpm4v0shf7jsr" path="res://placeables/items/scissors.tres" id="4_o0ax4"]
-[ext_resource type="PackedScene" path="res://targets/TargetsManager.tscn" id="5_nq7ub"]
-[ext_resource type="PackedScene" uid="uid://dwglrpbg4e0r4" path="res://seesaw.tscn" id="6_7ej46"]
+[ext_resource type="Resource" uid="uid://dwandouoianyk" path="res://placeables/items/bouncy_ball.tres" id="3_283cd"]
+[ext_resource type="Resource" uid="uid://ce8s1dkroedn8" path="res://placeables/items/scissors.tres" id="4_o0ax4"]
+[ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="5_nq7ub"]
+[ext_resource type="Resource" uid="uid://dfxxnog1m7687" path="res://placeables/items/ball.tres" id="5_ulrxl"]
+[ext_resource type="Resource" uid="uid://br3bk4doest8o" path="res://placeables/items/baloon.tres" id="6_4lmri"]
 [ext_resource type="PackedScene" uid="uid://b0t6hh2jmsrdr" path="res://marble.tscn" id="7_1xfnq"]
+[ext_resource type="Resource" uid="uid://cwjvlsjeuyrx3" path="res://placeables/items/efan.tres" id="7_i3cyh"]
 [ext_resource type="PackedScene" uid="uid://c7e24p47rwu63" path="res://electric_switch/electric_switch.tscn" id="8_6uckl"]
+[ext_resource type="Resource" uid="uid://dpcfqvkvnbtp" path="res://placeables/items/eswitch.tres" id="8_x6jsp"]
+[ext_resource type="PackedScene" uid="uid://dqravtww1kjrd" path="res://block.tscn" id="9_cpuyl"]
+[ext_resource type="Resource" uid="uid://lot8llu3c3wi" path="res://placeables/items/eplug.tres" id="9_rg68n"]
+[ext_resource type="Resource" uid="uid://yjiwg1m7f7m" path="res://placeables/items/ecable.tres" id="10_g38f6"]
+[ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="10_mf7v1"]
+[ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="11_7trqu"]
+[ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="11_u3me6"]
+[ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="12_4sv2i"]
+[ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="12_mf7v1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bcewn"]
 normal = Vector2(1, 0)
 distance = -56.0
 
-[sub_resource type="Resource" id="Resource_udvx3"]
+[sub_resource type="Resource" id="Resource_1ac74"]
 resource_local_to_scene = true
+resource_name = "Bouncy Ball"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("3_283cd")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_wqtvx"]
+resource_local_to_scene = true
+resource_name = "Marble Ball"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("3_7trqu")
-max_count = 1
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_q1xah"]
+resource_local_to_scene = true
+resource_name = "Beach Ball"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("5_ulrxl")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_l50cl"]
+resource_local_to_scene = true
+resource_name = "Flying Baloon"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("6_4lmri")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_ddpb4"]
+resource_local_to_scene = true
+resource_name = "Electric Fan"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("7_i3cyh")
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [sub_resource type="Resource" id="Resource_lllkd"]
+resource_local_to_scene = true
+resource_name = "Electric Switch"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("8_x6jsp")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_0imvb"]
+resource_local_to_scene = true
+resource_name = "Electric Plug"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("9_rg68n")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_ccr7p"]
+resource_local_to_scene = true
+resource_name = "Electric Cable"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("10_g38f6")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_3352f"]
+resource_local_to_scene = true
+resource_name = "Trampoline"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("11_u3me6")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_6slt7"]
+resource_local_to_scene = true
+resource_name = "Seesaw"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("12_4sv2i")
+max_count = 4
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_adyxo"]
+resource_local_to_scene = true
+resource_name = "Electric Cable"
+script = ExtResource("2_mf7v1")
+placeable_res = ExtResource("10_g38f6")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_cg0ig"]
+resource_local_to_scene = true
+resource_name = "Scissors"
 script = ExtResource("2_mf7v1")
 placeable_res = ExtResource("4_o0ax4")
-max_count = 1
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [node name="Level3" type="Node2D"]
@@ -41,7 +125,7 @@ rotation = 3.1415927
 shape = SubResource("WorldBoundaryShape2D_bcewn")
 
 [node name="TopBorder" type="CollisionShape2D" parent="Border"]
-position = Vector2(984, 56)
+position = Vector2(920, 56)
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_bcewn")
 
@@ -50,25 +134,65 @@ position = Vector2(56, 0)
 shape = SubResource("WorldBoundaryShape2D_bcewn")
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_cpuyl")]
-placeables = Array[ExtResource("2_mf7v1")]([SubResource("Resource_udvx3"), SubResource("Resource_lllkd")])
+placeables = Array[ExtResource("2_mf7v1")]([SubResource("Resource_1ac74"), SubResource("Resource_wqtvx"), SubResource("Resource_q1xah"), SubResource("Resource_l50cl"), SubResource("Resource_ddpb4"), SubResource("Resource_lllkd"), SubResource("Resource_0imvb"), SubResource("Resource_ccr7p"), SubResource("Resource_3352f"), SubResource("Resource_6slt7"), SubResource("Resource_adyxo"), SubResource("Resource_cg0ig")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("5_nq7ub")]
 
-[node name="Seesaw" parent="." instance=ExtResource("6_7ej46")]
-position = Vector2(403, 496)
-
-[node name="Seesaw2" parent="." instance=ExtResource("6_7ej46")]
-position = Vector2(520, 472)
-
-[node name="Seesaw3" parent="." instance=ExtResource("6_7ej46")]
-position = Vector2(640, 496)
-
-[node name="Seesaw4" parent="." instance=ExtResource("6_7ej46")]
-position = Vector2(760, 472)
-
 [node name="Marble" parent="." instance=ExtResource("7_1xfnq")]
-position = Vector2(320, 200)
+position = Vector2(320, 96)
 
 [node name="ElectricSwitch" parent="." instance=ExtResource("8_6uckl")]
 position = Vector2(856, 504)
 rotation = -3.1415927
+
+[node name="Block" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 32)
+
+[node name="Block2" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 96)
+
+[node name="Block3" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 160)
+
+[node name="Block4" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 224)
+
+[node name="Block5" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 288)
+
+[node name="Block6" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 352)
+
+[node name="Block7" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 416)
+
+[node name="Block8" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 480)
+
+[node name="Block9" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 544)
+
+[node name="Block10" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 608)
+
+[node name="Block11" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(928, 672)
+
+[node name="Block12" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(1120, 160)
+
+[node name="Block13" parent="." instance=ExtResource("9_cpuyl")]
+position = Vector2(1056, 160)
+
+[node name="ElectricFan" parent="." instance=ExtResource("10_mf7v1")]
+position = Vector2(1112, 104)
+scale = Vector2(-1, 1)
+is_on = false
+speed = 2
+
+[node name="Ball" parent="." instance=ExtResource("11_7trqu")]
+position = Vector2(1048, 96)
+
+[node name="FinalTarget" parent="." instance=ExtResource("12_mf7v1")]
+position = Vector2(1032, 544)
+scale = Vector2(9.915, 9.915)

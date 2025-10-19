@@ -99,5 +99,4 @@ volume_db = -7.0
 position = Vector2(5, -27)
 shape = SubResource("CapsuleShape2D_lmqmr")
 
-[node name="RopeConnector" parent="." instance=ExtResource("11_b0x0u")]
-position = Vector2(9, 13)
+[connection signal="propagate_state_cahnged" from="ElectricConnector" to="." method="on_off_changed"]

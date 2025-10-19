@@ -10,16 +10,16 @@
 [ext_resource type="PackedScene" uid="uid://dqravtww1kjrd" path="res://block.tscn" id="8_crte6"]
 [ext_resource type="PackedScene" uid="uid://cc3mdtk5nu3h5" path="res://ball.tscn" id="11_hq01p"]
 [ext_resource type="PackedScene" uid="uid://b0ysf5iffpxet" path="res://balloon.tscn" id="12_6mfmt"]
-[ext_resource type="PackedScene" uid="uid://c7e24p47rwu63" path="res://electric_switch/electric_switch.tscn" id="12_qegch"]
 [ext_resource type="PackedScene" uid="uid://0bjmgokmgvxr" path="res://electric_fan/electric_fan.tscn" id="13_6mfmt"]
 [ext_resource type="PackedScene" uid="uid://dpfhlsllh6e6q" path="res://rope.tscn" id="13_qegch"]
 [ext_resource type="PackedScene" uid="uid://dpg8nm3qigpt0" path="res://bouncy_ball.tscn" id="14_6mfmt"]
 [ext_resource type="PackedScene" uid="uid://m4ya5u6gd7ax" path="res://switch.tscn" id="15_qegch"]
+[ext_resource type="PackedScene" uid="uid://b3ncero04lpxp" path="res://targets/final_target.tscn" id="16_jai45"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bcewn"]
 normal = Vector2(1, 0)
 
-[sub_resource type="Resource" id="Resource_jai45"]
+[sub_resource type="Resource" id="Resource_jj0ry"]
 resource_local_to_scene = true
 script = ExtResource("2_g1dg4")
 placeable_res = ExtResource("3_hq01p")
@@ -32,7 +32,7 @@ placeable_res = ExtResource("4_fjysh")
 max_count = 1
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
-[sub_resource type="Resource" id="Resource_jj0ry"]
+[sub_resource type="Resource" id="Resource_w8ofq"]
 resource_local_to_scene = true
 script = ExtResource("2_g1dg4")
 placeable_res = ExtResource("5_bcewn")
@@ -62,7 +62,7 @@ shape = SubResource("WorldBoundaryShape2D_bcewn")
 shape = SubResource("WorldBoundaryShape2D_bcewn")
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_p1d34")]
-placeables = Array[ExtResource("2_g1dg4")]([SubResource("Resource_jai45"), SubResource("Resource_lllkd"), SubResource("Resource_jj0ry")])
+placeables = Array[ExtResource("2_g1dg4")]([SubResource("Resource_jj0ry"), SubResource("Resource_lllkd"), SubResource("Resource_w8ofq")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("2_qyb5k")]
 
@@ -94,9 +94,6 @@ position = Vector2(727, 172)
 position = Vector2(728.00006, 24.000004)
 rotation = -3.111493
 
-[node name="ElectricSwitch" parent="Switch" instance=ExtResource("12_qegch")]
-position = Vector2(32.06891, -430.15997)
-
 [node name="Rope" parent="." node_paths=PackedStringArray("attach_body_a", "attach_body_b") instance=ExtResource("13_qegch")]
 position = Vector2(76, -77)
 points = PackedVector2Array(651, 236, 656, 519)
@@ -111,5 +108,10 @@ speed = 2
 
 [node name="Ball" parent="." instance=ExtResource("14_6mfmt")]
 position = Vector2(1028, 633)
+mass = 0.1
+
+[node name="FinalTarget" parent="." instance=ExtResource("16_jai45")]
+position = Vector2(452, 576)
+scale = Vector2(6.95, 6.95)
 
 [editable path="Switch"]
