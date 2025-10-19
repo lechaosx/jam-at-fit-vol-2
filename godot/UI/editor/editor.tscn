@@ -66,12 +66,8 @@ text = "Reset"
 
 [node name="CollapsableContainer" type="FoldableContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/CollapsableContainer"]
-layout_mode = 2
-
-[node name="PlaceablesContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/CollapsableContainer/ScrollContainer"]
+[node name="PlaceablesContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/CollapsableContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
