@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwglrpbg4e0r4"]
+[gd_scene load_steps=13 format=3 uid="uid://dwglrpbg4e0r4"]
 
 [ext_resource type="Texture2D" uid="uid://bevmvv2e0e3x4" path="res://assets.svg" id="1_8xinp"]
-[ext_resource type="Script" uid="uid://brf0ss3x2djam" path="res://seesaw.gd" id="1_xc2ik"]
+[ext_resource type="Script" path="res://seesaw.gd" id="1_xc2ik"]
 [ext_resource type="AudioStream" uid="uid://cff3l5tbqeriw" path="res://audio/Click-complex.wav" id="2_ssxl2"]
 [ext_resource type="AudioStream" uid="uid://byvtf1tumaj50" path="res://audio/Creak-heavy.wav" id="3_3pa3j"]
 [ext_resource type="AudioStream" uid="uid://bepl1jpmpnrkt" path="res://audio/Creak-metal.wav" id="4_ag4ir"]
 [ext_resource type="AudioStream" uid="uid://c6nbre74de0gg" path="res://audio/Creak-wood-short.wav" id="5_s51bv"]
 [ext_resource type="AudioStream" uid="uid://dtlq1ldjudks7" path="res://audio/Creak-wood.wav" id="6_c1uy8"]
+[ext_resource type="PackedScene" uid="uid://sumfe3d2710f" path="res://rope_connector/rope_connector.tscn" id="8_3pa3j"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2lv8p"]
 a = Vector2(-100, 0)
@@ -41,6 +42,12 @@ node_b = NodePath("../../StaticBody2D")
 position = Vector2(0, -7.5)
 scale = Vector2(0.23509175, 0.23509175)
 texture = SubResource("AtlasTexture_xc2ik")
+
+[node name="RopeConnector" parent="RigidBody2D" instance=ExtResource("8_3pa3j")]
+position = Vector2(-96, 0)
+
+[node name="RopeConnector2" parent="RigidBody2D" instance=ExtResource("8_3pa3j")]
+position = Vector2(97, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

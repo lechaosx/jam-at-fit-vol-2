@@ -17,3 +17,6 @@ func disconnect_cable() -> void:
 func _on_electric_connector_on_connected() -> void:
 	connect_cable()
 	$ElectricConnector.set_state(true)
+
+func _ready() -> void:
+	$ElectricConnector.set_state(true)

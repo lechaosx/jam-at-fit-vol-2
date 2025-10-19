@@ -1,0 +1,137 @@
+[gd_scene load_steps=36 format=3 uid="uid://2a6a68yrbe1e"]
+
+[ext_resource type="Script" uid="uid://cso2s25wgbyjq" path="res://levels/sandbox_level.gd" id="1_ak613"]
+[ext_resource type="PackedScene" uid="uid://dklkxi1qq2fk6" path="res://border.tscn" id="1_moje3"]
+[ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="2_xioyx"]
+[ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="3_1vhwt"]
+[ext_resource type="Resource" uid="uid://dwandouoianyk" path="res://placeables/items/bouncy_ball.tres" id="4_ak613"]
+[ext_resource type="Resource" uid="uid://b46likhv0v1ss" path="res://placeables/items/marble.tres" id="5_g5q72"]
+[ext_resource type="Resource" uid="uid://dfxxnog1m7687" path="res://placeables/items/ball.tres" id="6_huvcg"]
+[ext_resource type="Resource" uid="uid://br3bk4doest8o" path="res://placeables/items/baloon.tres" id="7_qg154"]
+[ext_resource type="Resource" uid="uid://cwjvlsjeuyrx3" path="res://placeables/items/efan.tres" id="8_ow12e"]
+[ext_resource type="Resource" uid="uid://dpcfqvkvnbtp" path="res://placeables/items/eswitch.tres" id="9_xac37"]
+[ext_resource type="Resource" uid="uid://lot8llu3c3wi" path="res://placeables/items/eplug.tres" id="10_wvex7"]
+[ext_resource type="Resource" uid="uid://yjiwg1m7f7m" path="res://placeables/items/ecable.tres" id="11_o0voq"]
+[ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="12_k4oww"]
+[ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="13_yjhqg"]
+[ext_resource type="Resource" uid="uid://ce8s1dkroedn8" path="res://placeables/items/scissors.tres" id="14_6ghu0"]
+[ext_resource type="Resource" uid="uid://c4wf31rl7dx2j" path="res://placeables/items/block_long.tres" id="15_0ypr8"]
+[ext_resource type="Resource" uid="uid://dr1j6kiruwdyl" path="res://placeables/items/pulley.tres" id="16_mt2gc"]
+[ext_resource type="Resource" uid="uid://csu7knhqflg0d" path="res://placeables/items/barrel.tres" id="17_8l6dp"]
+[ext_resource type="Resource" uid="uid://c8360l6l5epfm" path="res://placeables/items/block.tres" id="18_kng7q"]
+[ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="19_1vhwt"]
+
+[sub_resource type="Resource" id="Resource_j521r"]
+resource_local_to_scene = true
+resource_name = "Bouncy Ball"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("4_ak613")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_mifp6"]
+resource_local_to_scene = true
+resource_name = "Marble Ball"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("5_g5q72")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_bkya1"]
+resource_local_to_scene = true
+resource_name = "Beach Ball"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("6_huvcg")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_cebh1"]
+resource_local_to_scene = true
+resource_name = "Flying Baloon"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("7_qg154")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_vg3g0"]
+resource_local_to_scene = true
+resource_name = "Electric Fan"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("8_ow12e")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_smjf4"]
+resource_local_to_scene = true
+resource_name = "Electric Switch"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("9_xac37")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_f3b4f"]
+resource_local_to_scene = true
+resource_name = "Electric Plug"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("10_wvex7")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_e36la"]
+resource_local_to_scene = true
+resource_name = "Electric Cable"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("11_o0voq")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_i773m"]
+resource_local_to_scene = true
+resource_name = "Trampoline"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("12_k4oww")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_wi3qq"]
+resource_local_to_scene = true
+resource_name = "Seesaw"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("13_yjhqg")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_ybgo2"]
+resource_local_to_scene = true
+resource_name = "Scissors"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("14_6ghu0")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_i2lrr"]
+resource_local_to_scene = true
+resource_name = "Long Block"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("15_0ypr8")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_op5au"]
+resource_local_to_scene = true
+resource_name = "Pulley"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("16_mt2gc")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_ninob"]
+resource_local_to_scene = true
+resource_name = "Barrel"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("17_8l6dp")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[sub_resource type="Resource" id="Resource_l4cx8"]
+resource_local_to_scene = true
+resource_name = "Block"
+script = ExtResource("3_1vhwt")
+placeable_res = ExtResource("18_kng7q")
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
+[node name="SandboxLevel" type="Node2D"]
+script = ExtResource("1_ak613")
+
+[node name="LevelPlaceables" parent="." instance=ExtResource("2_xioyx")]
+placeables = Array[ExtResource("3_1vhwt")]([SubResource("Resource_j521r"), SubResource("Resource_mifp6"), SubResource("Resource_bkya1"), SubResource("Resource_cebh1"), SubResource("Resource_vg3g0"), SubResource("Resource_smjf4"), SubResource("Resource_f3b4f"), SubResource("Resource_e36la"), SubResource("Resource_i773m"), SubResource("Resource_wi3qq"), SubResource("Resource_ybgo2"), SubResource("Resource_i2lrr"), SubResource("Resource_op5au"), SubResource("Resource_ninob"), SubResource("Resource_l4cx8")])
+
+[node name="TargetsManager" parent="." instance=ExtResource("19_1vhwt")]
+
+[node name="Border" parent="." instance=ExtResource("1_moje3")]

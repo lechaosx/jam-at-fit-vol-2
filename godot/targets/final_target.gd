@@ -2,6 +2,7 @@ extends Node2D
 class_name FinalTarget
 
 @export var associatedBall: Node2D
+@export var assocaitedBalls:Array[Node2D]
 var isBallPresent:bool
 
 signal targetNotify

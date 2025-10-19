@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://40bw6bhd555h"]
+[gd_scene load_steps=28 format=3 uid="uid://40bw6bhd555h"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kxl3b27xjo" path="res://placeables/level_placeables_definition.tscn" id="1_0vv12"]
 [ext_resource type="Script" uid="uid://d14m1du7rwwy7" path="res://resource_definitions/level_placeable_resource.gd" id="2_o5yuq"]
@@ -11,7 +11,11 @@
 [ext_resource type="Resource" uid="uid://bg3yurinulby5" path="res://placeables/items/trampoline.tres" id="9_vr6yy"]
 [ext_resource type="Resource" uid="uid://tp3st0262pdq" path="res://placeables/items/seesaw.tres" id="10_ra35m"]
 [ext_resource type="Resource" uid="uid://yjiwg1m7f7m" path="res://placeables/items/ecable.tres" id="11_8hjdj"]
+[ext_resource type="PackedScene" uid="uid://dpfhlsllh6e6q" path="res://rope.tscn" id="12_o5yuq"]
+[ext_resource type="Script" uid="uid://cwgc35jcb0rqh" path="res://resource_definitions/placeable_item_resource.gd" id="13_wjuib"]
+[ext_resource type="Texture2D" uid="uid://dahfdujx80p4x" path="res://boxer/boxer-1.png" id="14_xag4j"]
 [ext_resource type="PackedScene" uid="uid://bo8rftfrcw7w5" path="res://targets/TargetsManager.tscn" id="15_5y2bn"]
+[ext_resource type="PackedScene" uid="uid://buc8dlej5ikex" path="res://UI/tools/rope_tool.tscn" id="15_pgbyh"]
 
 [sub_resource type="Resource" id="Resource_axl34"]
 resource_local_to_scene = true
@@ -63,6 +67,7 @@ metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 resource_local_to_scene = true
 script = ExtResource("2_o5yuq")
 placeable_res = ExtResource("10_ra35m")
+max_count = 5
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
 [sub_resource type="Resource" id="Resource_n4g7x"]
@@ -72,9 +77,22 @@ placeable_res = ExtResource("11_8hjdj")
 max_count = 3
 metadata/_custom_type_script = "uid://d14m1du7rwwy7"
 
+[sub_resource type="Resource" id="Resource_atrxo"]
+script = ExtResource("13_wjuib")
+element_scene = ExtResource("12_o5yuq")
+texture = ExtResource("14_xag4j")
+tool = ExtResource("15_pgbyh")
+metadata/_custom_type_script = "uid://cwgc35jcb0rqh"
+
+[sub_resource type="Resource" id="Resource_vr6yy"]
+script = ExtResource("2_o5yuq")
+placeable_res = SubResource("Resource_atrxo")
+max_count = 5
+metadata/_custom_type_script = "uid://d14m1du7rwwy7"
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="LevelPlaceables" parent="." instance=ExtResource("1_0vv12")]
-placeables = Array[ExtResource("2_o5yuq")]([SubResource("Resource_axl34"), SubResource("Resource_8hjdj"), SubResource("Resource_0vv12"), SubResource("Resource_o5yuq"), SubResource("Resource_wjuib"), SubResource("Resource_xag4j"), SubResource("Resource_pgbyh"), SubResource("Resource_68kkm"), SubResource("Resource_n4g7x")])
+placeables = Array[ExtResource("2_o5yuq")]([SubResource("Resource_axl34"), SubResource("Resource_8hjdj"), SubResource("Resource_0vv12"), SubResource("Resource_o5yuq"), SubResource("Resource_wjuib"), SubResource("Resource_xag4j"), SubResource("Resource_pgbyh"), SubResource("Resource_68kkm"), SubResource("Resource_n4g7x"), SubResource("Resource_vr6yy")])
 
 [node name="TargetsManager" parent="." instance=ExtResource("15_5y2bn")]

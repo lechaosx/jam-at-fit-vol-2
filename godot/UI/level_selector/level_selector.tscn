@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvtbt3byrhqmd" path="res://UI/level_selector/level_selector.gd" id="1_gbel3"]
 [ext_resource type="PackedScene" uid="uid://d0nux7prgrt12" path="res://UI/level_selector/level_placeholder.tscn" id="2_7lqe8"]
-[ext_resource type="PackedScene" uid="uid://40bw6bhd555h" path="res://levels/test_level.tscn" id="2_43r57"]
+[ext_resource type="PackedScene" uid="uid://2a6a68yrbe1e" path="res://levels/sandbox_level.tscn" id="2_a68yj"]
 [ext_resource type="PackedScene" uid="uid://d1s2p8an8gdwp" path="res://levels/level1.tscn" id="2_lqsub"]
 [ext_resource type="PackedScene" uid="uid://57xl70y2gpkh" path="res://levels/level2.tscn" id="3_43r57"]
 [ext_resource type="PackedScene" uid="uid://dlg4ggr2bf2dg" path="res://levels/gpt/1kickOff.tscn" id="3_a68yj"]
@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gbel3")
-levels = Array[PackedScene]([ExtResource("2_43r57"), ExtResource("3_a68yj"), ExtResource("2_lqsub"), ExtResource("3_43r57"), ExtResource("4_a68yj")])
+levels = Array[PackedScene]([ExtResource("2_a68yj"), ExtResource("3_a68yj"), ExtResource("2_lqsub"), ExtResource("3_43r57"), ExtResource("4_a68yj")])
 level_button_scene = ExtResource("2_7lqe8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
